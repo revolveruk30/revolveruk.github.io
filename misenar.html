@@ -1,0 +1,518 @@
+<html>
+<title>SANS Notes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="w3-theme-black.css">
+<link rel="stylesheet" href="roboto.css">
+<link rel="stylesheet" href="font-awesome.min.css">
+
+
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 350px;
+  top: 35px;
+  bottom: 0;
+  height: inherit;
+  text-align: justify;}
+</style>
+
+<body>
+
+<!-- Topbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-small">
+    <a class="w3-bar-item w3-theme-l1"><i class="fa fa-bars"></i></a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-small w3-theme-l5" id="mySidebar">
+  <a class="w3-button w3-hover-black" href="cole.html">SEC 401 - Security Essentials, Cole</a>
+  <a class="w3-button w3-hover-black" href="beaupre.html">SEC 460 - Threat/Vulnerability Management, Beaupre</a>
+  <a class="w3-button w3-hover-black" href="cole2.html">SEC 501 - Enterprise Defender, Cole</a>
+  <a class="w3-button w3-hover-black" href="brenton.html">SEC 502 - Perimeter Protection, Brenton</a>
+  <a class="w3-button w3-hover-black" href="novak.html">SEC 503 - Intrusion Detection, Novak</a>
+  <a class="w3-button w3-hover-black" href="strand.html">SEC 504 - Hacker Tools, Strand</a>
+  <a class="w3-button w3-hover-black" href="pomeranz.html">SEC 506 - Linux/Unix Security, Pomeranz</a>
+  <a class="w3-button w3-hover-black" href="hoelzer.html">SEC 507 - Auditing Networks, Hoelzer</a>
+  <a class="w3-button w3-hover-black" href="misenar.html">SEC 511 - Continuous Monitoring, Misenar</a>
+  <a class="w3-button w3-hover-black" href="skoudis.html">SEC 517 - Cutting Edge Hacking Techniques, Skoudis</a>
+  <a class="w3-button w3-hover-black" href="strand2.html">SEC 550 - Offensive Countermeasures, Strand</a>
+  <a class="w3-button w3-hover-black" href="henderson.html">SEC 555 - SIEM with Tactical Analytics, Henderson</a>
+  <a class="w3-button w3-hover-black" href="skoudis2.html">SEC 560 - Network Penetration Testing, Skoudis</a>
+  <a class="w3-button w3-hover-black" href="wright.html">SEC 561 - Hands-On Hacking Techniques, Wright</a>
+  <a class="w3-button w3-hover-black" href="vest.html">SEC 564 - Red Team Operations, Vest</a>
+  <a class="w3-button w3-hover-black" href="tarala.html">SEC 566 - Implementing Critical Security Controls, Tarala</a>
+  <a class="w3-button w3-hover-black" href="baggett.html">SEC 573 - Automating InfoSec with Python, Baggett</a>
+  <a class="w3-button w3-hover-black" href="buggenhout.html">SEC 599 - Defeating Advanced Adversaries, Buggenhout</a>
+  <a class="w3-button w3-hover-black" href="wright2.html">SEC 617 - Wireless Ethical Hacking, Wright</a>
+  <a class="w3-button w3-hover-black" href="searle.html">SEC 642 - Web App Penetration Testing, Searle</a>
+  <a class="w3-button w3-hover-black" href="sims.html">SEC 660 - Advanced Penetration Testing, Sims</a>
+  <a class="w3-button w3-hover-black" href="sims2.html">SEC 760 - Advanced Exploit Development, Sims</a>
+  <a class="w3-button w3-hover-black" href="lee.html">FOR 408 - Windows Forensic Analysis, Lee</a>
+  <a class="w3-button w3-hover-black" href="lee2.html">FOR 508 - Incident Response Forensics, Lee</a>
+  <a class="w3-button w3-hover-black" href="hagen.html">FOR 572 - Advanced Network Forensics, Hagen</a>
+  <a class="w3-button w3-hover-black" href="zeltser.html">FOR 610 - Reverse-Engineering Malware, Zeltser</a>
+  <a class="w3-button w3-hover-black" href="cole3.html">MGT 414 - CISSP, Cole</a>
+</nav>
+
+<div class="w3-main" style="margin-left:350px">
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h2 class="w3-text-teal"></h2>
+
+<h2>    Continuous Security Monitoring, Seth Misenar</h2>
+<p>
+</p>
+<p>
+</p>
+<p>
+    Traditional attack techniques primarily focus on service-side exploitation,
+    which may also be referred to as server-side exploitation. With
+    service-side exploitation the adversary attacks a listening service that
+    contains a known vulnerability... While servers can be the victims of these
+    attacks, service-side exploitation is relevant to desktops, mobile devices,
+    or anything with a vulnerable listening service.
+</p>
+<p>
+    One of the key characteristics associated with traditional approaches to
+    cyber defense is being predominantly prevention oriented. Naturally, we
+    would rather prevent evil from ever making it into our organization in the
+    first place than to, for example, simply detect the badness. Emphasis on
+    prevention leads organizations to keep the bad guys out, keep malware from
+    ever executing, and simply blocking badness. Again, on the surface this
+    seems perfectly reasonable, but we will assess the efficacy of this
+    approach later.
+</p>
+<p>
+    Rarely do we see many standalone thick client/server applications anymore
+    that are separate from web browsers. The main way that most networking
+    devices are administered these days is via a browser connecting to a web
+    application.
+</p>
+<p>
+    The first principle of modern cyber defense requires an organization to
+    emphasize a detection-oriented approach to security. While conceptually
+    simple, this represents a paradigm shift for the majority of organizations.
+</p>
+<p>
+    An additional aspect of reorienting our organizations to be more focused on
+    detection is the establishment of Hunt Teams. The idea of a Hunt Team is to
+    have a team separate from that of traditional analysts.
+</p>
+<p>
+    Modern cyber defense also has a change in focus too. What exactly are we
+    looking to detect? Traditionally, the goal has been to detect the malware,
+    the exploit, or the scanning that presages an attack. The emphasis of
+    modern cyber defense is to detect the post-exploitation activity.
+</p>
+<p>
+    Post-exploitation activity is both more likely to cause actual damage, and,
+    surprisingly to some, also generally an easier detect. Simply focusing on
+    an adversary's attempts to persist and pivot pays huge defensive dividends.
+</p>
+<p>
+    To migrate to a more detection-dominant approach to information security
+    necessarily requires visibility into traffic. Many organizations fail
+    rather critically to allow for visibility into key portions of network
+    traffic. Most organizations have some degree of visibility into traffic
+    coming into their networks from the Internet, but lack fundamental
+    visibility within the internal network segments.
+</p>
+<p>
+    Where will adversaries attempt to pivot? What data is being targeted? How
+    can that data be accessed? These represent some of the various questions
+    that relate to another key practice of data visualization. Adversaries are
+    largely focused on data these days. Understanding the location and
+    accessibility of our high value data becomes key to our defensive posture.
+</p>
+<p>
+    A major posture improvement required for organizations wanting to enable
+    modern cyber defense involves migration toward a default deny approach to
+    egress ( outbound) traffic. Though organizations have long since moved to a
+    default deny stance for inbound traffic, outbound traffic is still
+    primarily allowed unless specifically blocked. A policy of blocking
+    everything outbound by default can be a cumbersome initial shift, but the
+    security benefits are huge.
+</p>
+<p>
+    Some examples of potential wins for outbound blocking:
+</p>
+<p>
+    &#8226; Helps detect internal compromised assets reaching back for C2
+</p>
+<p>
+    &#8226; Helps detect simplistic data exfiltration attempts
+</p>
+<p>
+    &#8226; Helps detect some policy violation attempts
+</p>
+<p>
+    &#8226; Helps detect some assets unwittingly attacking third-parties
+</p>
+<p>
+    Web application attacks, client-side exploitation, and pivoting are very
+    commonly elements of modern cyber campaigns. They also happen to be two
+    particular areas where many traditional technologies (and some newer ones)
+    are wanting, particularly from the prevention of compromise vantage point.
+</p>
+<p>
+    The router is typically the edge of a traditional perimeter. At the edge,
+    the router represents the last opportunity for outbound
+    filtering/monitoring, and also the first opportunity for inbound
+    filtering/monitoring. Another reason to consider the router is due to the
+    fact that it often represents the edge of our control and ownership
+</p>
+<p>
+    Though NetFlow has been widely used by network engineers for years, and is
+    likely already enabled, many security practitioners are still unaware of
+    this capability.
+</p>
+<p>
+    NetFlow records will all provide the following information:
+</p>
+<p>
+    &#8226; Timestamps, Start and Finish
+</p>
+<p>
+    &#8226; Source IP Address
+</p>
+<p>
+    &#8226; Destination IP Address
+</p>
+<p>
+    &#8226; ICMP Type Code (if applicable)
+</p>
+<p>
+    &#8226; UDP/TCP Port Numbers (if applicable)
+</p>
+<p>
+    &#8226; TCP Flags (if applicable)
+</p>
+<p>
+    &#8226; Bytes transferred
+</p>
+<p>
+    The router would likely only be able to attribute the traffic to the device
+    performing NAT for outbound traffic, quite likely the firewall. This is
+    unfortunate, but could still allow us to find issues that warrant further
+    review.
+</p>
+<p>
+    Data compromise represents many adversaries' primary goal, and likewise,
+    many organizations' primary security concern.
+</p>
+<p>
+    There is no Easy Button on advanced monitoring. The high volume detect can
+    be a successful one, but it can also have you chase your tail for a while
+    trying to figure out what if anything explains the volume. Clipping levels
+    and determining baseline volume can make this a much more successful
+    process.
+</p>
+<p>
+    On the detection front, the router is suitably positioned to help provide
+    insight into our outbound traffic. Specifically, we recommend looking for
+    "abnormal" connections... Also look at persistent outbound connections, the
+    destination IP and service of outbound traffic, and also the volume of the
+    traffic.
+</p>
+<p>
+    From a prevention standpoint, the router can do some very basic filtering
+    such as blocking obviously forged packets, but more advanced prevents
+    should likely be performed elsewhere.
+</p>
+<p>
+    Though the router can prove helpful, primarily due to its location, the
+    router is not an overt security product. The perimeter Stateful Inspection
+    (SI) firewall is likely the first security tool to be encountered on the
+    ingress and the last security tool to be seen for egress... The primary
+    focus of the perimeter SI firewall in the modern enterprise is to provide
+    somewhat basic, but fast security screening.
+</p>
+<p>
+    For some organizations it makes sense to perform geographical blocking,
+    which is blocking based on the region or country the traffic is sourced
+    from. Typically, this is achieved with a GeoIP lookup database, like the
+    ones available from MaxMind (some of which, like GeoLite2 databases are
+    free.)
+</p>
+<p>
+    With any sort of blacklist/blacklist, you need to be mindful that the data
+    can change over time. Also understand that you run definitely run the risk
+    of some blocking of potentially legitimate traffic.
+</p>
+<p>
+    Traditional security devices, including NGFW, IDS, IPS, and Malware
+    Detonation Devices, are rather poor when it comes to protecting custom web
+    applications Web application firewalls are built with custom web
+    applications in mind, and, with proper tuning, can be tailored to protect
+    individual custom web applications.
+</p>
+<p>
+    While the perimeter-focused NIDS is without question worthwhile, they are
+    far from the only place that NIDS should live. Yes, it is true that the
+    overwhelming majority of adversaries originate from the outside, but it is
+    also true that they do not stay outside for very long.
+</p>
+<p>
+    Once they bypass the external facing sensors with a cool client-side
+    exploit adversaries will, almost without question, move laterally within
+    the organization. Your external focused NIDS has zero visibility at that
+    level.
+</p>
+<p>
+    One major security posture improvement that every organization should
+    consider is employing internal NIDS, especially in order to better protect
+    key internal systems.
+</p>
+<p>
+    A false positive on a NIDS is an annoyance to be sure, but does not cause
+    business disruption. Whereas a false positive on an IPS causes service
+    outages. Necessarily then the configuration of an IPS must be such that
+    false positives cannot occur.
+</p>
+<p>
+    Bro monitors network activity and logs any connections, DNS requests,
+    detected network services and software, SSL certificates, and HTTP, FTP,
+    IRC SMTP, SSH, SSL, and Syslog activity that it sees, providing a real
+    depth and visibility into the context of data and events on your network.
+</p>
+<p>
+    Signature matching is the simplest form of detection. - Alert when specific
+    patterns are recognized. Signature matching is a form of blacklisting. -
+    Works well for known exploits and malware that doesn't change. It tends to
+    fail against. - New malware. - Polymorphic malware. - Custom malware.
+</p>
+<p>
+    Protocol behavior is the 2nd major NIDS design. One approach - Read RFCs
+    (Request For Comments) for a protocol such as TCP. - Model expected
+    protocol usage. TCP: SYN-&gt; SYN/ACK-&gt; ACK. - Alert for non-standard
+    protocol usage. TCP: SYN/AN or SYN/RST. This works, but remember Hanlon's
+    Razor. - Never attribute to malice that which is adequately explained by
+    stupidity.
+</p>
+<p>
+    Anomaly Detection models expected behavior, and ignores it. - It then
+    alerts on anomalous behavior. Anomaly detection is best when used for
+    specific high-risk cases. - It can fare poorly when applied broadly to
+    large complex networks.
+</p>
+<p>
+    Client-side exploits "turn your firewall inside out". - Source: victim. -
+    Destination: attacker. Most firewalls are far more permissive outbound than
+    inbound. -The majority of recent major incidents have begun with
+    client-side exploitation.
+</p>
+<p>
+    Network firewalls were designed to stop outsiders from getting into a
+    network, and could originally filter at layer 3 (IP addresses) and layer 4
+    (ports) only. "Next generation" firewalls add additional functionality,
+    including filtering at layer 7 (data). They are still an immature
+    technology. For example: determining whether a PDF is malicious at wire
+    speed is very difficult. This is why client-side attacks represent one of
+    the most common vectors for initial network compromise.
+</p>
+<p>
+    Service-side exploits are initiated by the attacker. - The attacker sends
+    the initial SYN (for TCP), or the first packet (UDP and ICMP). Also known
+    as server-side exploits. - "Service" is more accurate, as both server and
+    client systems (such as laptops) typically have listening services. Proper
+    firewall and DMZ design has largely mitigated this threat from the
+    Internet. - Service-side attacks are usually seen after a pivot, as part of
+    the post-exploitation phase.
+</p>
+<p>
+    Remember: malware will evade signature-based antivirus (and NIDS)
+    detection. We recommend you add behavioral detection to your defensive
+    repertoire, beginning with tracking the transfer of EXEs across your
+    network.
+</p>
+<p>
+    Modern malware usually tries to "phone home" and reach a command and control
+    (C2) server. It also tends to do so persistently: reaching out 24/7/365.
+    This outbound traffic offers one of the best ways to catch attacks that
+    have evaded both prevention and detection.
+</p>
+<p>
+    A core defensible network concept is: be aware of all persistent network
+    connections that transfer data between your network and a less trusted
+    network (such as the Internet). Inventory these connections, and ignore the
+    benign ones (such as legitimate VPN connections).
+</p>
+<p>
+    Adversaries' goals are focused largely on data, which is necessarily
+    situated on endpoints. Conceptually, protecting an individual endpoint is
+    far simpler than providing protection for multiple disparate devices, as we
+    do with network protections. However, in practice, the difficulty of
+    successfully employing robust security practices on endpoints proves
+    difficult due to the volume of the endpoints that need to be protected.
+</p>
+<p>
+    The primary distinguishing feature that make desktops more challenging than
+    servers to secure is simple: users. Active users drastically change the
+    security posture of a system. They want to install applications, access
+    data/resources, and also provide a more obvious conduit for adversaries to
+    introduce their malicious content.
+</p>
+<p>
+    Center for Internet Security
+</p>
+<p>
+    &#8226; Leveraging an established third-party configuration as a starting
+    point is a good choice
+</p>
+<p>
+    &#8226; The Center for Internet Security's benchmarks have long been a
+    trusted source for good security baseline configurations
+</p>
+<p>
+    &#8226; The benchmarks are developed via consensus from an working group
+    from industry
+</p>
+<p>
+    &#8226; The benchmarks are provided free-of-charge
+</p>
+<p>
+    &#8226; Importantly, there is significant documentation and guidance
+    explaining the various settings and their potential implications
+</p>
+<p>
+    Perhaps even more important than establishing the initial security baseline
+    configuration is systematically managing the changes to the baseline. Every
+    new application, configuration change, or update could impact the effective
+    security posture. Most organizations fail rather miserably at truly
+    managing the changes.
+</p>
+<p>
+    Developing a solid, vetted, inventory of software is necessarily a
+    time-consuming process, but also one that often results in the discovery
+    and subsequent removal of malicious, suspicious, or simply even unnecessary
+    software.
+</p>
+<p>
+    Below is a quick list of items that can be compared to determine whether
+    there is a white list match or not. The top represents the most obvious,
+    easiest to administer, but unfortunately also easiest to bypass approaches.
+    The bottom of the spectrum represents the highest degree of administrative
+    overhead, but also the highest level of integrity.
+
+• Filename • Full path • Publisher • MD5 Hash • SHA256 Hash • Digital Signature
+</p>
+<p>
+    Most commercial antivirus products are much more than just AV now: they are
+    now fancy endpoint security suites. The suites typically include many
+    additional capabilities beyond pure AV.
+</p>
+<p>
+    These suites will be much more all-encompassing and will likely include
+    standard, primarily signature based, antivirus, a host-based firewall,
+    perhaps some HIPS capabilities, some RIDS capabilities though they are less
+    overt about this one, perhaps too a dash of application whitelisting,
+    removable device control, something they will suggest provides DLP ( data
+    leakage prevention capabilities, and more).
+</p>
+<p>
+    One of the most significant justifications for HIDS/HIPS is that they are
+    suitably positioned to provide a substantially improved degree of
+    visibility within our enterprises. HIDS/HIPS do not require traffic to
+    traverse a choke point where a gateway lives in order to provide value.
+</p>
+<p>
+    HIDS/HIPS are suitably positioned to better protect assets where key users,
+    data, or applications reside. Perhaps the most significant WIN from
+    HIDS/HIPS is their ability to help prevent, but most importantly detect
+    attempts by adversaries to pivot.
+</p>
+<p>
+    &#8226; Keep in mind that tremendous detective capabilities are offered by
+    host based security tools that are not HIDS &#8226; Connections blocked by
+    the endpoint firewall can be a significant detect - Highly useful for
+    detecting attempts to pivot - Egress blocking can expose attempted C2
+    &#8226; Application Whitelisting blocks, after initial tuning, can also be
+    a huge boon to detection - Adversaries want to persist on endpoints and
+    typically will try to leverage an untrusted executable
+</p>
+<p>
+    &#8226; Deploy Application Whitelisting - Only allow previously identified
+    and vetted binaries to execute &#8226; Remove key Windows privileges - Most
+    importantly, remove Debug Programs privilege from all user accounts that
+    lack explicit need &#8226; Disable the built-in administrator account -
+    Review any/all attempts to interact with this account &#8226; Review and
+    revoke excessive user rights - Target servers/services accounts to block
+    local logon
+</p>
+<p>
+    The five tenets behind the Twenty Critical Security Controls for Effective
+    Cyber Defense are:
+</p>
+<p>
+    &#8226; Offense informs defense: Use knowledge of actual attacks that have
+    compromised systems to provide the foundation to build effective, practical
+    defenses. Include only those controls that can be shown to stop known
+    real-world attacks.
+</p>
+<p>
+    &#8226; Prioritization: Invest first in controls that will provide the
+    greatest risk reduction and protection against the most dangerous threat
+    actors, and that can be feasibly implemented in your computing environment.
+</p>
+<p>
+    &#8226; Metrics: Establish common metrics to provide a shared language for
+    executives, IT specialists, auditors, and security officials to measure the
+    effectiveness of security measures within an organization so that required
+    adjustments can be identified and implemented quickly.
+</p>
+<p>
+    &#8226; Continuous monitoring: Carry out continuous monitoring to test and
+    validate the effectiveness of current security measures.
+</p>
+<p>
+    &#8226; Automation: Automate defenses so that organizations can achieve
+    reliable, scalable, and continuous measurements of their adherence to the
+    controls and related metrics
+</p>
+<p>
+    There are many service logs we could focus on, but one stands out as a
+    missed opportunity for most organizations: DNS logs. Most mid-to-large
+    organizations deploy internal DNS servers that perform recursion, meaning
+    the server will use the Internet to resolve domains that are not local.
+    Most recursive DNS servers are also caching: they will remember a given DNS
+    response for a period of time.
+</p>
+<p>
+    Malware, like most network software, uses DNS for resolving names to IP
+    addresses (etc.) &#8226; It also uses DNS for command and control (C2)
+    traffic - It's usually allowed outbound - It's usually ignored &#8226; The
+    following should be monitored: - Large DNS queries with high entropy -
+    Large TXT record responses - High volumes of DNS resolution failures can
+    also be a sign of compromise
+</p>
+<p>
+    A default stance of "proxy all outbound connections unless whitelisted" is
+    a great control. Specific exceptions may be granted (for connections like
+    static VPN tunnels). This choke point gives time to assess a threat in real
+    time, plus remember specific actions, such as every URL accessed, and the
+    contents of every executable download.
+</p>
+<p>
+    Malware often uses the following ports to spread, communicate, send spam,
+    etc.: - 25/TCP (SMTP) - 1900/UDP (SSDP) - 135/TCP (DCE/RPC) - 3389/TCP
+    (RDP) -137/UDP (NetBIOS Name Service) - 139/TCP (NetBIOS Session Service) -
+    445/TCP (SMB over TCP) &#8226; In addition to blocking these outbound
+    ports, monitor blocked traffic.
+</p>
+<p>
+    Critical Windows Events to Monitor: 1. Service creation 2. User creation 3.
+    Adding users to privileged groups 4. Clearing the event Log 5. RDP/Terminal
+    Services certificate creation 6. Disabling the Windows Firewall 7. External
+    media detection 8. Lateral movement 9. App Locker events
+</p>
+<!-- END MAIN -->
+</div>
+
+
+</body>
+</html>

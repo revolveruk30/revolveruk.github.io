@@ -1,0 +1,254 @@
+<html>
+<title>SANS Notes</title>
+<meta charset="windows-1252">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="w3-theme-black.css">
+<link rel="stylesheet" href="roboto.css">
+<link rel="stylesheet" href="font-awesome.min.css">
+
+
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 350px;
+  top: 35px;
+  bottom: 0;
+  height: inherit;
+  text-align: justify;}
+</style>
+
+<body>
+
+<!-- Topbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-small">
+    <a class="w3-bar-item w3-theme-l1"><i class="fa fa-bars"></i></a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-small w3-theme-l5" id="mySidebar">
+  <a class="w3-button w3-hover-black" href="cole.html">SEC 401 - Security Essentials, Cole</a>
+  <a class="w3-button w3-hover-black" href="beaupre.html">SEC 460 - Threat/Vulnerability Management, Beaupre</a>
+  <a class="w3-button w3-hover-black" href="cole2.html">SEC 501 - Enterprise Defender, Cole</a>
+  <a class="w3-button w3-hover-black" href="brenton.html">SEC 502 - Perimeter Protection, Brenton</a>
+  <a class="w3-button w3-hover-black" href="novak.html">SEC 503 - Intrusion Detection, Novak</a>
+  <a class="w3-button w3-hover-black" href="strand.html">SEC 504 - Hacker Tools, Strand</a>
+  <a class="w3-button w3-hover-black" href="pomeranz.html">SEC 506 - Linux/Unix Security, Pomeranz</a>
+  <a class="w3-button w3-hover-black" href="hoelzer.html">SEC 507 - Auditing Networks, Hoelzer</a>
+  <a class="w3-button w3-hover-black" href="misenar.html">SEC 511 - Continuous Monitoring, Misenar</a>
+  <a class="w3-button w3-hover-black" href="skoudis.html">SEC 517 - Cutting Edge Hacking Techniques, Skoudis</a>
+  <a class="w3-button w3-hover-black" href="strand2.html">SEC 550 - Offensive Countermeasures, Strand</a>
+  <a class="w3-button w3-hover-black" href="henderson.html">SEC 555 - SIEM with Tactical Analytics, Henderson</a>
+  <a class="w3-button w3-hover-black" href="skoudis2.html">SEC 560 - Network Penetration Testing, Skoudis</a>
+  <a class="w3-button w3-hover-black" href="wright.html">SEC 561 - Hands-On Hacking Techniques, Wright</a>
+  <a class="w3-button w3-hover-black" href="vest.html">SEC 564 - Red Team Operations, Vest</a>
+  <a class="w3-button w3-hover-black" href="tarala.html">SEC 566 - Implementing Critical Security Controls, Tarala</a>
+  <a class="w3-button w3-hover-black" href="baggett.html">SEC 573 - Automating InfoSec with Python, Baggett</a>
+  <a class="w3-button w3-hover-black" href="buggenhout.html">SEC 599 - Defeating Advanced Adversaries, Buggenhout</a>
+  <a class="w3-button w3-hover-black" href="wright2.html">SEC 617 - Wireless Ethical Hacking, Wright</a>
+  <a class="w3-button w3-hover-black" href="searle.html">SEC 642 - Web App Penetration Testing, Searle</a>
+  <a class="w3-button w3-hover-black" href="sims.html">SEC 660 - Advanced Penetration Testing, Sims</a>
+  <a class="w3-button w3-hover-black" href="sims2.html">SEC 760 - Advanced Exploit Development, Sims</a>
+  <a class="w3-button w3-hover-black" href="lee.html">FOR 408 - Windows Forensic Analysis, Lee</a>
+  <a class="w3-button w3-hover-black" href="lee2.html">FOR 508 - Incident Response Forensics, Lee</a>
+  <a class="w3-button w3-hover-black" href="hagen.html">FOR 572 - Advanced Network Forensics, Hagen</a>
+  <a class="w3-button w3-hover-black" href="zeltser.html">FOR 610 - Reverse-Engineering Malware, Zeltser</a>
+  <a class="w3-button w3-hover-black" href="cole3.html">MGT 414 - CISSP, Cole</a>
+</nav>
+
+<div class="w3-main" style="margin-left:350px">
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h2 class="w3-text-teal"></h2>
+
+    <h2>The Craft of System Security, Sean Smith</h2>
+</p>
+<p>
+    Rather than thinking about C-I-A, we like to think about security in terms
+    of <strong><mark>correctness</strong></mark>. We can think of the system as being in
+    some state, an element of some larger space of possible states. Some subset
+    of these states are "good," based on the semantics of the system. The
+    system can change states, depending on various events: the actions of
+    users, the actions of adversaries, computation, environmental or component
+    failure, or even the passage of time.
+</p>
+<p>
+    One hopes that the system begins in a state within this good set. The
+    design of the system then leads to a larger set of states that are
+    reachable, given adversarial behavior. We can reframe the security question
+    as: Is this set of reachable states contained within the good set or can
+    the adversary lead the system into an incorrect state?
+</p>
+<p>
+    As a <strong><mark>system's complexity</strong></mark> grows-typically, via the addition
+    of new features-the state space grows as well, and thus the risk of an
+    undetected bad state increases. When an attacker finds unexpected states,
+    security trouble often follows.
+</p>
+<p>
+Many common security exploits are a form of a category of attacks known as    <strong><mark>buffer overflow</strong></mark> attacks. In such a scenario, an attacker
+    injects into the system's memory data that expands the functionality of the
+    system. In some sense, the attacker modifies the space of reachable states
+    of the system while it is running. This injected data typically gives the
+    attacker unauthorized superuser access to the machine in the form of a root
+    shell, thus the data is typically referred to as shellcode.
+</p>
+<p>
+    <strong><mark>Scanning</strong></mark>
+    a network is not a crime in itself but is typically categorized as suspect
+    behavior, since it is usually one of the first stages of an attack.
+    Scanning can produce all sorts of useful information to a potential
+    attacker, such as basic network topology, the types of OSes in the
+    environment, and which ports and services are running on the individual
+    machines. At the core, scanners gather such information by sending packets
+    to the target machine and evaluating responses.
+</p>
+<p>
+    At the end of the scanning phase, a potential attacker should have a decent
+    idea of what the target environment looks like as a whole and should have a
+    clear path to the target, know what OS the target uses, and have an idea of
+    what services the target is running. This is usually enough information for
+    an attacker to start thinking about what type of exploits will work against
+    the target.
+</p>
+<p>
+    Once an attacker has mapped out the target, gotten enough information to
+    plan the attack, and taken the appropriate steps to cover his or her
+    tracks, there's only one thing left to do: attack the target. Typically,
+    this involves trying to get a remote shell-ideally, with root or
+    administrator privileges-so that the attacker can install software, access
+    the desired information, destroy the hard drives, and so on. Often, the
+    attacker accomplishes this step by using an exploit that exercises a
+    vulnerability in one of the network-facing services.
+</p>
+<p>
+Modern thinking is to architect networks along    <strong><mark>security boundaries</strong></mark>, thus creating multiple security
+    domains inside the firewall. For example, an enterprise may partition its
+    intranet into subnets. Mission-critical servers may get placed on one
+    subnet and have very strong access controls, such as PKI; noncritical
+    servers may get placed on another subnet with more lax access controls;
+    workstations may get placed on yet another subnet; and publicly accessible
+    servers, such as Web servers, may get placed in a DMZ so that they can be
+    reached by the outside world.
+</p>
+<p>
+    The motivation behind this strategy is to contain firewall breaches to
+    particular security domains of the enterprise. This way, an attacker who
+    was able to get through the firewall and compromise a workstation might not
+    be able to gain access to mission-critical servers. This strategy of having
+multiple lines of defenses is often referred to as    <strong><mark>defense in depth</strong></mark> and has become a best practice when
+    designing modern networks.
+</p>
+<p>
+Some argue that the security of the system should be    <strong><mark>transparent</strong></mark>--the user shouldn't have to think about it at
+    all. In effect, a tranparent system in this regard means that, regardless
+    of what actions the user takes, the system cannot wind up in a bad state.
+    Users are not burdened with making security-relevant decisions; in return,
+    the application attempts to guarantee to stay in a good state. Others argue
+    that the system should be <strong><mark>expressive</strong></mark> and let the user know
+    when the system is dealing with security-related information or is at a
+    point where a transition into an unsafe state is possible. Proponents of
+    expressiveness claim that security-related decisions are best made in
+    context and that the best source of context is the human using the system.
+</p>
+<p>
+    There are situations in which users shouldn't have to deal with security.
+    For example, systems that communicate potentially sensitive information
+    over the network shouldn't ask the user whether to encrypt the traffic and
+    what key lengths and algorithms to use. That part of the system's security
+    should be invisible. However, the same system may need to be expressive
+    when it comes to authenticating a machine or user across the network. The
+    system itself may have no clue as to whether to trust a remote server, but
+    the system's user may know immediately.
+</p>
+<p>
+    Users typically have a very limited <strong><mark>mental model</strong></mark> of the
+    system, based on the control mappings that the users have observed. Even
+    subtle inconsistencies in the control mappings can break a user's model and
+    lead the person to use things incorrectly. If the system's designers
+    haven't anticipated the user's behavior, the system can get into a bad
+    state, which as you know, can have security ramifications.
+</p>
+<p>
+    <strong><mark>System designers</strong></mark>
+    have three tools at their disposal to guide users into creating appropriate
+    mental models of the system and thus using the system correctly, or at
+    least in such a way that doesn't send it into states that they aren't
+    anticipating. Norman calls these tools constraints, affordances, and
+    feedback.
+</p>
+<p>
+    <strong><mark>Constraints</strong></mark>
+    limit what the controls can do. Ideally, they should be used as a way to
+    disallow input or control events that send the system into a bad state. For
+    example, a Web form that asks users to enter their phone numbers can
+    constrain the input to allowing only the right number of digits and
+    blocking all alphabetical characters.
+</p>
+<p>
+    Norman uses the term <strong><mark>affordances</strong></mark> to describe actions that
+    are perceivable by the user. As a system designer, one can use this concept
+    to build controls that, by their construction and appearance, naturally
+    suggest their proper use. A classic example of this can be found on doors.
+    Well-designed doors that need a push to open present the user a simple push
+    pad.
+</p>
+<p>
+    As part of the way humans interact with the world, we evaluate actions and
+    plan strategy based on our perception of what our actions did. The
+observable result of our actions is usually called    <strong><mark>feedback</strong></mark>. For a system designer, this feedback can help
+    guide users into constructing accurate mappings beween control-change
+    events and system state changes.
+</p>
+<p>
+    The <strong><mark>path of least resistance</strong></mark> aims to take into account the
+    fact that humans often search for the easiest way to accomplish a given
+    task. Although this is true in the real world, it also applies to software.
+    Thus, if the easiest way to accomplish the task (i.e., "the path of least
+    resistance") is secure, then users will naturally take the most secure path
+    through the system.
+</p>
+<p>
+    Good <strong><mark>interface design</strong></mark> goes a long way toward making the
+    system trustable. Ulitmately, users want to believe that the system will
+    help and encourage them to do the correct thing and warn them when they are
+    about to do the wrong thing. Constraints, affordances, and feedback can
+    help users build accurate mental models, which are essential in
+    establishing system-user trust. An otherwise well-built system can end up
+    in bad states quite often if the interface makes it easy to get the system
+    in such a state or makes it difficult for users to steer away from such
+    states.
+</p>
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

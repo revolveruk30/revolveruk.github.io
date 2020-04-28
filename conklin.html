@@ -1,0 +1,2321 @@
+<html>
+<title>SANS Notes</title>
+<meta charset="windows-1252">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="w3-theme-black.css">
+<link rel="stylesheet" href="roboto.css">
+<link rel="stylesheet" href="font-awesome.min.css">
+
+
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 350px;
+  top: 35px;
+  bottom: 0;
+  height: inherit;
+  text-align: justify;}
+</style>
+
+<body>
+
+<!-- Topbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-small">
+    <a class="w3-bar-item w3-theme-l1"><i class="fa fa-bars"></i></a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-small w3-theme-l5" id="mySidebar">
+  <a class="w3-button w3-hover-black" href="cole.html">SEC 401 - Security Essentials, Cole</a>
+  <a class="w3-button w3-hover-black" href="beaupre.html">SEC 460 - Threat/Vulnerability Management, Beaupre</a>
+  <a class="w3-button w3-hover-black" href="cole2.html">SEC 501 - Enterprise Defender, Cole</a>
+  <a class="w3-button w3-hover-black" href="brenton.html">SEC 502 - Perimeter Protection, Brenton</a>
+  <a class="w3-button w3-hover-black" href="novak.html">SEC 503 - Intrusion Detection, Novak</a>
+  <a class="w3-button w3-hover-black" href="strand.html">SEC 504 - Hacker Tools, Strand</a>
+  <a class="w3-button w3-hover-black" href="pomeranz.html">SEC 506 - Linux/Unix Security, Pomeranz</a>
+  <a class="w3-button w3-hover-black" href="hoelzer.html">SEC 507 - Auditing Networks, Hoelzer</a>
+  <a class="w3-button w3-hover-black" href="misenar.html">SEC 511 - Continuous Monitoring, Misenar</a>
+  <a class="w3-button w3-hover-black" href="skoudis.html">SEC 517 - Cutting Edge Hacking Techniques, Skoudis</a>
+  <a class="w3-button w3-hover-black" href="strand2.html">SEC 550 - Offensive Countermeasures, Strand</a>
+  <a class="w3-button w3-hover-black" href="henderson.html">SEC 555 - SIEM with Tactical Analytics, Henderson</a>
+  <a class="w3-button w3-hover-black" href="skoudis2.html">SEC 560 - Network Penetration Testing, Skoudis</a>
+  <a class="w3-button w3-hover-black" href="wright.html">SEC 561 - Hands-On Hacking Techniques, Wright</a>
+  <a class="w3-button w3-hover-black" href="vest.html">SEC 564 - Red Team Operations, Vest</a>
+  <a class="w3-button w3-hover-black" href="tarala.html">SEC 566 - Implementing Critical Security Controls, Tarala</a>
+  <a class="w3-button w3-hover-black" href="baggett.html">SEC 573 - Automating InfoSec with Python, Baggett</a>
+  <a class="w3-button w3-hover-black" href="buggenhout.html">SEC 599 - Defeating Advanced Adversaries, Buggenhout</a>
+  <a class="w3-button w3-hover-black" href="wright2.html">SEC 617 - Wireless Ethical Hacking, Wright</a>
+  <a class="w3-button w3-hover-black" href="searle.html">SEC 642 - Web App Penetration Testing, Searle</a>
+  <a class="w3-button w3-hover-black" href="sims.html">SEC 660 - Advanced Penetration Testing, Sims</a>
+  <a class="w3-button w3-hover-black" href="sims2.html">SEC 760 - Advanced Exploit Development, Sims</a>
+  <a class="w3-button w3-hover-black" href="lee.html">FOR 408 - Windows Forensic Analysis, Lee</a>
+  <a class="w3-button w3-hover-black" href="lee2.html">FOR 508 - Incident Response Forensics, Lee</a>
+  <a class="w3-button w3-hover-black" href="hagen.html">FOR 572 - Advanced Network Forensics, Hagen</a>
+  <a class="w3-button w3-hover-black" href="zeltser.html">FOR 610 - Reverse-Engineering Malware, Zeltser</a>
+  <a class="w3-button w3-hover-black" href="cole3.html">MGT 414 - CISSP, Cole</a>
+</nav>
+
+<div class="w3-main" style="margin-left:350px">
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h2 class="w3-text-teal"></h2>
+
+<h2>Computer Security Principles, Conklin</h2>
+
+<h3>
+    Security Trends
+</h3>
+<p>
+    The security emphasis has shifted from the computer to the information
+    being processed. Information security is defined by the information being
+    protected from unauthorized access or alteration and yet is available to
+    authorized individuals when required.
+</p>
+<p>
+    Today, computer equipment is inexpensive compared to the value of the data
+    processed by the computer. Now the high-value item is not the machine,
+    but the information that it stores and processes. This has fundamentally
+    changed the focus of computer security from what it was in the early years.
+</p>
+<p>
+    Electronic crime can take a number of different forms, but the ones we will
+    examine here fall into two basic categories: crimes in which the computer
+    was the target, and incidents in which a computer was used to perpetrate
+    the act.
+</p>
+<p>
+    One of the most effective measures security professionals can take to
+    address attacks on their computer systems and networks is to ensure that
+    all software is up to date in terms of vendor- released patches. Many
+    of the outbreaks of viruses and worms would have been much less severe if
+    everybody had applied security updates and patches when they were released.
+</p>
+<p>
+    <strong><mark>Advanced Persistent Threats</strong></mark>
+    . Advanced refers to the use of advanced techniques, such as spear
+    phishing, as a vector into a target. Persistent refers to the attacker's
+    goal of establishing a long-term, hidden position on a system. Many
+    APTs can go on for years without being noticed. Threat refers to the other
+    objective: exploitation. If an adversary invests the resources to achieve
+    an APT attack, they are doing it for some form of long-term advantage.
+    APTs are not a specific type of attack, but rather the new means by which
+    highly resourced adversaries target systems.
+</p>
+<p>
+There are a number of ways that we can break down the various    <strong><mark>threats</strong></mark>. One way to categorize them is to separate threats
+    that come from outside of the organization from those that are internal.
+    Another is to look at the various levels of sophistication of the attacks,
+    from those by "script kiddies" to those by "elite hackers." A third is to
+    examine the level of organization of the various threats, from unstructured
+    threats to highly structured threats.
+</p>
+<p>
+    The act of deliberately accessing computer systems and networks without
+    authorization is generally referred to as <strong><mark>hacking</strong></mark>, with
+    individuals who conduct this activity being referred to as hackers. The
+    term hacking also applies to the act of exceeding one's authority in a
+    system.
+</p>
+<p>
+    Intruders are, if nothing else, extremely patient, since the process to
+    gain access to a system takes persistence and dogged determination. The
+    attacker will conduct many pre-attack activities in order to obtain
+    the information needed to determine which attack will most likely be
+    successful.
+</p>
+<p>
+    Generally, attacks by an individual or even a small group of attackers fall
+    into the unstructured threat category. Attacks at this level generally are
+    conducted over short periods of time (lasting at most a few months), do not
+    involve a large number of individuals, have little financial backing, and
+    are accomplished by insiders or outsiders who do not seek collusion with
+    insiders.
+</p>
+<p>
+At the low end technically are what are generally referred to as    <strong><mark>script kiddies</strong></mark>, individuals who do not have the technical
+    expertise to develop scripts or discover new vulnerabilities in software
+    but who have just enough understanding of computer systems to be able to
+    download and run scripts that others have developed. It is undoubtedly the
+    fastest growing group and the vast majority of the "unfriendly" activity
+    occurring on the Internet is probably carried out by these individuals.
+</p>
+<p>
+    At the next level are those people who are capable of writing scripts to
+    exploit known vulnerabilities. These individuals are much more technically
+    competent than script kiddies and account for an estimated 8 to 12 percent
+    of malicious Internet activity. At the top end of this spectrum are those
+highly technical individuals, often referred to as    <strong><mark>elite hackers</strong></mark>, who not only have the ability to write
+    scripts that exploit vulnerabilities but also are capable of discovering
+    new vulnerabilities. This group is the smallest of the lot, however, and is
+    responsible for, at most, only 1 to 2 percent of intrusive activity.
+</p>
+<p>
+It is generally acknowledged by security professionals that    <strong><mark>insiders</strong></mark> are more dangerous in many respects than outside
+    intruders. The reason for this is simple-insiders have the access and
+    knowledge necessary to cause immediate damage to an organization. Attacks
+    by insiders are often the result of employees who have become disgruntled
+    with their organization and are looking for ways to disrupt operations.
+</p>
+<p>
+    Attacks by criminal organizations usually fall into the structured threat
+    category, which is characterized by a greater amount of planning, a longer
+    period of time to conduct the activity, more financial backing to
+    accomplish it, and possibly corruption of, or collusion with, insiders.
+</p>
+<p>
+    Many nations today have developed to some extent the capability to conduct
+    information warfare. There are several definitions for information warfare,
+    but a simple one is that it is warfare conducted against the information
+    and information processing equipment used by an adversary.
+</p>
+<p>
+    <strong><mark>Information warfare</strong></mark>
+    falls into the highly structured threat category. This type of threat is
+    characterized by a much longer period of preparation (years is not
+    uncommon), tremendous financial backing, and a large and organized group of
+    attackers. The threat may include attempts not only to subvert insiders but
+    also to plant individuals inside of a potential target in advance of a
+    planned attack.
+</p>
+<p>
+    Water, electricity, oil and gas refineries and distribution, banking and
+    finance, telecommunications-all fall into the category of critical
+    infrastructures for a nation. <strong><mark>Critical infrastructures</strong></mark> are
+    those whose loss would have severe repercussions on the nation. With
+    countries relying so heavily on these infrastructures, it is inevitable
+    that they will be viewed as valid targets during conflict.
+</p>
+<p>
+    In light of the revelation that a pure state of security is not achievable
+    in the binary sense, the focus has shifted to one of risk management.
+    Today, the question is how much risk your system is exposed to, and from
+    what sources.
+</p>
+<p>
+    The first step an administrator can take to reduce possible attacks is to
+    ensure that all <strong><mark>patches</strong></mark> for the operating system and
+    applications are installed. Many security problems that we read about, such
+    as viruses and worms, exploit known vulnerabilities for which patches
+    exist.
+</p>
+<p>
+The second step an administrator can take is    <strong><mark>system hardening</strong></mark>, which involves limiting the services
+    that are running on the system. Only using those services that are
+    absolutely needed does two things: it limits the possible avenues of attack
+    (those services with vulnerabilities that can be exploited), and it reduces
+    the number of services the administrator has to worry about patching in the
+    first place.
+</p>
+<p>
+There are three major considerations when    <strong><mark>securing a system</strong></mark>:
+</p>
+<p>
+    <strong><mark>Correctness</strong></mark>
+    . Ensuring that a system is fully up to date, with all patches installed
+    and proper security controls in place; this goes a long way toward
+    minimizing risk. Correctness begins with a secure development lifecycle,
+    continues through patching and hardening, and culminates in operations.
+</p>
+<p>
+    <strong><mark>Isolation</strong></mark>
+    . Protecting a system from unauthorized use, by means of access control and
+    physical security. Isolation begins with infrastructure, continues with
+    access control, and includes the use of cryptography.
+</p>
+<p>
+    <strong><mark>Obfuscation</strong></mark>
+    . Making it difficult for an adversary to know when they have succeeded.
+    Whether accomplished by obscurity, randomization, or obfuscation,
+    increasing the workload of an attacker makes it more difficult for them to
+    succeed in their attack.
+</p>
+<h2>
+    General Security Concepts
+</h2>
+<p>
+    A hacker was once considered an individual who understood the technical
+    aspects of computer operating systems and networks. expertise. Today,
+    primarily as a result of the media, the term is used more often to refer to
+    individuals who attempt to gain unauthorized access to computer systems or
+    networks.
+</p>
+<p>
+    Computer security entails the methods used to ensure that a system is
+    secure. Subjects such as authentication and access controls must be
+    addressed in broad terms of computer security.
+</p>
+<p>
+    <strong><mark>Network security</strong></mark>
+    to refer to the protection of the multiple computers and other devices that
+    are connected together. Information security and information assurance,
+    which place the focus of the security process not on the hardware and
+    software being used but on the data that is processed by them. The common
+    press and many professionals have settled on cybersecurity as the term to
+    describe the field.
+</p>
+<p>
+    The goal of computer security has been threefold: confidentiality,
+integrity, and availability-the "CIA" of security. The purpose of    <strong><mark>confidentiality</strong></mark> is to ensure that only those individuals
+    who have the authority to view a piece of information may do so. No
+    unauthorized individual should ever be able to view data they are not
+    entitled to access. <strong><mark>Integrity</strong></mark> is a related concept but
+    deals with the generation and modification of data. Only authorized
+    individuals should ever be able to create or change (or delete)
+    information. The goal of <strong><mark>availability</strong></mark> is to ensure that
+    the data, or the system itself, is available for use when the authorized
+    user wants it.
+</p>
+<p>
+    As a result of the increased use of networks for commerce, two additional
+    security goals have been added to the original three in the CIA of
+    security. <strong><mark>Authentication</strong></mark> attempts to ensure that an
+individual is who they claim to be. Related to this is non-repudiation, or    <strong><mark>accountability</strong></mark>, which deals with the ability to verify
+    that a message has been sent and received and that the sender can be
+    identified and verified.
+</p>
+<p>
+    Recent emphasis on systems assurance has raised the potential inclusion of
+    the term <strong><mark>auditability</strong></mark>, which refers to whether a control
+    can be verified to be functioning properly. In security, it is imperative
+    that we can track actions to ensure what has or has not been done.
+</p>
+<p>
+    Our security equation thus becomes: Protection = Prevention + (Detection +
+    Response) This is known as the operational model of computer security.
+    Every security technique and technology falls into at least one of the
+    three elements of the equation.
+</p>
+<p>
+    In addition to the CIA elements, there are additional tenets that form a
+    basis for system security. The three operational tenets found in secure
+    deployments are session management, exception management, and configuration
+    management.
+</p>
+<p>
+    <strong><mark>Session management</strong></mark>
+    is the set of activities employed to establish a communication channel
+    between two parties, identifying each in a manner that allows future
+    activity without renewed authentication.
+</p>
+<p>
+    Exceptions are the invocation of conditions that fall outside the normal
+    sequence of operation. Whether by error or malicious action, exceptions are
+    changes to normal processing and need to be managed. The handling of
+    exceptions, referred to as <strong><mark>exception handling</strong></mark>, is an
+    important consideration during software development. The bottom line is
+    simple: either the system must handle the condition and recover, or it must
+    fail and be recovered by separate action. Designing in exception handling
+    makes a system more resilient, because exceptions will happen.
+</p>
+<p>
+    The proper configuration and provisioning of all of the components in a
+    system is essential to the proper operation of the system. The design and
+    operation of the elements to ensure the proper functional environment of a
+    system is referred to as <strong><mark>configuration management</strong></mark>.
+</p>
+<p>
+    Host security and network-level security, have prevention as well as
+    detection and response components. Rather than view these two approaches as
+    independent solutions, a mature organization uses both in a complementary
+    fashion.
+</p>
+<p>
+    <strong><mark>Host security</strong></mark>
+    takes a granular view of security by focusing on protecting each computer
+    and device individually instead of addressing protection of the network as
+    a whole. When host security is used, each computer is relied upon to
+    protect itself.
+</p>
+<p>
+    Host security is important and should always be addressed. Security,
+    however, should not stop there, as host security is a complementary process
+    to be combined with network security. If individual host computers have
+    vulnerabilities embodied within them, then network security can provide
+    another layer of protection that will, hopefully, stop any intruders who
+    have gotten that far into the environment.
+</p>
+<p>
+    In some smaller environments, host security by itself may be an option, but
+    as systems become connected into networks, security should include the
+    actual network itself. In <strong><mark>network security</strong></mark>, an emphasis is
+    placed on controlling access to internal computers from external entities.
+    This control can be through devices such as routers, firewalls,
+    authentication hardware and software, encryption, and intrusion detection
+    systems (IDSs).
+</p>
+<p>
+One of the most fundamental principles in security is    <strong><mark>least privilege</strong></mark>. This concept is applicable to many
+    physical environments as well as network and host security. Least privilege
+    means that a subject (which may be a user, application, or process) should
+    have only the necessary rights and privileges to perform its task with no
+    additional permissions. Limiting an object's privileges limits the amount
+    of harm that can be caused, thus limiting an organization's exposure to
+    damage.
+</p>
+<p>
+    The principle of <strong><mark>separation of privilege</strong></mark> states that the
+    protection mechanism should be constructed so that it uses more than one
+    piece of information to make access decisions. Applying this principle to
+    the people side of the security function results in the concept of
+    separation of duties.
+</p>
+<p>
+    When applied to people's actions, <strong><mark>separation of duties</strong></mark>
+    specifies that for any given task, more than one individual needs to be
+    involved. The task is broken into different duties, each of which is
+    accomplished by a separate individual. By implementing a task in this
+    manner, no single individual can abuse the system for his or her own gain.
+</p>
+<p>
+    <strong><mark>Fail-safe defaults</strong></mark>
+    is a concept that when something fails, it should do so to a safe state.
+    One approach is that a protection mechanism should deny access by default,
+    and grant access only when explicit permission exists. This is sometimes
+    called default deny, and the common operational term for this approach is
+    implicit deny.
+</p>
+<p>
+If a particular situation is not covered by any of the other rules, the    <strong><mark>implicit deny</strong></mark> approach states that access should not be
+    granted. In other words, if no rule would allow access, then access should
+    not be granted.
+</p>
+<p>
+    The terms security and <strong><mark>complexity</strong></mark> are often at odds with
+    each other, because the more complex something is, the harder it is to
+    understand, and you cannot truly secure something if you do not understand
+    it. Another reason complexity is a problem within security is that it
+    usually allows too many opportunities for something to go wrong.
+</p>
+<p>
+    The principle of <strong><mark>economy of mechanism</strong></mark> is described as
+    always using simple solutions when available. An example of the principle
+    concerns the number of services that you allow your system to run. Default
+    installations of computer operating systems often leave many services
+    running. The keep- it-simple principle tells us to eliminate or
+    disable those services that we don't need. This is also a good idea from a
+    security standpoint because it results in fewer applications that can be
+    exploited and fewer services that the administrator is responsible for
+    securing.
+</p>
+<p>
+    <strong><mark>Complete mediation</strong></mark>
+    refers to the concept that each and every request should be verified. When
+    permissions are verified the first time, and the result is cached for
+    subsequent use, performance may be increased, but this also opens the door
+    to permission errors.
+</p>
+<p>
+    The <strong><mark>principle of open design</strong></mark> holds that the protection of
+    an object should not rely upon secrecy of the protection mechanism itself.
+    This principle has been long proven in cryptographic circles, where hiding
+    the algorithm ultimately fails and the true protection relies upon the
+    secrecy and complexity of the keys.
+</p>
+<p>
+    <strong><mark>Security through obscurity</strong></mark>
+    . In this case, security is considered effective if the environment and
+    protection mechanisms are confusing or thought to be not generally known.
+    Security through obscurity uses the approach of protecting something by
+    hiding it. The idea is that if something is out of sight, it is out of
+    mind. This approach, however, does not provide actual protection of the
+    object. Security through obscurity may make someone work a little harder to
+    accomplish a task, but it does not prevent anyone from eventually
+    succeeding.
+</p>
+<p>
+    The <strong><mark>principle of least common mechanism</strong></mark> states that
+    mechanisms used to access resources should be dedicated and not shared.
+    Sharing of mechanisms allows a potential cross-over between channels
+    resulting in a protection failure mode. The key is to provide a means of
+    isolation between processes so information cannot flow between separate
+    users unless specifically designed to do so.
+</p>
+<p>
+    <strong><mark>Psychological acceptability</strong></mark>
+    refers to the users' acceptance of security measures. Users play a key role
+    in the operation of a system, and if security measures are perceived to be
+    an impediment to the work a user is responsible for, then a natural
+    consequence may be that the user bypasses the control. Security
+    professionals, particularly those designing the security systems, should
+    not only be aware of this concept, but pay particular attention to how
+    security controls will be viewed by workers in the context of their work
+    responsibility, not with respect to security for its own sake.
+</p>
+<p>
+    <strong><mark>Defense in depth</strong></mark>
+    is a principle that is characterized by the use of multiple, different
+    defense mechanisms with a goal of improving the defensive response to an
+    attack. Another term for defense in depth is layered security. Single
+    points of failure represent just that, an opportunity to fail. By using
+    multiple defenses that are different, with differing points of failure, a
+    system becomes stronger.
+</p>
+<p>
+    Networks should utilize the same type of layered security architecture.
+    There is no 100 percent secure system, and there is nothing that is
+    foolproof, so a single specific protection mechanism should never be solely
+    relied upon. The layers need to work together in a coordinated manner so
+    that one does not impede another's functionality and introduce a security
+    hole.
+</p>
+<p>
+    It is important to implement several different layers because if intruders
+    succeed at one layer, you want to be able to stop them at the next. The
+    redundancy of different protection layers assures that there is no one
+    single point of failure pertaining to security.
+</p>
+<p>
+    <strong><mark>Diversity of defense</strong></mark>
+    is a concept that complements the idea of various layers of security. It
+    involves making different layers of security dissimilar so that even if
+    attackers know how to get through a system that comprises one layer, they
+    may not know how to get through a different type of layer that employs a
+    different system for security. When applying the
+    diversity-of-defense concept, you should set up these two
+    firewalls to filter for different types of traffic and provide different
+    types of restrictions.
+</p>
+<p>
+    <strong><mark>Access control</strong></mark>
+    is the ability to control whether a subject (such as an individual or a
+    process running on a computer system) can interact with an object (such as
+    a file or hardware device).
+</p>
+<p>
+    <strong><mark>Authentication</strong></mark>
+    is the process used to verify to the computer system or network that the
+    individual is who they claim to be. Once the individual has verified their
+    identity, access controls regulate what the individual can actually do on
+    the system.
+</p>
+<p>
+    Access controls define what actions a user can perform or what objects a
+    user can have access to. These controls assume that the identity of the
+    user has been verified. In order to verify your identity, you can provide
+    Something you know (knowledge factor) Something you have (possession
+    factor) Something about you (something that you are)
+</p>
+<p>
+    Operating systems such as Windows and Linux allow administrators to
+    organize users into groups, to create categories of users for which similar
+    access policies can be established. A <strong><mark>group policy</strong></mark> defines
+    for the group things such as the applicable operating system and
+    application settings and permissions. Examples of groups commonly found
+    include administrator, user, and guest.
+</p>
+<p>
+    The <strong><mark>password policy</strong></mark> should address the procedures used for
+    selecting user passwords (specifying what is considered an acceptably
+    complex password in the organization in terms of the character set and
+    length), the frequency with which passwords must be changed, and how
+    passwords will be distributed.
+</p>
+<p>
+The U.S. military encouraged the development of the    <strong><mark>Bell-LaPadula security model</strong></mark> to address data
+    confidentiality in computer operating systems. This model is especially
+    useful in designing multilevel security systems that implement the
+    military's hierarchical security scheme, which includes levels of
+    classification such as Unclassified, Confidential, Secret, and Top Secret.
+</p>
+<p>
+A second confidentiality model, the    <strong><mark>Brewer-Nash security model</strong></mark>, is one defined by
+    controlling read and write access based on conflict of interest rules.
+</p>
+<p>
+    The <strong><mark>Simple Security Rule</strong></mark>, which states that no subject
+    (such as a user or a program) can read information from an object (such as
+    a file) with a security classification higher than that possessed by the
+    subject itself. This rule is often referred to as the no-read-up
+    rule.
+</p>
+<p>
+    the <strong><mark>*-property</strong></mark> (pronounced "star property" principle
+    states that a subject can write to an object only if the target's security
+    classification is greater than or equal to the object's security
+    classification. The system is designed to make it impossible (hopefully)
+    for data to be disclosed to those without the appropriate level to view it.
+    This is what the system should protect against and is the reason for what
+    is known as the no-write-down rule.
+</p>
+<p>
+    Not all environments are more concerned with confidentiality than
+    integrity. In a financial institution, for example, viewing somebody's bank
+    balance is an issue, but a greater issue would be the ability to actually
+    modify that balance. In environments where integrity is more important, a
+    different model than the Bell-LaPadula security model is needed.
+</p>
+<p>
+    The Brewer-Nash security model. In this model, information flows are
+    modeled to prevent information from flowing between subjects and objects
+    when a conflict of interest would occur.
+</p>
+<p>
+    In the <strong><mark>Biba model</strong></mark>, instead of security classifications,
+    integrity levels are used. A principle of integrity levels is that data
+    with a higher integrity level is believed to be more accurate or reliable
+    than data with a lower integrity level.
+</p>
+<p>
+    <strong><mark>Low-Water-Mark policy</strong></mark>
+    . This policy in many ways is the opposite of the *-property in that
+    it prevents subjects from writing to objects of a higher integrity level.
+    The policy also contains a second rule that states the integrity level of a
+    subject will be lowered if it reads an object of a lower integrity level.
+    The reason for this is that if the subject then uses data from that object,
+    the highest the integrity level can be for a new object created from it is
+    the same level of integrity of the original object.
+</p>
+<p>
+    While the Low-Water-Mark policy certainly prevents unauthorized
+    modification of data, it has the unfortunate side effect of eventually
+    lowering the integrity levels of all subjects to the lowest level on the
+    system (unless the subject always views files with the same level of
+    integrity). This is because of the second rule, which lowers the integrity
+    level of the subject after accessing an object of a lower integrity level.
+</p>
+<p>
+    Biba's model in many respects is the opposite of the Bell-LaPadula
+    model in that what it enforces are "no-read-down" and
+    "no-write-up" policies. It also implements a third rule that
+    prevents subjects from executing programs of a higher level.
+</p>
+<h2>
+    Operational and Organizational Security
+</h2>
+<p>
+    <strong><mark>Policies</strong></mark>
+    are high-level, broad statements of what the organization wants to
+    accomplish. They are made by management when laying out the organization's
+    position on some issue. Procedures are the step-by-step
+    instructions on how to implement policies in the organization. They
+    describe exactly how employees are expected to act in a given situation or
+    to accomplish a specific task.
+</p>
+<p>
+    <strong><mark>Standards</strong></mark>
+    are mandatory elements regarding the implementation of a policy. They are
+    accepted specifications that provide specific details on how a policy is to
+    be enforced. Guidelines are recommendations relating to a policy. The key
+    term in this case is recommendations-guidelines are not mandatory steps.
+</p>
+<p>
+    You have to evaluate the effectiveness of the security measures you have in
+    place. This step may include a <strong><mark>vulnerability assessment</strong></mark>
+    (an attempt to identify and prioritize the list of vulnerabilities within a
+    system or network) and a penetration test (a method to check the security
+    of a system by simulating an attack by a malicious individual) of your
+    system to ensure the security is adequate.
+</p>
+<p>
+    The security policy is a high-level statement produced by senior
+    management that outlines both what security means to the organization and
+    the organization's goals for security. The main security policy can then be
+    broken down into additional policies that cover specific topics.
+</p>
+<p>
+    An <strong><mark>incident response policy</strong></mark> and associated procedures
+    should be developed to outline how the organization will prepare for
+    security incidents and respond to them when they occur. The incident
+    response policy should cover five phases: preparation, detection,
+    containment and eradication, recovery, and follow-up actions.
+</p>
+<p>
+    <strong><mark>Security awareness</strong></mark>
+    and training programs can enhance an organization's security posture in two
+    direct ways. First, they teach personnel how to follow the correct set of
+    actions to perform their duties in a secure manner. Second, they make
+    personnel aware of the indicators and effects of social engineering
+    attacks.
+</p>
+<p>
+    Training with respect to the information security policy, individual
+    responsibilities, and expectations is something that requires periodic
+    reinforcement through refresher training. The best defense against phishing
+    and other social engineering attacks is an educated and aware body of
+    employees. Continual refresher training about the topic of social
+    engineering and specifics about current attack trends are needed to keep
+    employees aware of and prepared for new trends in social engineering
+    attacks.
+</p>
+<p>
+    Most experts will agree that the biggest danger to any organization does
+    not come from external attacks but rather from the <strong><mark>insider</strong></mark>
+    -a disgruntled employee or somebody else who has physical access to the
+    facility. Consequently, every organization also needs security policies,
+    procedures, and guidelines that cover physical security, and every security
+    administrator should be concerned with these as well.
+</p>
+<p>
+    <strong><mark>Physical security</strong></mark>
+    consists of all mechanisms used to ensure that physical access to the
+    computer systems and networks is restricted to only authorized users. The
+    most common physical access control device, which has been around in some
+    form for centuries, is a lock. Newer locks replace the traditional key with
+    a card that must be passed through a reader or placed against it. The
+    individual may also have to provide a personal access code, thus making
+    this form of access both a something-you- know and
+    something-you-have method.
+</p>
+<p>
+In addition to locks on doors, other common    <strong><mark>physical security</strong></mark> devices include video surveillance and
+    even simple access control logs (sign-in logs). Many organizations
+    employ a guard to provide an extra level of examination of individuals who
+    want to gain access to a facility. Other devices are limited to their
+    designed function. A human guard can apply common sense to situations that
+    might have been unexpected.
+</p>
+<h2>
+    The Role of People in Security
+</h2>
+<p>
+    A very basic fact that should be recognized is that technology alone will
+    not solve the security problem. No matter how advanced the technology is,
+    it will ultimately be deployed in an environment where humans exist. It is
+    the human element that poses the biggest security challenge.
+</p>
+<p>
+    <strong><mark>Social engineering</strong></mark>
+    is the process of convincing an authorized individual to provide
+    confidential information or access to an unauthorized individual. It is a
+    technique in which the attacker uses various deceptive practices to
+    convince the targeted person to divulge information they normally would not
+    divulge or to convince the target of the attack to do something they
+    normally wouldn't do.
+</p>
+<p>
+    Social engineering is very successful for two general reasons. The first is
+    the basic desire of most people to be helpful. The second reason that
+    social engineering is successful is that individuals normally seek to avoid
+    confrontation and trouble
+</p>
+<p>
+    <strong><mark>Phishing</strong></mark>
+    (pronounced "fishing") is a type of social engineering in which an attacker
+    attempts to obtain sensitive information from a user by masquerading as a
+    trusted entity in an e-mail or instant message sent to a large group
+    of often random users.
+</p>
+<p>
+    Despite the increasing media coverage concerning phishing attempts, some
+    Internet users still fall for them, which results in attackers continuing
+    to use this relatively cheap method to gain the information they are
+    seeking.
+</p>
+<p>
+    <strong><mark>Spear phishing</strong></mark>
+    is the term that has been created to refer to the special targeting of
+    groups with something in common when launching a phishing attack. By
+    targeting specific groups, the ratio of successful attacks (that is, the
+    number of responses received) to the total number of e-mails or
+    messages sent usually increases because a targeted attack will seem more
+    plausible than a message sent to users randomly.
+</p>
+<p>
+    <strong><mark>Shoulder surfing</strong></mark>
+    does not necessarily involve direct contact with the target, but instead
+    involves the attacker directly observing the individual entering sensitive
+    information on a form, keypad, or keyboard.
+</p>
+<p>
+A slightly different approach to social engineering is called    <strong><mark>reverse social engineering</strong></mark>. In this technique, the
+    attacker hopes to convince the target to initiate the contact. The reason
+    this attack may be successful is that, since the target is the one
+    initiating the contact, attackers may not have to convince the target of
+    their authenticity.
+</p>
+<p>
+    The <strong><mark>password dilemma</strong></mark>. The more difficult we make it for
+    attackers to guess our passwords, and the more frequently we force password
+    changes, the more difficult the passwords are for authorized users to
+    remember and the more likely they are to write them down.
+</p>
+<p>
+    <strong><mark>Tailgating</strong></mark>
+    or piggybacking is the simple tactic of following closely behind a person
+    who has just used their own access card or PIN to gain physical access to a
+    room or building. An attacker can thus gain access to the facility without
+    having to know the access code or having to acquire an access card.
+</p>
+<p>
+    As a final note on <strong><mark>user responsibilities</strong></mark>, corporate
+    security officers must cultivate an environment of trust in their office,
+    as well as an understanding of the importance of security. If users feel
+    that security personnel are only there to make their life difficult or to
+    dredge up information that will result in an employee's termination, the
+    atmosphere will quickly turn adversarial and be transformed into an "us
+    versus them" situation.
+</p>
+<h2>
+    Intrusion Detection Systems
+</h2>
+<p>
+    An <strong><mark>intrusion detection system</strong></mark> (IDS) is a security system
+    that detects inappropriate or malicious activity on a computer or network.
+    The main purpose of an IDS is to identify suspicious or malicious activity,
+    note activity that deviates from normal behavior, catalog and classify the
+    activity, and, if possible, respond to the activity.
+</p>
+<p>
+    <strong><mark>Host-based IDS</strong></mark>
+    (HIDS) Examines activity on an individual system, such as a mail server,
+    web server, or individual PC. It is concerned only with an individual
+    system and usually has no visibility into the activity on the network or
+    systems around it.
+</p>
+<p>
+    <strong><mark>Network-based IDS</strong></mark>
+    (NIDS) Examines activity on the network itself. It has visibility only into
+    the traffic crossing the network link it is monitoring and typically has no
+    idea of what is happening on individual systems.
+</p>
+<p>
+    <strong><mark>Traffic collector</strong></mark>
+    (or sensor) Collects activity/events for the IDS to examine. On a HIDS,
+    this could be log files, audit logs, or traffic coming to or leaving a
+    specific system. On a NIDS, this is typically a mechanism for copying
+    traffic off the network link-basically functioning as a sniffer. This
+    component is often referred to as a sensor.
+</p>
+<p>
+    <strong><mark>Analysis engine</strong></mark>
+    Examines the collected network traffic and compares it to known patterns of
+    suspicious or malicious activity stored in the signature database. The
+    analysis engine is the "brains" of the IDS.
+</p>
+<p>
+    <strong><mark>Signature database</strong></mark>
+    A collection of patterns and definitions of known suspicious or malicious
+    activity.
+</p>
+<p>
+    <strong><mark>User interface</strong></mark>
+    and reporting Interfaces with the human element, providing alerts when
+    appropriate and giving the user a means to interact with and operate the
+    IDS.
+</p>
+<p>
+    In addition to being divided along the host and network lines, IDSs are
+    often classified according to the detection model they use: anomaly or
+    misuse.
+</p>
+<p>
+    An <strong><mark>anomaly detection</strong></mark> model is the more complicated of the
+    two. In this model, the IDS must know what "normal" behavior on the host or
+    network being protected really is. Once the "normal" behavior baseline is
+    established, the IDS can then go to work identifying deviations from the
+    norm, which are further scrutinized to determine whether or not that
+    activity is malicious.
+</p>
+<p>
+    Unfortunately, most anomaly-based systems suffer from extremely high
+    false positives, especially during the "break-in" period while the IDS
+    is learning the network. On the other hand, an anomaly-based system is
+    not restricted to a specific signature set and is far more likely to
+    identify a new exploit or attack tool that would go unnoticed by a
+    traditional IDS.
+</p>
+<p>
+    A <strong><mark>misuse detection</strong></mark> model is a little simpler to implement,
+    and therefore it's the more popular of the two models. In a misuse
+    detection model, the IDS looks for suspicious activity or activity that
+    violates specific policies and then reacts as it has been programmed to do.
+</p>
+<p>
+    Some analysts break IDS models down even further into four categories
+    depending on how the IDS operates and detects malicious traffic:
+</p>
+<p>
+    <strong><mark>Behavior-based</strong></mark>
+    This model relies on a collected set of "normal behavior": what should
+    happen on the network and is considered "normal" or "acceptable" traffic.
+</p>
+<p>
+    <strong><mark>Signature-based</strong></mark>
+    This model relies on a predefined set of patterns (called signatures). The
+    IDS has to know what behavior is considered "bad" ahead of time before it
+    can identify and act upon suspicious or malicious traffic.
+</p>
+<p>
+    <strong><mark>Anomaly-based</strong></mark>
+    This model is essentially the same as behavior-based. The IDS is first
+    taught what "normal" traffic looks like and then looks for deviations to
+    those "normal" patterns.
+</p>
+<p>
+    <strong><mark>Heuristic</strong></mark>
+    This model uses artificial intelligence to detect intrusions and malicious
+    traffic. A heuristic model is typically implemented through algorithms that
+    help an IDS decide if a traffic pattern is malicious or not. This
+    implementation of fuzzy logic allows this model to fall somewhere between
+    signature-based and behavior-based models.
+</p>
+<p>
+    <strong><mark>Signatures</strong></mark>
+    can be very simple or remarkably complicated, depending on the activity
+    they are trying to highlight. In general, signatures can be divided into
+    two main groups, depending on what the signature is looking for:
+    content-based and context- based.
+</p>
+<p>
+    <strong><mark>Content-based signatures</strong></mark>
+    are generally the simplest. They are designed to examine the content of
+    such things as network packets or log entries. Content-based
+    signatures are typically easy to build and look for simple things, such as
+    a certain string of characters or a certain flag set in a TCP packet.
+</p>
+<p>
+    <strong><mark>Context-based signatures</strong></mark>
+    are generally more complicated, as they are designed to match large
+    patterns of activity and examine how certain types of activity fit into the
+    other activities going on around them.
+</p>
+<p>
+    A <strong><mark>NIDS has certain advantages</strong></mark> that make it a good choice
+    for certain situations:
+</p>
+<p>
+    &#183; Providing IDS coverage requires fewer systems. With a few
+    well-placed NIDS sensors, you can monitor all the network traffic
+    going in and out of your organization.
+</p>
+<p>
+    &#183; Deployment, maintenance, and upgrade costs are usually lower. The
+    fewer systems that have to be managed and maintained to provide IDS
+    coverage, the lower the cost to operate the IDS.
+</p>
+<p>
+    &#183; A NIDS has visibility into all network traffic and can correlate
+    attacks among multiple systems. Well-placed NIDS sensors can see the
+    "big picture" when it comes to network-based attacks. The network
+    sensors can tell you whether attacks are widespread and unorganized or
+    focused and concentrated on specific systems.
+</p>
+<p>
+    A <strong><mark>NIDS has certain disadvantages</strong></mark>:
+</p>
+<p>
+    &#183; It is ineffective when traffic is encrypted. When network traffic is
+    encrypted from application to application or system to system, a NIDS
+    sensor will not be able to examine that traffic. With the increasing
+    popularity of encrypted traffic, this is becoming a bigger problem for
+    effective IDS operations.
+</p>
+<p>
+    &#183; It can't see traffic that does not cross it. The IDS sensor can
+    examine only traffic crossing the network link it is monitoring. With most
+    IDS sensors being placed on perimeter links, traffic traversing the
+    internal network is never seen.
+</p>
+<p>
+    &#183; It must be able to handle high volumes of traffic. As network speeds
+    continue to increase, the network sensors must be able to keep pace and
+    examine the traffic as quickly as it can pass the network.
+</p>
+<p>
+    &#183; It doesn't know about activity on the hosts themselves. NIDSs focus
+    on network traffic. Activity that occurs on the hosts themselves will not
+    be seen by a NIDS.
+</p>
+<p>
+    Most NIDSs can be distinguished by how they examine the traffic and whether
+    or not they interact with that traffic. On a passive system, the NIDS
+    simply watches the traffic, analyzes it, and generates alarms.
+</p>
+<p>
+    An active NIDS contains all the same components and capabilities of the
+    passive NIDS with one critical addition-the active NIDS can react to the
+    traffic it is analyzing. These reactions can range from something simple,
+    such as sending a TCP reset message to interrupt a potential attack and
+    disconnect a session, to something complex, such as dynamically modifying
+    firewall rules to reject all traffic from specific source IP addresses for
+    the next 24 hours.
+</p>
+<p>
+    HIDSs can operate in real time, looking for activity as it occurs, or in
+    batch mode, looking for activity on a periodic basis. Host-based
+    systems are typically self-contained, but many of the newer commercial
+    products have been designed to report to and be managed by a central
+    system.
+</p>
+<p>
+    The analysis engine is perhaps the most important component of the HIDS, as
+    it must decide what activity is "okay" and what activity is "bad." The
+    analysis engine is a sophisticated decision and pattern-matching
+    mechanism.
+</p>
+<p>
+    HIDSs have certain advantages that make them a good choice for certain
+    situations:
+</p>
+<p>
+    &#183; They can be very operating system-specific and have more detailed
+    signatures. A HIDS can be very specifically designed to run on a certain
+    operating system or to protect certain applications. This narrow focus lets
+    developers concentrate on the specific things that affect the specific
+    environment they are trying to protect.
+</p>
+<ul>
+    <li>
+        They can reduce false-positive rates.
+    </li>
+</ul>
+<p>
+    &#183; They can examine data after it has been decrypted. With security
+    concerns constantly on the rise, many developers are starting to encrypt
+    their network communications. When designed and implemented in the right
+    manner, a HIDS will be able to examine traffic that is unreadable to a
+    network-based IDS.
+</p>
+<ul>
+    <li>
+        They can be very application specific.
+    </li>
+</ul>
+<p>
+    &#183; They can determine whether or not an alarm may impact that specific
+    system.
+</p>
+<p>
+    &#183; HIDSs also have certain disadvantages that must be weighed in making
+    the decision of whether to deploy this type of technology:
+</p>
+<p>
+    &#183; The HIDS must have a process on every system you want to watch.
+</p>
+<p>
+    &#183; The HIDS can have a high cost of ownership and maintenance. Unless
+    some type of central console is used that allows you to maintain remote
+    processes, administrators must maintain each HIDS process individually.
+</p>
+<ul>
+    <li>
+        The HIDS uses local system resources.
+    </li>
+</ul>
+<p>
+    &#183; The HIDS has a very focused view and cannot relate to activity
+    around it.
+</p>
+<p>
+    &#183; The HIDS, if logging only locally, could be compromised or disabled.
+</p>
+<p>
+    The more advanced host- based offerings, which most vendors refer to
+    as host-based intrusion prevention systems (HIPSs), combine the
+    following elements into a single package:
+</p>
+<p>
+    <strong><mark>Integrated system firewall</strong></mark>
+    The firewall component checks all network traffic passing into and out of
+    the host. Users can set rules for what types of traffic they want to allow
+    into or out of their system.
+</p>
+<p>
+    <strong><mark>Behavioral- and signature-based IDS</strong></mark>
+    This hybrid approach uses signatures to match well-known attacks and
+    generic patterns for catching "zero-day" or unknown attacks for which
+    no signatures exist.
+</p>
+<p>
+    <strong><mark>Application control</strong></mark>
+    This allows administrators to control how applications are used on the
+    system and whether or not new applications can be installed.
+</p>
+<p>
+    <strong><mark>Enterprise management</strong></mark>
+    Some host-based products are installed with an "agent" that allows
+    them to be managed by and report back to a central server.
+</p>
+<p>
+    <strong><mark>Malware detection and prevention</strong></mark>
+    Some HIDSs/HIPSs include scanning and prevention capabilities that address
+    spyware, malware, rootkits, and other malicious software.
+</p>
+<p>
+    An <strong><mark>intrusion prevention system (IPS) </strong></mark>monitors network
+    traffic for malicious or unwanted behavior and can block, reject, or
+    redirect that traffic in real time. IPSs are merely expansions of existing
+    IDS capabilities.
+</p>
+<p>
+    With <strong><mark>rate-based monitoring</strong></mark>, the IPS can watch the
+    amount of traffic traversing the network. If the IPS sees too much traffic
+    coming into or going out from a specific system or set of systems, the IPS
+    can intervene and throttle down the traffic to a lower and more acceptable
+    level.
+</p>
+<p>
+    A <strong><mark>honeypot</strong></mark>, sometimes called a digital sandbox, is an
+    artificial environment where attackers can be contained and observed
+    without putting real systems at risk. A good honeypot appears to an
+    attacker to be a real network consisting of application servers, user
+    systems, network traffic, and so on, but in most cases it's actually made
+    up of one or a few systems running specialized software to simulate the
+    user and network traffic common to most targeted networks.
+</p>
+<p>
+    Any time an attacker has been lured into probing or attacking the virtual
+    network, the honeypot records the activity for later analysis: what the
+    attacker does, which systems and applications she concentrates on, what
+    tools are run, how long the attacker stays, and so on. All this information
+    is collected and analyzed in the hopes that it will allow security
+    personnel to better understand and protect against the threats to their
+    systems.
+</p>
+<p>
+    Why aren't more businesses running honeypots? Quite simply, the time and
+    cost are prohibitive. Honeypots take a lot of time and effort to manage and
+    maintain, and even more effort to sort, analyze, and classify the traffic
+    the honeypot collects.
+</p>
+<p>
+    A <strong><mark>protocol analyzer</strong></mark> (also known as a packet sniffer,
+    network analyzer, or network sniffer) is a piece of software or an
+    integrated software/hardware system that can capture and decode network
+    traffic.
+</p>
+<p>
+    To accommodate protocol analyzers, IDS devices, and IPS devices, most
+    switch manufacturers support port mirroring or a Switched Port Analyzer
+    (SPAN) port. The network traffic is essentially copied (or mirrored) to a
+    specific port, which can then support a protocol analyzer. Another option
+    for traffic capture is to use a network tap, a hardware device that can be
+    placed inline on a network connection and that will copy traffic passing
+    through the tap to a second set of interfaces on the tap.
+</p>
+<p>
+    A <strong><mark>port scanner</strong></mark> is a tool designed to probe a system or
+    systems for open ports. Its job is to probe for open (or listening) ports
+    and report back to the user which ports are closed, which are filtered, and
+    which are open.
+</p>
+<p>
+    By scanning a large number of ports over a large number of hosts, a port
+    scanner can provide you (or an attacker) with a very good picture of what
+    services are running on which hosts on your network.
+</p>
+<p>
+    <strong><mark>Banner grabbing</strong></mark>
+    is a technique used to gather information from a service that publicizes
+    information via a banner. Banners can be used for many things; for example,
+    they can be used to identify services by type, version, and so forth, and
+    they enable administrators to post information, including warnings, to
+    users when they log in.
+</p>
+<h2>
+    System Hardening
+</h2>
+<p>
+    A good deal of effort must be put into protecting and securing the system
+    before it is ever placed into service. The process of securing and
+preparing a system for the production environment is called    <strong><mark>hardening</strong></mark>. Hardening systems, servers, workstations,
+    networks, and applications is a process of defining the required uses and
+    needs and aligning security controls to limit a system's desired
+    functionality.
+</p>
+<p>
+This process of establishing a system's security state is called    <strong><mark>baselining</strong></mark>, and the resulting product is a security
+    baseline that allows the system to run safely and securely. Uniform
+    baselines are critical in large-scale operations because maintaining
+    separate configurations and security levels for hundreds or thousands of
+    systems is far too costly.
+</p>
+<p>
+    The <strong><mark>operating system</strong></mark> (OS) of a computer is the basic
+    software that handles things such as input, output, display, memory
+    management, and all the other highly detailed tasks required to support the
+    user environment and associated applications.
+</p>
+<p>
+    A <strong><mark>network operating system</strong></mark> (NOS) is an operating system
+    that includes additional functions and capabilities to assist in connecting
+    computers and devices, such as printers, to a local area network (LAN).
+</p>
+<p>
+    For most modern operating systems, including Windows 2008, Solaris, and
+    Linux, the terms operating system and network operating system are used
+    interchangeably as they perform all the basic functions and provide
+    enhanced capabilities for connecting to LANs.
+</p>
+<p>
+    The operating system itself is the foundation of system security. The
+operating system does this through the use of a security kernel. The    <strong><mark>security kernel</strong></mark> is also called a reference monitor and is
+    the component of the operating system that enforces the security policies
+    of the operating system. The core of the OS is constructed so that all
+    operations must pass through and be moderated by the security kernel,
+    placing it in complete control over the enforcement of rules.
+</p>
+<p>
+    <strong><mark>Host security</strong></mark>
+    is important and should always be addressed. Security, however, should not
+    stop there, as host security is a complementary process to be combined with
+    network security.
+</p>
+<p>
+    Once a server has been built and is ready to be placed into operation, the
+    recording of hash values on all of its crucial files will provide valuable
+    information later in case of a question concerning possible system
+    integrity after a detected intrusion.
+</p>
+<p>
+    Removing methods of connecting additional devices to a workstation to move
+    data-such as optical drives and USB ports-assists in controlling the
+    movement of data into and out of the device.
+</p>
+<p>
+    You must meet several key requirements to ensure that the system hardening
+    processes described in this section achieve their security goals. These are
+    OS independent and should be a normal part of all system maintenance
+    operations:
+</p>
+<p>
+    &#183; The base installation of all OS and application software comes from
+    a trusted source, and is verified as correct by using hash values.
+</p>
+<p>
+    &#183; Machines are connected only to a completely trusted network during
+    the installation, hardening, and update processes.
+</p>
+<p>
+    &#183; The base installation includes all current service packs and updates
+    for both the OS and applications.
+</p>
+<p>
+    &#183; Current backup images are taken after hardening and updates to
+    facilitate system restoration to a known state.
+</p>
+<p>
+    Here are some of the security capabilities introduced with Vista and
+    continued in later versions of Windows:
+</p>
+<p>
+    <strong><mark>User Account Control</strong></mark>
+    allows users to operate the system without requiring administrative
+    privileges. This feature does help prevent users from "accidentally" making
+    changes to their system configuration.
+</p>
+<p>
+    <strong><mark>Windows Firewall</strong></mark>
+    includes an outbound filtering capability. Windows allows filtering of
+    traffic coming into and leaving the system, which is useful for controlling
+    things like peer-to-peer applications.
+</p>
+<p>
+    <strong><mark>Vulnerability scanning</strong></mark>
+    can also help administrators identify common misconfigurations in account
+    setup, patch levels, applications, and operating systems Most organizations
+    look at vulnerability scanning as an ongoing process, as it is not enough
+    to scan systems once and assume they will be secure from that point on.
+</p>
+<p>
+    Vendors typically follow a hierarchy for software updates:
+</p>
+<p>
+    <strong><mark>Hotfix</strong></mark>
+    This is a term given to a (usually) small software update designed to
+    address a specific problem, such as a buffer overflow in an application
+    that exposes the system to attacks. Hotfixes are typically developed in
+    reaction to a discovered problem and are produced and then released rather
+    quickly. Hotfixes typically address critical, security-related issues
+    and should be applied to the affected application or operating system as
+    soon as possible.
+</p>
+<p>
+    <strong><mark>Patch</strong></mark>
+    This term is usually applied to a more formal, larger software update that
+    may address several or many software problems. Patches often contain
+    enhancements or additional capabilities as well as fixes for known bugs.
+    Patches are usually developed over a longer period of time.
+</p>
+<p>
+    <strong><mark>Service pack</strong></mark>
+    This term is usually given to a large collection of patches and hotfixes
+    rolled into a single, rather large package. Service packs are designed to
+    bring a system up to the latest known good level all at once, rather than
+    requiring the user or system administrator to download dozens or hundreds
+    of updates separately.
+</p>
+<p>
+    <strong><mark>Antivirus</strong></mark>
+    (AV) products attempt to identify, neutralize, or remove malicious
+    programs, macros, and files. These products were initially designed to
+    detect and remove computer viruses, though many of the antivirus products
+    are now bundled with additional security products and features.
+</p>
+<p>
+    Most antivirus products combine the following approaches when scanning for
+    viruses:
+</p>
+<p>
+    <strong><mark>Signature-based scanning</strong></mark>
+    Much like an intrusion detection system (IDS), the antivirus products scan
+    programs, files, macros, e-mails, and other data for known worms,
+    viruses, and malware. The antivirus product contains a virus dictionary
+    with thousands of known virus signatures that must be frequently updated,
+    as new viruses are discovered daily. This approach will catch known viruses
+    but is limited by the virus dictionary-what it does not know about it
+    cannot catch.
+</p>
+<p>
+    <strong><mark>Heuristic scanning</strong></mark>
+    (or analysis) Heuristic scanning does not rely on a virus dictionary.
+    Instead, it looks for suspicious behavior-anything that does not fit into a
+    "normal" pattern of behavior for the OS and applications running on the
+    system being protected.
+</p>
+<p>
+    Heuristic scanning typically looks for commands or instructions that are
+    not normally found in application programs, such as attempts to access a
+    reserved memory register. A weight-based system rates every suspicious
+    behavior based on the degree of threat associated with that behavior. A
+    rule-based system compares activity to a set of rules meant to detect
+    and identify malicious software.
+</p>
+<p>
+    As with IDS/IPS products, encryption and obfuscation pose a problem for
+    antivirus products: anything that cannot be read cannot be matched against
+    current virus dictionaries or activity patterns. To combat the use of
+    encryption in malware and viruses, many heuristic scanners look for
+    encryption and decryption loops.
+</p>
+<p>
+    Current antivirus products are highly configurable and most offerings will
+    have the following capabilities:
+</p>
+<p>
+    <strong><mark>Automated updates</strong></mark>
+    . Perhaps the most important feature of a good antivirus solution is its
+    ability to keep itself up to date by automatically downloading the latest
+    virus signatures on a frequent basis. This usually requires that the system
+    be connected to the Internet in some fashion and that updates be performed
+    on a daily (or more frequent) basis.
+</p>
+<p>
+    <strong><mark>Automated scanning</strong></mark>
+    Most antivirus products allow for the scheduling of automated scans so that
+    you can designate when the antivirus product will examine the local system
+    for infected files. These automated scans can typically be scheduled for
+    specific days and times, and the scanning parameters can be configured to
+    specify what drives, directories, and types of files are scanned.
+</p>
+<p>
+    <strong><mark>Media scanning</strong></mark>
+    . Removable media is still a common method for virus and malware
+    propagation, and most antivirus products can be configured to automatically
+    scan optical media, USB drives, memory sticks, or any other type of
+    removable media as soon as they are connected to or accessed by the local
+    system.
+</p>
+<p>
+    <strong><mark>Manual scanning</strong></mark>
+    . Many antivirus products allow the user to scan drives, files, or
+    directories (folders) "on demand."
+</p>
+<p>
+    <strong><mark>E-mail scanning</strong></mark>
+    . E-mail is still a major method of virus and malware propagation.
+    Many antivirus products give users the ability to scan both incoming and
+    outgoing messages as well as any attachments.
+</p>
+<p>
+    <strong><mark>Resolution</strong></mark>
+    When the antivirus product detects an infected file or application, it can
+    typically perform one of several actions. The antivirus product may
+    quarantine the file, making it inaccessible it may try to repair the file
+    by removing the infection or offending code; or it may delete the infected
+    file.
+</p>
+<p>
+    <strong><mark>Antispam</strong></mark>
+    . products attempt to filter out that endless stream of junk e-mail so
+    you don't have to. Some antispam products operate at the corporate level,
+    filtering messages as they enter or leave designated mail servers. Other
+    products operate at the host level, filtering messages as they come into
+    your personal inbox. Most antispam products use similar techniques and
+    approaches for filtering out spam:
+</p>
+<p>
+    <strong><mark>Black listing</strong></mark>
+    . Several organizations maintain lists of servers or domains that generate
+    or have generated spam. Most gateway- or server-level products
+    can reference these black lists and automatically reject any mail coming
+    from servers or domains on the black lists.
+</p>
+<p>
+    <strong><mark>Header filtering</strong></mark>
+    . The antispam products look at the message headers to see if they are
+    forged. E-mail headers typically contain information such as sender,
+    receiver, servers used to transmit the message, and so on. Spammers often
+    forge information in message headers in an attempt to hide where the
+    message is really coming from.
+</p>
+<p>
+    <strong><mark>Content filtering</strong></mark>
+    . The content of the message is examined for certain key words or phrases
+    that are common to spam but rarely seen in legitimate e-mails ("get
+    rich now" for example). Unfortunately, content filtering does occasionally
+    flag legitimate messages as spam.
+</p>
+<p>
+    <strong><mark>User-defined filtering.</strong></mark>
+    Most antispam products allow end users to develop their own filters, such
+    as always allowing e-mail from a specific source even if it would
+    normally be blocked by a content filter.
+</p>
+<p>
+    <strong><mark>Trapping</strong></mark>
+    Some products will monitor unpublished e-mail addresses for incoming
+    spam- anything sent to an unpublished and otherwise unused account is
+    likely to be spam.
+</p>
+<p>
+    <strong><mark>Egress filtering</strong></mark>
+    This technique scans mail as it leaves an organization to catch spam before
+    it is sent to other organizations.
+</p>
+<p>
+    <strong><mark>Spyware</strong></mark>
+    is the term used to define malware that is designed to steal information
+    from the system, such as keystrokes, passwords, PINs, and keys. Antispyware
+    helps protect your systems from the ever-increasing flood of malware
+    that seeks to watch your keystrokes, steal your passwords, and report
+    sensitive information back to attackers.
+</p>
+<p>
+    Applications can be controlled at the OS at the time of start via black
+    listing or white listing. <strong><mark>Black listing </strong></mark>is essentially
+    noting which applications should not be allowed to run on the machine. This
+is basically a permanent "ignore" or "call block" type capability.    <strong><mark>White listing</strong></mark> is the exact opposite: it consists of a list
+    of allowed applications. Each of these approaches has advantages and
+    disadvantages. Black listing is difficult to use against dynamic threats,
+    as the identification of a specific application can easily be avoided
+    through minor changes.
+</p>
+<p>
+Perhaps as important as OS and network hardening is    <strong><mark>application hardening</strong></mark>-securing an application against
+    local and Internet-based attacks. Hardening applications is fairly
+    similar to hardening operating systems-you remove the functions or
+    components you don't need, restrict access where you can, and make sure the
+    application is kept up to date with patches.
+</p>
+<p>
+    <strong><mark>Patch management</strong></mark>
+    is a disciplined approach to the acquisition, testing, and implementation
+    of OS and application patches and requires a fair amount of resources to
+    implement properly. Keeping track of patch availability is merely the first
+    step; in many environments, patches must be analyzed and tested. Does the
+    patch apply to the software you are running? Does the patch address a
+    vulnerability or critical issue that must be addressed immediately? What is
+    the impact of applying that patch or group of patches? Will it break
+    something else if you apply this patch?
+</p>
+<p>
+    A <strong><mark>vulnerability scanner</strong></mark> is a program designed to probe
+    hosts for weaknesses, misconfigurations, old versions of software, and so
+    on. There are essentially three main categories of vulnerability scanners:
+    network, host, and application.
+</p>
+<p>
+    A <strong><mark>network vulnerability scanner</strong></mark> probes a host or hosts for
+    issues across their network connections. Typically a network scanner will
+    either contain or use a port scanner to perform an initial assessment of
+    the network to determine which hosts are alive and which services are open
+    on those hosts. Each system and service is then probed.
+</p>
+<p>
+    <strong><mark>Host vulnerability scanners</strong></mark>
+    are designed to run on a specific host and look for vulnerabilities and
+    misconfigurations on that host. Host scanners tend to be more specialized
+    because they're looking for issues associated with a specific operating
+    system or set of operating systems. A good example of a host scanner is the
+    Microsoft Baseline Security Analyzer (MBSA).
+</p>
+<p>
+    <strong><mark>SCADA</strong></mark>
+    is an acronym for supervisory control and data acquisition, a system
+    designed to control automated systems in cyber-physical environments.
+    SCADA systems control manufacturing plants, traffic lights, refineries,
+    energy networks, water plants, building automation and environmental
+    controls, and a host of other systems. Where computers control a physical
+    process directly, a SCADA system likely is involved. These systems
+    frequently include a human machine interface (HMI), where an operator can
+    exert a form of directive control over the operation of the system under
+    control.
+</p>
+<p>
+    Many older SCADA systems were air-gapped from the corporate network; that
+    is, they shared no direct network connections. This meant that data flows
+    in and out were handled manually and took time to accomplish. Modern
+    systems wished to remove this constraint and added direct network
+    connections between the SCADA networks and the enterprise IT network. These
+    connections increase the attack surface and the risk to the system, and the
+    more they resemble an IT networked system, the greater the need for
+    security functions.
+</p>
+<p>
+    <strong><mark>Embedded system</strong></mark>
+    is the name given to a computer that is included as an integral part of a
+    larger system. From computer peripherals like printers, to household
+    devices like smart TVs and thermostats, to the car you drive, embedded
+    systems are everywhere. Embedded systems are designed with a single control
+    purpose in mind and have virtually no additional functionality, but this
+    does not mean that they are free of risk or security concerns.
+</p>
+<p>
+    Because most embedded systems operate as isolated systems, the risks have
+    not been significant. However, as capabilities have increased, and these
+    devices have become networked together, the risks have increased
+    significantly.
+</p>
+<p>
+    <strong><mark>Network segmentation</strong></mark>
+    is the use of the network architecture to limit communication between
+    devices. A variety of networking mechanisms can be used to limit access to
+    devices at the network level. Logical network segmentation can be done via
+    VLANs, MAC and IP address restrictions at routers and switches, firewall
+    filtering, and access control mechanisms.
+</p>
+<h2>
+    Types of Attacks and Malware
+</h2>
+<p>
+    A computer system is attacked for one of two general reasons: it is
+specifically targeted by an attacker, or it is a target of opportunity.    <strong><mark>Targeted attacks</strong></mark> are more difficult and take more time and
+    effort than attacks on a target of opportunity. The latter type of attack
+    simply relies on the fact that, with any piece of widely distributed
+    software, somebody in the organization will not have patched the system as
+    they should have.
+</p>
+<p>
+    Your first step to minimize possible attacks is to ensure that all patches
+    for the operating system and applications are installed. The next step is
+    to limit the services that are running on the system. Another step is to
+    limit public disclosure of private information about your organization and
+    its computing resources.
+</p>
+<p>
+    Malicious code, or <strong><mark>malware</strong></mark>, refers to software that has
+    been designed for some nefarious purpose. Such software can be designed to
+    cause damage to a system, such as by deleting all files, or it can be
+    designed to create a backdoor in the system to grant access to unauthorized
+    individuals.
+</p>
+<p>
+    A <strong><mark>virus</strong></mark> is a piece of malicious code that replicates by
+    attaching itself to another piece of executable code. When the other
+    executable code is run, the virus also executes and has the opportunity to
+    infect other files and perform any other nefarious actions it was designed
+    to do.
+</p>
+<p>
+    The first viruses created were of two types-boot sector viruses and program
+    viruses. A <strong><mark>boot sector virus</strong></mark> infects the boot sector
+    portion of either a floppy disk or a hard drive (years ago, not all
+    computers had hard drives, and many booted from a floppy).
+</p>
+<p>
+    A second type of virus is the <strong><mark>program virus</strong></mark>, which
+    attaches itself to executable files-typically files ending in .exe or .com
+    on Windows-based systems. The virus is attached in such a way that it
+    is executed before the program executes.
+</p>
+<p>
+    One method that has been used to detect this sort of virus before it has an
+    opportunity to damage a system is to calculate <strong><mark>checksums</strong></mark>
+    for commonly used programs or utilities. Should the checksum for an
+    executable ever change, it is quite likely that it is due to a virus
+    infection.
+</p>
+<p>
+    The proliferation of software that included macro-programming
+    languages resulted in a new breed of virus-the <strong><mark>macro virus</strong></mark>
+    . This type of virus is so common today that it is considered a security
+    best practice to advise users never to open a document attached to an
+    e-mail if it seems at all suspicious. Many organizations now routinely
+    have their mail servers eliminate any attachments containing Visual Basic
+    macros.
+</p>
+<p>
+    Two advances in virus writing have made it more difficult for antivirus
+    software to detect viruses. These advances are the introduction of stealth
+    virus techniques and polymorphic viruses. A <strong><mark>stealthy virus</strong></mark>
+    employs techniques to help evade being detected by antivirus software that
+    uses checksums or other techniques. <strong><mark>Polymorphic viruses</strong></mark>
+    also attempt to evade detection, but they do so by changing the virus
+    itself (the virus "evolves").
+</p>
+<p>
+    When a new form of malware/virus is discovered, antivirus companies and
+    security researchers will decompile the program in an attempt to
+reverse-engineer its functionality. Much can be determined from    <strong><mark>reverse engineering</strong></mark>, such as where the malware came from,
+    how it works, how it communicates, how it spreads, and so forth. Armoring
+    malware can make the process of determining this information much more
+    difficult, if not impossible.
+</p>
+<p>
+    It was once easy to distinguish between a worm and a virus. Recently, with
+    the introduction of new breeds of sophisticated malicious code, the
+    distinction has blurred. <strong><mark>Worms</strong></mark> are pieces of code that
+    attempt to penetrate networks and computer systems. Once a penetration
+    occurs, the worm will create a new copy of itself on the penetrated system.
+    The important distinction, however, is whether the code has to attach
+    itself to something else (a virus) or if it can "survive" on its own (a
+    worm).
+</p>
+<p>
+    The detection of malware by antimalware programs is primarily done through
+    the use of a signature. Files are scanned for sections of code in the
+    executable that act as markers, unique patterns of code that enable
+    detection.
+</p>
+<p>
+    Malware writers are aware of this functionality and have adapted methods to
+    defeat it. One of the primary means of avoiding detection by sensors is the
+    use of polymorphic code, which is code that changes on a regular basis.
+</p>
+<p>
+    A <strong><mark>Trojan horse</strong></mark>, or simply Trojan, is a piece of software
+    that appears to do one thing (and may, in fact, actually do that thing) but
+    hides some other functionality. The challenge for the attacker is enticing
+    the user to copy and run the program. This generally means that the program
+    must be disguised as something that the user would want to run-a special
+    utility or game, for example.
+</p>
+<p>
+    A <strong><mark>rootkit</strong></mark> is a form of malware that is specifically
+    designed to modify the operation of the operating system in some fashion to
+    facilitate non-standard functionality. The history of rootkits goes back to
+    the beginning of the UNIX operating system, where they were sets of
+    modified administrative tools. Originally designed to allow a program to
+    take greater control over operating system function when it fails or
+    becomes unresponsive, the technique has evolved and is used in a variety of
+    ways.
+</p>
+<p>
+    Because of rootkits' invasive nature, and the fact that many aspects of
+    rootkits are not easily detectable, most system administrators don't even
+    attempt to clean up or remove a rootkit. It is far easier to use a
+    previously captured clean system image and reimage the machine than to
+    attempt to determine the depth and breadth of the damage and fix individual
+    files.
+</p>
+<p>
+    A <strong><mark>logic bomb</strong></mark> is a piece of code that sits dormant for a
+    period of time until some event invokes its malicious payload. An example
+    of a logic bomb might be a program that is set to load and run
+    automatically, and that periodically checks an organization's payroll or
+    personnel database for a specific employee.
+</p>
+<p>
+    <strong><mark>Spyware</strong></mark>
+    is software that "spies" on users, recording and reporting on their
+    activities. It can record keystrokes (commonly called keylogging) when the
+    user logs into specific websites. It can monitor how a user uses a specific
+    piece of software (for example, monitor attempts to cheat at games).
+</p>
+<p>
+Software that is supported by advertising is called adware.    <strong><mark>Adware</strong></mark> comes in many different forms. With legitimate
+    adware, the user is aware of the advertising and agrees to the arrangement
+    in return for free use of the software. Adware can also refer to a form of
+    malware, which is characterized by software that presents unwanted ads.
+    These ads are sometimes an irritant, and at other times represent an actual
+    security threat.
+</p>
+<p>
+    Hackers create armies of machines by installing malware agents on the
+    machines, which then are called zombies. These collections of machines are
+    called <strong><mark>botnets</strong></mark>. These zombies machines are used to conduct
+    other attacks and to spread spam and other malware.
+</p>
+<p>
+    <strong><mark>Backdoors</strong></mark>
+    were originally (and sometimes still are) nothing more than methods used by
+    software developers to ensure that they could gain access to an application
+    even if something were to happen in the future to prevent normal access
+    methods.
+</p>
+<p>
+    The term backdoor is also, and more commonly, used to refer to programs
+    that attackers install after gaining unauthorized access to a system to
+    ensure that they can continue to have unrestricted access to the system,
+    even if their initial access method is discovered and blocked.
+</p>
+<p>
+    <strong><mark>Ransomware</strong></mark>
+    is a form of malware that performs some action and extracts ransom from a
+    user. The most common form of ransomware is one that encrypts a key file or
+    set of files, rendering a system unusable, or dataset unavailable. The
+    attacker releases the information after being paid, typically in a
+    nontraceable means such as bitcoin.
+</p>
+<p>
+    Early attack patterns were against the network, but most of today's attacks
+    are aimed at the applications. This is primarily because this is where the
+    objective of most attacks resides; in the infamous words of bank robber
+    Willie Sutton, "because that's where the money is."
+</p>
+<p>
+    Application-level attacks take advantage of several facts associated
+    with computer applications. First, most applications are large programs
+    written by groups of programmers and, by their nature, have errors in
+    design and coding that create vulnerabilities.
+</p>
+<p>
+    Attacks on specific protocols or services are attempts either to take
+    advantage of a specific feature of the protocol or service or to use the
+    protocol or service in a manner for which it was not intended.
+</p>
+<p>
+    A <strong><mark>denial-of-service</strong></mark> (DoS) attack is an attack
+    designed to prevent a system or service from functioning normally. In a DoS
+    attack, the attacker attempts to deny authorized users access either to
+    specific information or to the computer system or network itself. This can
+    be accomplished by crashing the system- taking it offline-or by sending so
+    many requests that the machine is overwhelmed.
+</p>
+<p>
+    A <strong><mark>SYN flood attack</strong></mark> can be used to prevent service to a
+    system temporarily in order to take advantage of a trusted relationship
+    that exists between that system and another. In a SYN flooding attack, the
+    attacker sends fake communication requests to the targeted system. Each of
+    these requests will be answered by the target system, which then waits for
+    the third part of the handshake. Since the requests are fake (a nonexistent
+    IP address is used in the requests, so the target system is responding to a
+    system that doesn't exist), the target will wait for responses that never
+    come.
+</p>
+<p>
+    The number of connections a system can support is finite, so when more
+    requests come in than can be processed, the system will soon be reserving
+    all its connections for fake requests. At this point, any further requests
+    are simply dropped (ignored), and legitimate users who want to connect to
+    the target system will not be able to do so, because use of the system has
+    been denied to them.
+</p>
+<p>
+    DoS attacks are conducted using a single attacking system. A DoS attack
+    employing multiple attacking systems is known as a distributed
+    denial-of-service (DDoS) attack. The goal of a DDoS attack is
+    also to deny the use of or access to a specific service or system.
+</p>
+<p>
+    In a DDoS attack, service is denied by overwhelming the target with traffic
+    from many different systems. A network of attack agents (sometimes called
+    zombies) is created by the attacker, and upon receiving the attack command
+    from the attacker, the attack agents commence sending a specific type of
+    traffic against the target. If the attack network is large enough, even
+    ordinary web traffic can quickly overwhelm the largest of sites.
+</p>
+<p>
+    <strong><mark>Social engineering</strong></mark>
+    relies on lies and misrepresentation, which an attacker uses to trick an
+    authorized user into providing information or access the attacker would not
+    normally be entitled to. The attacker might, for example, contact a system
+    administrator and pretend to be an authorized user, asking to have a
+    password reset. Social engineering also applies to physical access. Simple
+    techniques include impersonating pizza or flower delivery personnel to gain
+    physical access to a facility.
+</p>
+<p>
+    <strong><mark>Sniffing</strong></mark>
+    is when someone examines all the network traffic that passes their NIC,
+    whether addressed for them or not. A network sniffer is a software or
+    hardware device that is used to observe traffic as it passes through a
+    network on shared broadcast media. The device can be used to view all
+    traffic, or it can target a specific protocol, service, or even string of
+    characters (looking for logins, for example). Some network sniffers are
+    designed not just to observe all traffic but to modify traffic as well.
+</p>
+<p>
+    <strong><mark>Network sniffers</strong></mark>
+    can be used by network administrators to monitor network performance. They
+    can be used to perform traffic analysis, for example, to determine what
+    type of traffic is most commonly carried on the network and to determine
+    which segments are most active. They can also be used for network bandwidth
+    analysis and to troubleshoot certain problems (such as duplicate MAC
+    addresses).
+</p>
+<p>
+    <strong><mark>Spoofing</strong></mark>
+    is nothing more than making data look like it has come from a different
+    source. This is possible in TCP/IP because of the friendly assumptions
+    behind the protocols. When the protocols were developed, it was assumed
+    that individuals who had access to the network layer would be privileged
+    users who could be trusted.
+</p>
+<p>
+    IP is designed to work so that the originators of any IP packet include
+    their own IP address in the From portion of the packet. While this is the
+    intent, nothing prevents a system from inserting a different address in the
+    From portion of the packet. This is known as IP address spoofing.
+</p>
+<p>
+    Spoofing can also take advantage of a trusted relationship between two
+    systems. If two systems are configured to accept the authentication
+    accomplished by each other, an individual logged onto one system might not
+    be forced to go through an authentication process again to access the other
+    system. An attacker can take advantage of this arrangement by sending a
+    packet to one system that appears to have come from a trusted system.
+</p>
+<p>
+    The attacker will often initially launch a DoS attack (such as a SYN
+    flooding attack) to temporarily take out the spoofed system for the period
+    of time that the attacker is exploiting the trusted relationship. Once the
+    attack is completed, the DoS attack on the spoofed system would be
+    terminated, and the system administrators, apart from having a temporarily
+    nonresponsive system, might never notice that the attack occurred. Because
+    of this type of attack, administrators are encouraged to strictly limit any
+    trusted relationships between hosts.
+</p>
+<p>
+    A <strong><mark>man-in-the-middle attack</strong></mark>, as the name
+    implies, generally occurs when attackers are able to place themselves in
+    the middle of two other hosts that are communicating. Ideally, this is done
+    by ensuring that all communication going to or from the target host is
+    routed through the attacker's host (which can be accomplished if the
+    attacker can compromise the router for the target host). The attacker can
+    then observe all traffic before relaying it and can actually modify or
+    block traffic.
+</p>
+<p>
+    There are numerous methods of instantiating a
+    man-in-the-middle attack; one of the common methods is via
+    session hijacking. Session hijacking can occur when information such as a
+    cookie is stolen, allowing the attacker to impersonate the legitimate
+    session. This attack can be as a result of a cross-site scripting
+    attack, which tricks a user into executing code resulting in cookie theft.
+</p>
+<p>
+    A <strong><mark>replay attack</strong></mark> occurs when the attacker captures a
+    portion of a communication between two parties and retransmits it at a
+    later time. For example, an attacker might replay a series of commands and
+    codes used in a financial transaction to cause the transaction to be
+    conducted multiple times. Generally replay attacks are associated with
+    attempts to circumvent authentication mechanisms, such as the capturing and
+    reuse of a certificate or ticket.
+</p>
+<p>
+    The best way to prevent replay attacks is with encryption, cryptographic
+    authentication, and time stamps. If a portion of the certificate or ticket
+    includes a date/time stamp or an expiration date/time, and this portion is
+    also encrypted as part of the ticket or certificate, replaying it at a
+    later time will prove useless, since it will be rejected as having expired.
+</p>
+<p>
+    <strong><mark>Phishing</strong></mark>
+    is the use of fraudulent e-mails or instant messages that appear to be
+    genuine but are designed to trick users. The goal of a phishing attack is
+    to obtain from the user information that can be used in an attack, such as
+    login credentials or other critical information. Spear phishing is the term
+    that has been created to refer to a phishing attack that targets a specific
+    group with something in common.
+</p>
+<p>
+    The DNS system is used to convert a name into an IP address. There is not a
+    single DNS system, but rather a hierarchy of DNS servers, from root servers
+    on the backbone of the Internet, to copies at your ISP, your home router,
+    and your local machine, each in the form of a DNS cache.
+</p>
+<p>
+    Looking at DNS as a complete system shows that there are hierarchical
+    levels from the top (root server) down to the cache in an individual
+    machine. <strong><mark>DNS poisoning</strong></mark> can occur at any of these levels,
+    with the effect of the poisoning growing wider the higher up it occurs.
+</p>
+<p>
+    Because of the importance of integrity on DNS requests and responses, a
+    project has begun to secure the DNS infrastructure using digital signing of
+    DNS records. This project, initiated by the U.S. government and called
+    Domain Name System Security Extensions (DNSSEC), works by digitally signing
+    records. This is done by adding records to the DNS system, a key and a
+    signature attesting to the validity of the key. With this information,
+    requestors can be assured that the information they receive is correct.
+</p>
+<p>
+    An attacker can send messages, corrupt the ARP table, and cause packets to
+    be misrouted. This form of attack is called <strong><mark>ARP poisoning</strong></mark>
+    and results in malicious address redirection, This can allow a mechanism
+    whereby an attacker can inject themselves into the middle of a conversation
+    between two machines, a man-in- the-middle attack.
+</p>
+<p>
+    A <strong><mark>brute-force attack</strong></mark> on a password can take place at
+    two levels: The attacker can use a password- cracking program to
+    attempt to guess the password directly at a login prompt, or the attacker
+    can first steal a password file, use a password-cracking program to
+    compile a list of possible passwords based on the list of password hashes
+    contained in the password file (offline), and then use that narrower list
+    to attempt to guess the password at the login prompt. The first attack can
+    be made more difficult if the account locks after a few failed login
+    attempts. The second attack can be thwarted if the password file is
+    securely maintained so that others cannot obtain a copy of it.
+</p>
+<p>
+    <strong><mark>Pass the hash</strong></mark>
+    is a hacking technique where the attacker captures the hash used to
+    authenticate a process. They can then use this hash, by injecting it into a
+    process in place of the password. This is a highly technical attack,
+    targeting the Windows authentication process, injecting a copy of the
+    password hash directly into the system.
+</p>
+<p>
+    An attack that takes advantage of bugs or weaknesses in software is
+    referred to as <strong><mark>software exploitation</strong></mark>. These bugs and
+    weaknesses can be the result of poor design, poor testing, or poor coding
+    practices. They can also result from what are sometimes called "features."
+    An example of this might be a debugging feature, which when used during
+    debugging might allow unauthenticated individuals to execute programs on a
+    system.
+</p>
+<p>
+A common weakness that has often been exploited is a    <strong><mark>buffer overflow</strong></mark>, which occurs when a program is provided
+    more data for input than it was designed to handle. This can result in a
+    number of problems, including causing the program to abort or the system to
+    crash. Under certain circumstances, the program can execute a command
+    supplied by the attacker. Buffer overflows typically inherit the level of
+    privilege enjoyed by the program being exploited. This is why programs that
+    use root-level access are so dangerous when exploited with a buffer
+    overflow, as the code that will execute does so at root-level access.
+</p>
+<p>
+    When user input is used without input validation, this gives an attacker
+    the opportunity to craft input to create specific events to occur when the
+    input is parsed and used by an application. <strong><mark>SQL injection</strong></mark>
+    attacks involve the manipulation of input, resulting in a SQL statement
+    that is different than intended by the designer. Command injection attacks
+    can occur when input is used in a fashion that allows command-line
+    manipulation, giving an attacker command-line access at the same
+    privilege level as the application.
+</p>
+<p>
+    The <strong><mark>advanced persistent threat</strong></mark> (APT) is a method of attack
+    that primarily focuses on stealth and continuous presence on a system. APT
+    is a very advanced method, requiring a team to maintain access and
+    typically involves high-value targets. APT typically involves
+    specially crafted attack vectors, coupled with phishing or spear phishing
+    for the initial entry. The techniques are employed to develop backdoors and
+    multiple account access routes. The skill level of the attackers is
+    typically exceedingly high and their aim is to completely own a system
+    without being detected. APTs are the attack method of choice for
+    nation-states and industrial espionage.
+</p>
+<p>
+    The following are indications of an APT attack:
+</p>
+<p>
+    &#183; Off-hours activity. If logs demonstrate "normal" activity at
+    times when your workers are at home, this is a sign of compromised
+    accounts. Look for large numbers of occurrences, as APT attackers tend to
+    use multiple accounts.
+</p>
+<p>
+    &#183; Finding multiple backdoor Trojans/remote access Trojans. When
+    security scans begin to find a lot of malware, this can be a sign of APTs.
+</p>
+<p>
+    &#183; Finding unknown files. APTs tend to bundle exfiltration data and
+    keep it in encrypted form before slowly siphoning it out. Discovery of
+    large files of unknown origin can be these bundles.
+</p>
+<p>
+    &#183; Finding spear phishing e-mails and pass-the-hash
+    tools. These advanced attack methods are indications of an advanced
+    adversary.
+</p>
+<p>
+    &#183; Strange data flows. This is the most telltale sign. Finding unusual
+    data flows, movement of data not in the normal course of business indicates
+    leakage.
+</p>
+<p>
+    <strong><mark>Remote access Trojans</strong></mark>
+    (RATs) are malware designed to enable remote access to a machine. This
+    functionality is similar to remote desktop administration, but rather than
+    being visible to a user, it is hidden in the system. RATs enable attackers
+    to have a way back into a system.
+</p>
+<p>
+    You should conduct some form of <strong><mark>security audit</strong></mark> or
+    assessment on a regular basis. Your organization might spend quite a bit on
+    security, and it is important to measure how effective the efforts have
+    been.
+</p>
+<p>
+A powerful mechanism for detecting security incidents is the use of    <strong><mark>security logs</strong></mark>. For logs to be effective, however, they
+    require monitoring. Monitoring of event logs can provide information
+    concerning the events that have been logged.
+</p>
+<p>
+    Here are some examples, but by no means a complete list, of items that
+    should be audited on a regular basis:
+</p>
+<p>
+    <strong><mark>User access</strong></mark>
+    . Administrators should review which users are accessing the systems, when
+    they are doing so, what resources they are using, and so on.
+</p>
+<p>
+    <strong><mark>User rights</strong></mark>
+    . When a user changes jobs or responsibilities, she will likely need to be
+    assigned different access permissions; she may gain access to new resources
+    and lose access to others. Storage Many organizations have policies
+    governing what can be stored on "company" resources and how much space can
+    be used by a given user or group.
+</p>
+<p>
+    <strong><mark>Retention</strong></mark>
+    . In some organizations, how long a particular document or record is stored
+    can be as important as what is being stored. A records retention policy
+    helps to define what is stored, how it is stored, how long it is stored,
+    and how it is disposed of when the time comes.
+</p>
+<p>
+    <strong><mark>Firewall rules</strong></mark>
+    . Periodic audits of firewall rules are important to ensure the firewall is
+    filtering traffic as desired and to help ensure that "temporary" rules do
+    not end up as permanent additions to the rule set.
+</p>
+<h2>
+    Incident Response
+</h2>
+<p>
+    The system needs to be able to operate in a state of compromise, yet still
+    achieve the desired security objectives. The mindset has to change from
+preventing intrusion and attack to preventing loss. A successful    <strong><mark>incident response</strong></mark> effort requires two components,
+    knowledge of one's own systems and knowledge of the adversary. Incident
+    response is a term used to describe the steps an organization performs in
+    response to any situation determined to be abnormal in the operation of a
+    computer system.
+</p>
+<p>
+    An <strong><mark>incident</strong></mark> is any event in an information system or
+    network where the results are different than normal. Incident response is
+    not just an information security operation. Incident response is an effort
+    that involves the entire business.
+</p>
+<p>
+    Two major elements play a role in determining the level of response.
+    Information criticality is the primary determinant, and this comes from the
+data classification and the quantity of data involved.    <strong><mark>Information criticality</strong></mark> is defined as the relative
+    importance of specific information to the business. Information criticality
+    is a key measure used in the prioritization of actions throughout the
+    incident response process.
+</p>
+<p>
+    The second major element involves a <strong><mark>business decision</strong></mark> on
+    how this incident plays into current business operations. A series of
+    breaches, whether minor or not, indicates a pattern that can have public
+    relations and regulatory issues.
+</p>
+<p>
+    <strong><mark>Footprinting</strong></mark>
+    is the determination of the boundaries of a target space. There are
+    numerous sources of information, including websites, DNS records, and IP
+    address registrations. Understanding the boundaries assists an attacker in
+    knowing what is in their target range and what isn't.
+</p>
+<p>
+    <strong><mark>Scanning</strong></mark>
+    is the examination of machines to determine what operating systems,
+    services, and vulnerabilities exist. The enumeration step is a listing of
+    the systems and vulnerabilities to build an attack game plan.
+</p>
+<p>
+    The next step is to <strong><mark>gain access</strong></mark> to a higher-privilege
+    account. From a higher-privilege account, the range of accessible
+    activities is greater, including pilfering files, creating back doors so
+    you can return, and covering your tracks by erasing logs.
+</p>
+<p>
+    Incident response is the set of actions security personnel perform in
+    response to a wide range of triggering events. Incident response is a
+    multistep process with several component elements. The first is
+    organization preparation, followed by system preparation. An initial
+    detection is followed by initial response, then isolation, investigation,
+    recovery, and reporting.
+</p>
+<p>
+    Incident response is a key element of a security posture and must involve
+    many different aspects of the business to properly respond. This is best
+    built upon the foundation of a comprehensive incident response policy that
+    details the roles and responsibilities of the organizational elements with
+    respect to the process elements detailed in this chapter.
+</p>
+<p>
+    Incident response efforts begin before an incident occurs-that is, before
+    "something goes wrong." Preparing for an incident is the first phase. The
+    organization needs to establish the steps to be taken when an incident is
+    discovered (or suspected); determine points of contact; train all employees
+    and security professionals so they understand the steps to take and who to
+    call; establish an incident response team; acquire the equipment necessary
+    to detect, contain, and recover from an incident; establish the procedures
+    and guidelines for the use of the equipment obtained; and train those who
+    will use the equipment.
+</p>
+<p>
+    Understanding how access control is employed, including specifics across
+    all systems, is key when determining who can do what-a common incident
+    response question. Understanding the logging methodology and architecture
+    will make incident response data retrieval easier.
+</p>
+<p>
+    One primary mitigation step is <strong><mark>data minimization</strong></mark>. Data
+    minimization efforts can play a key role in both operational efficiency and
+    security. One of the first rules associated with data is this: Don't keep
+    what you don't need.
+</p>
+<p>
+    <strong><mark>Data storage</strong></mark>
+    should be governed not by what you can store, but by the business need to
+    store. What is not stored is not subject to breach, and minimizing storage
+    to only what is supported by business need reduces risk and cost to the
+    enterprise. One tool that can be used to assist in the selection of
+    controls is a data classification scheme. Not all data is equally
+    important, nor is it equally damaging in the event of loss.
+</p>
+<p>
+    An incident is defined as a situation that departs from normal, routine
+    operations. Whether an incident is important or not is the first
+    determination to be made as part of an incident response process.
+</p>
+<p>
+    When evidence accumulates, or in some cases when specific items such as
+    security device logs indicate a potential incident, the next step is to
+    escalate the situation to the incident response team.
+</p>
+<p>
+    A common technique is to develop a reporting template that can be supplied
+    to an individual who suspects an incident, so that the necessary
+    information is gathered in a timely manner.
+</p>
+<p>
+    Once an incident is discovered and characterized, the most important step
+in the incident response process involves the    <strong><mark>isolation of the problem</strong></mark>. Many incidents can spread to
+    other machines and expand the damage footprint if not contained by the
+    incident response team.
+</p>
+<p>
+One method of isolating a machine is through a    <strong><mark>quarantine process</strong></mark>. Quarantine is a process of isolating
+    an object from its surroundings, preventing normal access methods. A more
+    extreme response is device removal. In the event that a machine becomes
+    compromised, it is simply removed from production and replaced.
+</p>
+<p>
+    Having a knowledge base of previous incidents and the actions used is a
+    valuable resource because it is in the context of the particular
+    enterprise. These reports also allow a mechanism to close the loop with
+    management over the incident and, most importantly, provide a roadmap of
+    the actions that can be used in the future to prevent events of identical
+    or similar nature.
+</p>
+<p>
+    The new standard of information security involves living in a state of
+    compromise, where one should always expect that adversaries are active in
+    their networks. It is unrealistic to expect that you can keep attackers out
+    of your network.
+</p>
+<p>
+    <strong><mark>Indicators of Compromise</strong></mark>
+    (IOCs) are artifacts left behind from computer intrusion activity.
+    Detection of IOCs is a quick way to jumpstart a response element. One of
+    the biggest challenges in incident response is getting on the trail of an
+    attacker, and IOCs provide a means of getting on the trail.
+</p>
+<p>
+    Common Indicators of Compromise:
+</p>
+<p>
+    &#183; Unusual outbound traffic. This probably is the clearest indicator
+    that data is going where it shouldn't.
+</p>
+<p>
+    &#183; Geographical irregularities. Communications going to countries in
+    which no business ties exist is another key indicator that data is going
+    where it shouldn't.
+</p>
+<p>
+    &#183; Unusual login activity. Failed logins, login failures to nonexistent
+    accounts, and so forth, indicate compromise.
+</p>
+<p>
+    &#183; Anomalous usage patterns for privileged accounts. Changes in
+    patterns of when administrators typically operate and what they typically
+    access indicate compromise.
+</p>
+<p>
+    &#183; Changes in database access patterns. This indicates hackers are
+    searching for data, or reading it to collect large quantities.
+</p>
+<p>
+    &#183; Automated web traffic. Timing can show some requests are scripts,
+    not humans.
+</p>
+<p>
+    &#183; Change in HTML response sizes. SQL injection can result in large
+    HTML response sizes.
+</p>
+<p>
+    &#183; Large numbers of requests for specific files. Numerous requests for
+    specific files, such as join.php, may indicate automated attack patterns.
+</p>
+<p>
+    &#183; Mismatched port to application traffic. Common method of attempting
+    to hide activity. Unusual DNS requests. Command and control server traffic.
+</p>
+<p>
+    &#183; Unusual Registry changes. Indications of changes to a system state.
+    Unexpected patching. Some hackers/malware will patch to prevent other
+    hackers from entering a target.
+</p>
+<p>
+    &#183; Bundles of data/files in wrong place. Large aggregations of data,
+    frequently encrypted, may be files being prepared for exfiltration.
+</p>
+<p>
+    &#183; Changes to mobile device profiles. Mobile is the new perimeter, and
+    changes may indicate malware.
+</p>
+<p>
+    &#183; DDoS/DoS attacks. Denial of service is used as a tool to provide
+    smokescreen or distraction.
+</p>
+<h2>
+    Computer Forensics
+</h2>
+<p>
+    The term <strong><mark>forensics</strong></mark> relates to the application of
+    scientific knowledge to legal problems. Specifically, computer forensics
+    involves the preservation, identification, documentation, and
+    interpretation of computer data. In today's practice, computer forensics
+    can be performed for three purposes:
+</p>
+<p>
+    &#183; Investigating computer systems as related to a violation of law
+</p>
+<p>
+    &#183; Investigating computer systems for compliance with an organization's
+    policies
+</p>
+<p>
+    &#183; Responding to a request for digital evidence (e-discovery)
+</p>
+<p>
+    <strong><mark>Incident response</strong></mark>
+    is about corrective action-returning the system to a normal operational
+    state-whereas forensics is about figuring out what happened.
+</p>
+<p>
+    <strong><mark>Evidence</strong></mark>
+    consists of the documents, verbal statements, and material objects that are
+    admissible in a court of law. Evidence is critical to convincing
+    management, juries, judges, or other authorities that some kind of
+    violation has occurred.
+</p>
+<p>
+    Bits of data are merely magnetic pulses on a disk or some other storage
+    technology. Therefore, data must always be evaluated through some kind of
+    "filter" rather than sensed directly. This is often of concern to auditors,
+    because good auditing techniques recommend accessing the original data or a
+    version that is as close as possible to the original data.
+</p>
+<p>
+    Evidence must be properly marked as it is collected so that it can be
+    identified as a particular piece of evidence gathered at the scene.
+    Properly label and store evidence, and make sure the labels can't be easily
+    removed.
+</p>
+<p>
+    You should never examine a system with the utilities provided by that
+    system. You should always use utilities that have been verified as correct
+    and uncorrupted. Even better, use a forensic workstation, a computer system
+    specifically designed to perform computer forensic activities. Being
+    methodical is extremely important when identifying evidence. Do not collect
+    evidence by yourself-have a second person who can serve as a witness to
+    your actions.
+</p>
+<p>
+    Protect evidence from electromagnetic or mechanical damage. Ensure that
+    evidence is not tampered with, damaged, or compromised by the procedures
+    used during the investigation. This helps avoid potential liability
+    problems later. Be especially cautious during transport of evidence to
+    ensure custody of evidence is maintained and the evidence isn't damaged or
+    tampered with.
+</p>
+<p>
+    In any legal proceeding, whether criminal or civil, the other party will
+    always examine the storage conditions and, if less than perfect, place the
+    burden on the person storing it to prove that it is still intact. This is
+    just one reason why recording hash values upon collection is so important.
+</p>
+<p>
+    Evidence, once collected, must be properly controlled to prevent tampering.
+    The <strong><mark>chain of custody</strong></mark> accounts for all persons who handled
+    or had access to the evidence. The chain of custody shows who obtained the
+    evidence, when and where it was obtained, where it was stored, and who had
+    control or possession of the evidence for the entire time since the
+    evidence was obtained.
+</p>
+<p>
+    If files, logs, and other information are going to be captured and used for
+    evidence, you need to ensure that the data isn't modified. In most cases, a
+    tool that implements a hashing algorithm to create message digests is used.
+</p>
+<p>
+    From a forensics perspective, Linux systems differ from Windows systems in
+    three main ways:
+</p>
+<p>
+    &#183; No registry. Program data is stored in scattered locations.
+</p>
+<p>
+    &#183; Different file system. A multitude of different file systems are
+    used.
+</p>
+<p>
+    &#183; Plaintext abounds. Files and data tend to be in plaintext, which
+    impacts searching.
+</p>
+<p>
+    <strong><mark>Network forensics</strong></mark>
+    is the capture, recording, and analysis of network events in order to
+    discover the source of network problems or security incidents. As a
+    general-purpose tool, network forensics is nearly impossible because
+    of the scale issues. But in specific situations, such as in front of
+    high-value targets that have limited data movement, it can prove to be
+    valuable. It can also be valuable in troubleshooting ongoing incidents and
+    problems in the network.
+</p>
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,618 @@
+<html>
+<title>SANS Notes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="w3-theme-black.css">
+<link rel="stylesheet" href="roboto.css">
+<link rel="stylesheet" href="font-awesome.min.css">
+
+
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 350px;
+  top: 35px;
+  bottom: 0;
+  height: inherit;
+  text-align: justify;}
+</style>
+
+<body>
+
+<!-- Topbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-small">
+    <a class="w3-bar-item w3-theme-l1"><i class="fa fa-bars"></i></a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-small w3-theme-l5" id="mySidebar">
+  <a class="w3-button w3-hover-black" href="cole.html">SEC 401 - Security Essentials, Cole</a>
+  <a class="w3-button w3-hover-black" href="beaupre.html">SEC 460 - Threat/Vulnerability Management, Beaupre</a>
+  <a class="w3-button w3-hover-black" href="cole2.html">SEC 501 - Enterprise Defender, Cole</a>
+  <a class="w3-button w3-hover-black" href="brenton.html">SEC 502 - Perimeter Protection, Brenton</a>
+  <a class="w3-button w3-hover-black" href="novak.html">SEC 503 - Intrusion Detection, Novak</a>
+  <a class="w3-button w3-hover-black" href="strand.html">SEC 504 - Hacker Tools, Strand</a>
+  <a class="w3-button w3-hover-black" href="pomeranz.html">SEC 506 - Linux/Unix Security, Pomeranz</a>
+  <a class="w3-button w3-hover-black" href="hoelzer.html">SEC 507 - Auditing Networks, Hoelzer</a>
+  <a class="w3-button w3-hover-black" href="misenar.html">SEC 511 - Continuous Monitoring, Misenar</a>
+  <a class="w3-button w3-hover-black" href="skoudis.html">SEC 517 - Cutting Edge Hacking Techniques, Skoudis</a>
+  <a class="w3-button w3-hover-black" href="strand2.html">SEC 550 - Offensive Countermeasures, Strand</a>
+  <a class="w3-button w3-hover-black" href="henderson.html">SEC 555 - SIEM with Tactical Analytics, Henderson</a>
+  <a class="w3-button w3-hover-black" href="skoudis2.html">SEC 560 - Network Penetration Testing, Skoudis</a>
+  <a class="w3-button w3-hover-black" href="wright.html">SEC 561 - Hands-On Hacking Techniques, Wright</a>
+  <a class="w3-button w3-hover-black" href="vest.html">SEC 564 - Red Team Operations, Vest</a>
+  <a class="w3-button w3-hover-black" href="tarala.html">SEC 566 - Implementing Critical Security Controls, Tarala</a>
+  <a class="w3-button w3-hover-black" href="baggett.html">SEC 573 - Automating InfoSec with Python, Baggett</a>
+  <a class="w3-button w3-hover-black" href="buggenhout.html">SEC 599 - Defeating Advanced Adversaries, Buggenhout</a>
+  <a class="w3-button w3-hover-black" href="wright2.html">SEC 617 - Wireless Ethical Hacking, Wright</a>
+  <a class="w3-button w3-hover-black" href="searle.html">SEC 642 - Web App Penetration Testing, Searle</a>
+  <a class="w3-button w3-hover-black" href="sims.html">SEC 660 - Advanced Penetration Testing, Sims</a>
+  <a class="w3-button w3-hover-black" href="sims2.html">SEC 760 - Advanced Exploit Development, Sims</a>
+  <a class="w3-button w3-hover-black" href="lee.html">FOR 408 - Windows Forensic Analysis, Lee</a>
+  <a class="w3-button w3-hover-black" href="lee2.html">FOR 508 - Incident Response Forensics, Lee</a>
+  <a class="w3-button w3-hover-black" href="hagen.html">FOR 572 - Advanced Network Forensics, Hagen</a>
+  <a class="w3-button w3-hover-black" href="zeltser.html">FOR 610 - Reverse-Engineering Malware, Zeltser</a>
+  <a class="w3-button w3-hover-black" href="cole3.html">MGT 414 - CISSP, Cole</a>
+</nav>
+
+<div class="w3-main" style="margin-left:350px">
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h2 class="w3-text-teal"></h2>
+
+    <h2>Computer Security, Dieter Gollmann</h2>
+</p>
+
+
+<p>
+     <strong><mark>Computer security</strong></mark> can trace its origins back to the 1960s. Multi-user
+    systems emerged, needing mechanisms for protecting the system from its
+    users, and the users from each other. Protection rings are a concept dating
+    from this period.
+</p>
+<p>
+    A new technology becomes a real issue for computer security only when it is
+    sufficiently mature and deployed widely enough for new applications with
+    new security problems to materialize. With this consideration in mind, we
+    observe that computer security has passed through the following epochs:
+    1970s: age of the mainframe; 1980s: age of the PC; 1990s: age of the
+    Internet; 2000s: age of the web.
+</p>
+<p>
+    The 1990s: this decade became without a doubt the epoch of the Internet.
+    Not because the Internet was created in the 1990s – it is much older – but
+    because new technology became available and because the Internet was opened
+    to commercial use in 1992. The HTTP protocol and HTML provided the basis
+    for visually more interesting applications than email or remote procedure
+    calls. The World Wide Web (1991) and graphical web browsers (Mosaic, 1993)
+    created a whole new ‘user experience’. Both developments facilitated a
+    whole new range of applications.
+</p>
+<p>
+    <strong><mark>Communications security</strong></mark>
+    , however, only solves the easy problem, i.e. protecting data in transit.
+    It should have been clear from the start that the real problems resided
+    elsewhere. The typical end system was a PC, no longer stand-alone or
+    connected to a LAN, but connected to the Internet. Connecting a machine to
+    the Internet has two major ramifications. The system owner no longer
+    controls who can send inputs to this machine; the system owner no longer
+    controls what input is sent to the machine.
+</p>
+<p>
+    The application-level software implementing the services offered on the web
+    has become a main target for attacks. Major attack patterns are SQL
+    injection, cross-site scripting, and attacks against the domain name
+    system. Application software accounts for an increasing number of reported
+    vulnerabilities and real attacks.
+</p>
+<p>
+    Proponents of new technologies are often asked to take a precautionary
+    approach, study the impact of their technology and develop appropriate
+    security mechanisms in advance. This approach can work if the use of the
+    technology follows expectations, but is likely to fail in the face of user
+    innovations.
+</p>
+<h2>
+    Managing Security
+</h2>
+<p>
+    Keeping the enemy outside the castle walls is a traditional paradigm in
+    computer security. However, statistics on the sources of attacks often show
+    that attacks from insiders account for a majority of incidents and the
+    largest proportion of damage. There is a suggestion that attacks via the
+    Internet might change this picture, but <strong><mark>insider fraud</strong></mark>
+    remains a considerable concern in organizations and in electronic commerce
+    transactions.
+</p>
+<p>
+    It is strongly recommended to organize security responsibilities in an
+    organization in a way that makes it clear that security measures have the
+    full support of senior management. A brief policy document signed by the
+    chief executive that lays down the ground rules can serve as a starting
+    point.
+</p>
+<p>
+    <strong><mark>Security-awareness</strong></mark>
+    programmes convey this information. The converse of users ignoring
+    apparently unreasonable security rules are security experts treating
+    apparently unreasonable users as the enemy. Trying to force users to follow
+    rules they regard as arbitrary is not an efficient approach. Involving
+    users as stakeholders in the security of their organization is a better way
+    of persuading them to voluntarily comply with rules rather than to look for
+    workarounds.
+</p>
+<p>
+Security policies are a core concept in computer security. A    <strong><mark>security policy</strong></mark> is a statement that defines the security
+    objectives of an organization; it has to state what needs to be protected;
+    it may also indicate how this is to be done. There is considerable variety
+    in the target of policies and the level of detail they are expressed in.
+</p>
+<p>
+    <strong><mark>Security policy objective</strong></mark>
+    : A statement of intent to protect an identified resource from unauthorized
+    use. A policy also has to explain how the objectives are to be met. This
+    can be done first at the level of the organization.
+</p>
+<p>
+    <strong><mark>Organizational security policy</strong></mark>
+    : The set of laws, rules, and practices that regulate how an organization
+    manages, protects, and distributes resources to achieve specified security
+    policy objectives.
+</p>
+<p>
+    Within an IT system, <strong><mark>organizational policies</strong></mark> can be
+    supported by technical means. Automated security policy: The set of
+    restrictions and properties that specify how a computing system prevents
+    information and computing resources from being used to violate an
+    organizational security policy. Automated policies define access control
+    lists and firewall settings, stipulate the services that may be run on user
+    devices and prescribe the security protocols for protecting network
+    traffic.
+</p>
+<p>
+    In security engineering, we would love to <strong><mark>measure security</strong></mark>
+    . First, values for various security-relevant factors are obtained. In SANS
+    obtaining a value for such a factor is a security measurement. Some values
+    can be established objectively, e.g. the number of open network ports,
+    whether the latest patch has been installed for a software product or the
+    privilege level under which a service program is running.
+</p>
+<p>
+    Secondly, a set of measurements may be consolidated into a single value
+    that is used for comparing the current security state against a baseline or
+    a past state. In SANS terminology, the values used by management for making
+    security comparisons are called <strong><mark>security metrics</strong></mark>.
+</p>
+<p>
+    Measurements of a product are indicative of its potential security, but
+    even a secure product can be deployed in an insecure manner. It is thus a
+    task for security management to ensure that the security features provided
+    are properly used.
+</p>
+<p>
+    How relevant is the number of security flaws? It is sufficient for an
+    attacker to find and exploit a single flaw to compromise security. It is
+    equally open to debate whether such metrics could be the basis for a
+    meaningful security comparison of products, given that it is rare to find
+    two products that serve exactly the same purpose.
+</p>
+<p>
+    In summary, desirable as security metrics are, we have at best metrics for
+    some individual aspects of security. The search for better metrics is still
+    an open field of research.
+</p>
+<h2>
+    Risk and Threat Analysis
+</h2>
+<p>
+Without a structured and systematic approach to    <strong><mark>risk analysis</strong></mark>, you are in danger of getting lost in the
+    details of particular security problems but failing to establish a
+    comprehensive overview of your risks.
+</p>
+<p>
+    Informally, <strong><mark>risk</strong></mark> is the possibility that some incident or
+    attack can cause damage to your enterprise. An attack against an IT system
+    consists of a sequence of actions, exploiting vulnerabilities in the system
+    until the attacker’s goals have been achieved. To assess the risk posed by
+    the attack you have to evaluate the impact of the attack and the likelihood
+    of the attack occurring.
+</p>
+<p>
+    A <strong><mark>threat</strong></mark> is an undesirable negative impact on your assets.
+    There are various ways of identifying threats. You can categorize threats
+    by their impact on assets and agents. For example, Microsoft’s STRIDE
+    threat model for software security lists the following categories:
+</p>
+<p><ul>
+    · Spoofing identities – an agent pretends to be somebody else;
+</p>
+<p>
+    · Tampering with data – violates the integrity of an asset;
+</p>
+<p>
+    · Repudiation – an agent denies having performed an action;
+</p>
+<p>
+    · Information disclosure – violates the confidentiality of an asset;
+</p>
+<p>
+    · Denial of service – violates the availability of an asset;
+</p>
+<p>
+    · Elevation of privilege – an agent gains more privileges beyond its
+    entitlement.
+</p></ul>
+<p>
+    Once you move to the implementation stage, you have to examine your system
+    for vulnerabilities. <strong><mark>Vulnerabilities</strong></mark> are weaknesses of a
+    system that could be accidentally or intentionally exploited to damage
+    assets. In an IT system, typical vulnerabilities are: accounts with system
+    privileges with default passwords programs with unnecessary privileges;
+    programs with known flaws; weak access control settings on resources, weak
+    firewall configurations
+</p>
+<p>
+    Vulnerability scanners provide a systematic and automated way of
+    identifying vulnerabilities. Their knowledge base of known vulnerabilities
+    has to be kept up to date.
+</p>
+<p>
+    A threat materializes when an attack succeeds. An attack is a sequence of
+    steps. It may start innocuously, gathering information needed to move on to
+    gain privileges on one machine, from there jump to another machine, until
+    the final target is reached. To get a fuller picture of its potential
+    impact, a forest of <strong><mark>attack trees</strong></mark> can be constructed.
+</p>
+<p>
+    The severity of an attack depends on the likelihood that it will be
+    launched, the likelihood that it will succeed, and the damage that it might
+    do. Likelihood depends on the difficulty of the attack, on the motivation
+    of the attacker, on the number of potential attackers, and on existing
+    countermeasures.
+</p>
+<p>
+    Having measured the value of assets, the criticality of vulnerabilities,
+    and the likelihood and impact of threats, you now face the tricky task of
+    calculating your risks. Very informally, you can calculate risk as: Risk =
+    Assets x Threats x Vulnerabilities.
+</p>
+<p>
+    The result of a <strong><mark>risk analysis</strong></mark> is a prioritized list of
+    threats, together with recommended countermeasures to mitigate risk. Risk
+    analysis tools usually come with a knowledge base of countermeasures for
+    the threats they can identify. Risk analysis is also used for calculating
+    the return on security investment (ROSI). ROSI compares for given security
+    measures the expected reduction in risk with the costs of fielding the
+    security measures.
+</p>
+<h2>
+    Foundations of Computer Security
+</h2>
+<p>
+    Accidental failures count as reliability issues, operating mistakes as
+usability issues. Security is concerned with    <strong><mark>intentional failures</strong></mark>. There may not always be a clear
+    intent to achieve a particular goal, but there is at some stage a decision
+    by a person to do something that person is not supposed to do. The root
+    cause of security problems is thus human nature.
+</p>
+<p>
+    Security is about the protection of assets. This definition implies that
+you have to know your assets and their value. A rough classification of    <strong><mark>protection measures</strong></mark> distinguishes between the following:
+</p>
+<p><ul>
+    · prevention – taking measures that prevent your assets from being damaged;
+</p>
+<p>
+    · detection – taking measures that allow you to detect when an asset has
+    been damaged, how it has been damaged, and who has caused the damage;
+</p>
+<p>
+    · reaction – taking measures that allow you to recover your assets or to
+    recover from damage to your assets.
+</p></ul>
+<p>
+    In a first attempt to capture the notion of computer security, we examine
+    how information assets can be compromised. The definition most frequently
+    proposed covers three aspects: <strong><mark>confidentiality</strong></mark> –
+prevention of unauthorized disclosure of information;    <strong><mark>integrity</strong></mark> – prevention of unauthorized modification of
+    information; <strong><mark>availability</strong></mark> – prevention of unauthorized
+    withholding of information or resources.
+</p>
+<p>
+    Once you delve deeper into confidentiality issues you will face the
+    question of whether you only want to hide the content of a document from
+    unauthorized view, or also its existence.
+</p>
+<p>
+    If you want to hide who is engaging in a given action, you could ask for a
+    property such as anonymity. Anonymity – A subject (user) is anonymous if it
+    cannot be identified within a given anonymity set of subjects.
+</p>
+<p>
+    The Orange Book definition of <strong><mark>data integrity</strong></mark>: The state
+    that exists when computerized data is the same as that in the source
+    documents and has not been exposed to accidental or malicious alteration or
+    destruction.
+</p>
+<p>
+    <strong><mark>Integrity</strong></mark>
+    is often a prerequisite for other security properties. For example, an
+    attacker could try to circumvent confidentiality controls by modifying the
+    operating system or an access control table referenced by the operating
+    system. Hence, we have to protect the integrity of the operating system or
+    the integrity of access control data structures to achieve confidentiality.
+</p>
+<p>
+    <strong><mark>Availability</strong></mark>
+    is very much a concern beyond the traditional boundaries of computer
+    security. Engineering techniques used to improve availability often come
+    from other areas such as fault-tolerant computing. In the context of
+    security, we want to ensure that a malicious attacker cannot prevent
+    legitimate users from having reasonable access to their systems. That is,
+    we want to prevent denial of service.
+</p>
+<p>
+    We may find a flaw in our security system that allows an attacker to find a
+    way past our controls. Therefore, we may add a new security requirement to
+    our list. Users should be held responsible for their actions.
+</p>
+<p>
+    <strong><mark>Accountability</strong></mark>
+    – Audit information must be selectively kept and protected so that actions
+    affecting security can be traced to the responsible party. To be able to do
+    so, the system has to identify and authenticate users. It has to keep an
+    audit trail of security-relevant events.
+</p>
+<p>
+Non-repudiation is related to accountability.    <strong><mark>Non-repudiation</strong></mark> services provide unforgeable evidence that
+    a specific action occurred. This definition is meaningful when analyzing
+    the security services cryptographic mechanisms can provide. Digital
+    signatures provide non-repudiation. Typical non-repudiation services in
+    communications security are nonrepudiation of origin providing evidence
+    about the sender of a document, and non-repudiation of delivery, providing
+    evidence that a message was delivered to a specific recipient.
+</p>
+<p>
+    A discussion of security has several reasons for mentioning other areas of
+    computing such as reliability, relating to (accidental) failures, and
+    safety, relating to the impact of system failures on their environment,
+    which also deal with situations where a system has to perform properly in
+    adverse conditions.
+</p>
+<p>
+    Computer security deals with the prevention and detection of unauthorized
+    actions by users of a computer system. With this definition, proper
+authorization and access control are essential to computer security.    <strong><mark>Proper authorization</strong></mark> assumes the existence of a security
+    policy... The definition above describes what we do in computer security.
+    When looking at the root causes for why we do it, we might adopt a
+    definition such as: Computer security is concerned with the measures we can
+    take to deal with intentional actions by parties behaving in some unwelcome
+    fashion.
+</p>
+<p>
+    Computer security is about controlling access to information and resources.
+    However, controlling access to information can sometimes be elusive and is
+    therefore often replaced by the more straightforward goal of controlling
+    access to data. The distinction between data and information is subtle but
+    it is also the root of some of the more difficult problems in security.
+    Data represents information. Information is the (subjective) interpretation
+    of data.
+</p>
+<p>
+    <strong><mark>First Design Decision</strong></mark>
+    : In a given application, should the protection mechanisms in a computer
+    system focus on data, operations, or users? It is a fundamental design
+    decision choosing which of these options to take when applying security
+    controls. Operating systems have traditionally focused on protecting data
+    (resources). In modern applications, it is often more relevant to control
+    the users’ actions.
+</p>
+<p>
+    <strong><mark>Second Design Decision</strong></mark>
+    : In which layer of the computer system should a security mechanism be
+    placed? When you investigate fielded security products, you will observe
+    security mechanisms at every layer of this model, from hardware to
+    application software. It is the task of the designer to find the right
+    layer for each mechanism and to find the right mechanisms for each layer.
+</p>
+<p>
+    <strong><mark>Third Design Decision</strong></mark>
+    : Do you prefer simplicity – and higher assurance – to a feature-rich
+    security environment? To achieve a high degree of assurance, the security
+    system has to be examined in close detail and as exhaustively as possible.
+    Hence, there is a trade-off between complexity and assurance. The higher an
+    assurance level you aim for, the simpler your system ought to be.
+</p>
+<p>
+    <strong><mark>Fourth Design Decision</strong></mark>
+    : Should the tasks of defining and enforcing security be given to a central
+    entity or should they be left to individual components in a system? This
+    question arises naturally in distributed systems security and you will see
+    examples of both alternatives. Every protection mechanism defines a
+    security perimeter (boundary). The parts of the system that can malfunction
+    without compromising the protection mechanism lie outside this perimeter.
+</p>
+<p>
+    <strong><mark>Fifth Design Decision</strong></mark>
+    : How can you prevent an attacker from getting access to a layer below the
+    protection mechanism? An attacker with access to the ‘layer below’ is in a
+    position to subvert protection mechanisms further up. The fact that
+    security mechanisms have a soft underbelly and are vulnerable to attacks
+    from lower layers should be a reason for concern, but not for despair. When
+    you reach the stage where you cannot apply computer security mechanisms or
+    do not want to do so, you still can put in place physical or organizational
+    security measures.
+</p>
+<h2>
+    Identification and Authentication
+</h2>
+<p>
+    <strong><mark>Abstraction</strong></mark>
+    is useful and dangerous at the same time. It is useful to discuss password
+    security in abstract terms. You can examine policies on password formats or
+    aging without knowing how passwords are processed in your IT system. It is
+    dangerous to discuss password security only at such an abstract level.
+    Implementation flaws can compromise the best security policies.
+</p>
+<p>
+System designers have to balance convenience and security.    <strong><mark>Ease of use</strong></mark> is an important factor in making IT systems
+    really useful. Unfortunately, many practices which are convenient also
+    introduce new vulnerabilities. This is not the last time the curse of
+    convenience will haunt you.
+</p>
+<h2>
+    Access Control
+</h2>
+<p>
+    The very nature of access suggests that there is an active entity, a
+    subject or principal, accessing a passive object with some specific access
+operation, while a reference monitor grants or denies access.    <strong><mark>Access control</strong></mark> then consists of two steps, authentication,
+    and authorization.
+</p>
+<p>
+    Definition. A <strong><mark>principal</strong></mark> is an entity that can be granted
+    access to objects or can make statements affecting access control
+    decisions. A <strong><mark>subject</strong></mark> is an active entity within an IT
+    system. For the purpose of access decisions, subjects have to be bound to
+    principals. When a subject requests access to a protected object the
+    reference monitor checks whether the principal bound to the subject has the
+    right to access the object. We might thus say that the subject ‘speaks for’
+    a principal.
+</p>
+<p>
+    Principals and objects present two options for focusing control. You can
+    either specify • what a principal is allowed to do, or • what may be done
+    with an object.
+</p>
+<p>
+    On the most elementary level, a subject may observe an object or alter an
+    object. There are thus two access modes: • Observe – look at the contents
+    of an object; • Alter – change the contents of an object.
+</p>
+<p>
+There are two fundamental options for implementing an    <strong><mark>access control matrix</strong></mark>. Access rights can be kept with the
+    subjects or with the objects. In the first case, every subject is given a
+    capability, an unforgeable token that specifies this subject’s access
+    rights. Typically, capabilities are associated with discretionary access
+    control.
+</p>
+<p>
+    An <strong><mark>access control list</strong></mark> stores the access rights to an
+    object as a list with the object itself. An ACL, therefore, corresponds to
+    a column of the access control matrix and states who may access a given
+    object. The entries in an ACL are called access control entries (ACEs).
+</p>
+<p>
+    Management of access rights based only on individual subjects can be rather
+    cumbersome. It is therefore common practice to place users in groups and to
+    derive access rights also from a user’s group.
+</p>
+<p>
+    <strong><mark>Roles</strong></mark>
+    : a role is a collection of procedures. Roles are assigned to users. A user
+    assigned to a role can execute the procedures defined for that role. A user
+    can have more than one role and more than one user can have the same role.
+</p>
+<p>
+    <strong><mark>Procedures</strong></mark>
+    : procedures are ‘high-level’ access control methods with a more complex
+    semantic than read or write. Procedures can only be applied to objects of
+    certain data types.
+</p>
+<p>
+    <strong><mark>Data types</strong></mark>
+    : each object is of a certain data type and can be accessed only through
+    the procedures defined for this data type. Controlling access to an object
+    by restricting the procedures that may access this object is a general
+    programming practice.
+</p>
+<h2>
+    Network Security
+</h2>
+<p>
+    To control what traffic is allowed to enter your network (ingress
+    filtering) or leave your network (egress filtering) you may deploy a
+    firewall. A <strong><mark>firewall</strong></mark> is a network security device
+    controlling traffic flow between two parts of a network. Firewalls are
+    often installed between the network of an entire organization and the
+    Internet, but could also be installed in an intranet to protect individual
+    departments.
+</p>
+<p>
+    Firewalls defend a protected network against parties who try to access
+    services from outside the network that are intended to be available only
+    internally. Firewalls can also restrict access from inside to external
+    services that are deemed dangerous or unnecessary for the work of an
+    organization.
+</p>
+<p>
+    A firewall can also perform <strong><mark>network address translation</strong></mark>,
+    hiding internal machines with private addresses behind public IP addresses,
+    and translating public addresses to private addresses for internal servers.
+    Hiding the internal structure of a network reduces the attack surface.
+    Fewer targets are known to the attacker.
+</p>
+<p>
+    <strong><mark>Protocol tunneling</strong></mark>
+    , i.e. sending data for one protocol through another protocol, negates the
+    purpose of a firewall. As more and more careful administrators block almost
+    all ports but have to leave port 80 open, more and more protocols are
+    tunneled through HTTP to get through the firewall. Another candidate for
+    tunneling is the SSH protocol.
+</p>
+<p>
+    Encrypted traffic cannot be examined and filtered, so protocols such as
+    HTTPS and SSH that provide end-to-end cryptographic protection cannot be
+    monitored by the firewall.
+</p>
+<p>
+    An <strong><mark>intrusion detection system</strong></mark> (IDS) consists of a set of
+    sensors gathering data, either located on the hosts or on the network. The
+    sensor network is managed from a central console. There, data are analyzed,
+    intrusions reported, and possible reactions triggered. There are two
+    approaches for detecting intrusions, misuse detection, and anomaly
+    detection.
+</p>
+<p>
+    <strong><mark>Vulnerability assessment</strong></mark>
+    examines the security state of a network. Information about open ports,
+    software packages running (which version, patched?), network topology, etc.
+    is collected, and a prioritized list of vulnerabilities is compiled.
+    Vulnerability assessment is only as good as the knowledge base being used,
+    which has to be updated constantly to handle new threats.
+</p>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

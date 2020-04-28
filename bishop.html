@@ -1,0 +1,1605 @@
+<html>
+<title>SANS Notes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="w3-theme-black.css">
+<link rel="stylesheet" href="roboto.css">
+<link rel="stylesheet" href="font-awesome.min.css">
+
+
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 350px;
+  top: 35px;
+  bottom: 0;
+  height: inherit;
+  text-align: justify;}
+</style>
+
+<body>
+
+<!-- Topbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-small">
+    <a class="w3-bar-item w3-theme-l1"><i class="fa fa-bars"></i></a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-small w3-theme-l5" id="mySidebar">
+  <a class="w3-button w3-hover-black" href="cole.html">SEC 401 - Security Essentials, Cole</a>
+  <a class="w3-button w3-hover-black" href="beaupre.html">SEC 460 - Threat/Vulnerability Management, Beaupre</a>
+  <a class="w3-button w3-hover-black" href="cole2.html">SEC 501 - Enterprise Defender, Cole</a>
+  <a class="w3-button w3-hover-black" href="brenton.html">SEC 502 - Perimeter Protection, Brenton</a>
+  <a class="w3-button w3-hover-black" href="novak.html">SEC 503 - Intrusion Detection, Novak</a>
+  <a class="w3-button w3-hover-black" href="strand.html">SEC 504 - Hacker Tools, Strand</a>
+  <a class="w3-button w3-hover-black" href="pomeranz.html">SEC 506 - Linux/Unix Security, Pomeranz</a>
+  <a class="w3-button w3-hover-black" href="hoelzer.html">SEC 507 - Auditing Networks, Hoelzer</a>
+  <a class="w3-button w3-hover-black" href="misenar.html">SEC 511 - Continuous Monitoring, Misenar</a>
+  <a class="w3-button w3-hover-black" href="skoudis.html">SEC 517 - Cutting Edge Hacking Techniques, Skoudis</a>
+  <a class="w3-button w3-hover-black" href="strand2.html">SEC 550 - Offensive Countermeasures, Strand</a>
+  <a class="w3-button w3-hover-black" href="henderson.html">SEC 555 - SIEM with Tactical Analytics, Henderson</a>
+  <a class="w3-button w3-hover-black" href="skoudis2.html">SEC 560 - Network Penetration Testing, Skoudis</a>
+  <a class="w3-button w3-hover-black" href="wright.html">SEC 561 - Hands-On Hacking Techniques, Wright</a>
+  <a class="w3-button w3-hover-black" href="vest.html">SEC 564 - Red Team Operations, Vest</a>
+  <a class="w3-button w3-hover-black" href="tarala.html">SEC 566 - Implementing Critical Security Controls, Tarala</a>
+  <a class="w3-button w3-hover-black" href="baggett.html">SEC 573 - Automating InfoSec with Python, Baggett</a>
+  <a class="w3-button w3-hover-black" href="buggenhout.html">SEC 599 - Defeating Advanced Adversaries, Buggenhout</a>
+  <a class="w3-button w3-hover-black" href="wright2.html">SEC 617 - Wireless Ethical Hacking, Wright</a>
+  <a class="w3-button w3-hover-black" href="searle.html">SEC 642 - Web App Penetration Testing, Searle</a>
+  <a class="w3-button w3-hover-black" href="sims.html">SEC 660 - Advanced Penetration Testing, Sims</a>
+  <a class="w3-button w3-hover-black" href="sims2.html">SEC 760 - Advanced Exploit Development, Sims</a>
+  <a class="w3-button w3-hover-black" href="lee.html">FOR 408 - Windows Forensic Analysis, Lee</a>
+  <a class="w3-button w3-hover-black" href="lee2.html">FOR 508 - Incident Response Forensics, Lee</a>
+  <a class="w3-button w3-hover-black" href="hagen.html">FOR 572 - Advanced Network Forensics, Hagen</a>
+  <a class="w3-button w3-hover-black" href="zeltser.html">FOR 610 - Reverse-Engineering Malware, Zeltser</a>
+  <a class="w3-button w3-hover-black" href="cole3.html">MGT 414 - CISSP, Cole</a>
+</nav>
+
+<div class="w3-main" style="margin-left:350px">
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h2 class="w3-text-teal"></h2>
+
+    <h2>Computer Security, Matt Bishop</h2>
+</p>
+
+
+<p>
+    <strong><mark>Computer security</strong></mark>
+    is not just a science but also an art. It is an art because no system can
+    be considered secure without an examination of how it is to be used. The
+    definition of a secure computer necessitates a statement of requirements
+    and an expression of those requirements in the form of authorized actions
+    and authorized users. How will people, as well as other computers, interact
+    with the computer system? How clear and restrictive an interface can a
+    designer create without rendering the system unusable while trying to
+    prevent unauthorized use or access to the data or resources on the system?
+    Computer security is also a science. Its theory is based on mathematical
+    constructions, analyses, and proofs. Its systems are built in accordance
+    with the accepted practices of engineering. It uses inductive and deductive
+    reasoning to examine the security of systems from key axioms and to
+    discover underlying principles. These scientific principles can then be
+    applied to untraditional situations and new theories, policies, and
+    mechanisms.
+</p>
+<p>
+    <strong><mark>Security mechanisms</strong></mark>
+    detect and prevent attacks and recover from those that succeed. Analyzing
+    the security of a system requires an understanding of the mechanisms that
+    enforce the security policy. It also requires a knowledge of the related
+    assumptions and trust, which lead to the threats and the degree to which
+    they may be realized. Such knowledge allows one to design better mechanisms
+    and policies to neutralize these threats. This process leads to risk
+    analysis. Human beings are the weakest link in the security mechanisms of
+    any system. Therefore, policies and procedures must take people into
+    account.
+</p>
+<p>
+    <strong><mark>Confidentiality</strong></mark>
+    is the concealment of information or resources. The need for keeping
+    information secret arises from the use of computers in sensitive fields
+    such as government and industry. Access control mechanisms support
+    confidentiality. One access control mechanism for preserving
+    confidentiality is cryptography, which scrambles data to make it
+    incomprehensible. A cryptographic key controls access to the unscrambled
+    data, but then the cryptographic key itself becomes another datum to be
+    protected. Confidentiality also applies to the existence of data, which is
+    sometimes more revealing than the data itself. Access control mechanisms
+    sometimes conceal the mere existence of data, lest the existence itself
+    reveal information that should be protected.
+</p>
+<p>
+    <strong><mark>Integrity </strong></mark>
+    refers to the trustworthiness of data or resources, and it is usually
+    phrased in terms of preventing improper or unauthorized change. Integrity
+    includes data integrity (the content of the information) and origin
+    integrity (the source of the data, often called authentication). The source
+    of the information may bear on its accuracy and credibility and on the
+    trust that people place in the information. Integrity mechanisms fall into
+    two classes: prevention mechanisms and detection mechanisms. Prevention
+    mechanisms seek to maintain the integrity of the data by blocking any
+    unauthorized attempts to change the data or any attempts to change the data
+    in unauthorized ways. Detection mechanisms do not try to prevent violations
+    of integrity; they simply report that the data's&#8364;'s integrity is no
+    longer trustworthy. Integrity includes both the correctness and the
+    trustworthiness of the data. The origin of the data (how and from whom it
+    was obtained), how well the data was protected before it arrived at the
+    current machine, and how well the data is protected on the current machine
+    all affect the integrity of the data.
+</p>
+<p>
+    <strong><mark> Availability</strong></mark>
+    refers to the ability to use the information or resource desired.
+    Availability is an important aspect of reliability as well as of system
+    design because an unavailable system is at least as bad as no system at
+    all. The aspect of availability that is relevant to security is that
+    someone may deliberately arrange to deny access to data or to a service by
+    making it unavailable. Attempts to block availability, called denial of
+    service attacks, can be the most difficult to detect because the analyst
+    must determine if the unusual access patterns are attributable to
+    deliberate manipulation of resources or of the environment. A deliberate
+    attempt to make a resource unavailable may simply look like, or be an
+    atypical event. In some environments, it may not even appear atypical.
+</p>
+<h2>
+    Threats
+</h2>
+<p>
+    A <strong><mark>threat</strong></mark> is a potential violation of security. The
+    violation need not actually occur for there to be a threat. The fact that
+    the violation might occur means that those actions that could cause it to
+    occur must be guarded against (or prepared for). Shirey divides threats
+    into four broad classes: disclosure, or unauthorized access to information;
+    deception, or acceptance of false data; disruption, or interruption or
+    prevention of correct operation; and usurpation, or unauthorized control of
+    some part of a system.
+</p>
+<p>
+    <strong><mark>Snooping</strong></mark>
+    , the unauthorized interception of information is a form of disclosure. It
+    is passive, suggesting simply that some entity is listening to (or reading)
+    communications or browsing through files or system information.
+    Confidentiality services counter this threat.
+</p>
+<p>
+    <strong><mark>Modification</strong></mark>
+    or alteration, an unauthorized change of information, covers three classes
+    of threats. The goal may be deception, in which some entity relies on the
+    modified data to determine which action to take, or in which incorrect
+    information is accepted as correct and is released. If the modified data
+    controls the operation of the system, the threats of disruption and
+    usurpation arise. Unlike snooping, modification is active; it results from
+    an entity changing information. Integrity services counter this threat.
+</p>
+<p>
+    <strong><mark>Spoofing</strong></mark>
+    , an impersonation of one entity by another, is a form of both deception
+    and usurpation. It lures a victim into believing that the entity with which
+    it is communicating is a different entity. Integrity services (called
+    authentication services in this context) counter this threat.
+</p>
+<p>
+    <strong><mark> Denial of service</strong></mark>
+    , a long-term inhibition of service, is a form of usurpation, although it
+    is often used with other mechanisms to deceive. The attacker prevents a
+    server from providing a service. The denial may occur at the source (by
+    preventing the server from obtaining the resources needed to perform its
+    function), at the destination (by blocking the communications from the
+    server), or along the intermediate path (by discarding messages from either
+    the client or the server, or both). Availability mechanisms counter this
+    threat.
+</p>
+<h2>
+    Goals of Security
+</h2>
+<p>
+    Critical to our study of security is the distinction between policy and
+    mechanism. A <strong><mark>security policy </strong></mark>is a statement of what is,
+    and what is not, allowed. A <strong><mark>security mechanism</strong></mark> is a
+    method, tool, or procedure for enforcing a security policy. Mechanisms can
+    be nontechnical, such as requiring proof of identity before changing a
+    password; in fact, policies often require some procedural mechanisms that
+    technology cannot enforce. Given a security policy's specification of
+    secure and nonsecure actions, these security mechanisms can prevent the
+    attack, detect the attack, or recover from the attack. The strategies may
+    be used together or separately.
+</p>
+<p>
+    <strong><mark>Prevention</strong></mark>
+    involves the implementation of mechanisms that users cannot override and
+    that are trusted to be implemented in a correct, unalterable way so that
+    the attacker cannot defeat the mechanism by changing it. Preventative
+    mechanisms often are very cumbersome and interfere with system use to the
+    point that they hinder normal use of the system. But some simple
+    preventative mechanisms, such as passwords (which aim to prevent
+    unauthorized users from accessing the system), have become widely accepted.
+</p>
+<p>
+    <strong><mark>Detection</strong></mark>
+    is most useful when an attack cannot be prevented, but it can also indicate
+    the effectiveness of preventative measures. Detection mechanisms accept
+    that an attack will occur; the goal is to determine that an attack is
+    underway, or has occurred, and report it. Typical detection mechanisms
+    monitor various aspects of the system, looking for actions or information
+    indicating an attack.
+</p>
+<p>
+    <strong><mark>Recovery</strong></mark>
+    has two forms. The first is to stop an attack and to assess and repair any
+    damage caused by that attack. The attacker may return, so recovery involves
+    identification and fixing of the vulnerabilities used by the attacker to
+    enter the system. In a second form of recovery, the system continues to
+    function correctly while an attack is underway. This type of recovery is
+    quite difficult to implement because of the complexity of computer systems.
+    It draws on techniques of fault tolerance as well as techniques of security
+    and is typically used in safety-critical systems. It differs from the first
+    form of recovery because at no point does the system function incorrectly.
+    However, the system may disable non-essential functionality.
+</p>
+<p>
+    A <strong><mark>policy</strong></mark> consists of a set of axioms that the policymakers
+    believe can be enforced. Designers of policies always make two assumptions.
+    First, the policy correctly and unambiguously partitions the set of system
+    states into secure and nonsecure states. Second, the security mechanisms
+    prevent the system from entering a nonsecure state. If either assumption is
+    erroneous, the system will be nonsecure.
+</p>
+<p>
+    <strong><mark>Trust</strong></mark>
+    cannot be quantified precisely. System specification, design, and
+    implementation can provide a basis for determining how much to trust a
+    system. This aspect of trust is called assurance. It is an attempt to
+    provide a basis for bolstering (or substantiating or specifying) how much
+    one can trust a system.
+</p>
+<p>
+    A <strong><mark>specification</strong></mark> is a (formal or informal) statement of the
+    desired functioning of the system. It can be highly mathematical, using any
+    of several languages defined for that purpose. It can also be informal,
+    using, for example, English to describe what the system should do under
+    certain conditions. The defining quality is a statement of what the system
+    is allowed to do or what it is not allowed to do.
+</p>
+<h2>
+    Risk Analysis
+</h2>
+<p>
+    Any useful policy and mechanism must balance the benefits of the protection
+    against the cost of designing, implementing, and using the mechanism. This
+    balance can be determined by <strong><mark>analyzing the risks</strong></mark> of a
+    security breach and the likelihood of it occurring. To determine whether an
+    asset should be protected, and to what level, requires analysis of the
+    potential threats against that asset and the likelihood that they will
+    materialize. The level of protection is a function of the probability of an
+    attack occurring and the effects of the attack should it succeed. If an
+    attack is unlikely, protecting against it has a lower priority than
+    protecting against a likely one.
+</p>
+<p>
+    <strong><mark>Risk</strong></mark>
+    is a function of environment. Attackers from a foreign country are not a
+    threat to the company when the computer is not connected to the Internet.
+    Risks change with time. If a company's network is not connected to the
+    Internet, there seems to be no risk of attacks from other hosts on the
+    Internet. However, despite any policies to the contrary, someone could
+    connect a modem to one of the company computers and connect to the Internet
+    through the modem. Should this happen, any risk analysis predicated on
+    isolation from the Internet would no longer be accurate.
+</p>
+<p>
+    Regardless of the strength of the technical controls, if nontechnical
+    considerations affect their <strong><mark>implementation and use</strong></mark>, the
+    effect on security can be severe. Moreover, if configured or used
+    incorrectly, even the best security control is useless at best and
+    dangerous at worst. Thus, the designers, implementers, and maintainers of
+    security controls are essential to the correct operation of those controls.
+</p>
+<p>
+    People who have some motive to attack an organization and are not
+    authorized to use that organization's systems are called outsiders and can
+    pose a serious threat. Experts agree, however, that a far more dangerous
+    threat comes from disgruntled employees and other <strong><mark>insiders</strong></mark>
+    who are authorized to use the computers. Insiders typically know the
+    organization of the company's systems and what procedures the operators and
+    users follow and often know enough passwords to bypass many security
+    controls that would detect an attack launched by an outsider. Insider
+    misuse of authorized privileges is a very difficult problem to solve.
+</p>
+<p>
+    <strong><mark>Untrained personnel</strong></mark>
+    also pose a threat to system security. System administrators who misread
+    the output of security mechanisms, or do not analyze that output,
+    contribute to the probability of successful attacks against their systems.
+    Similarly, administrators who misconfigure security-related features of a
+    system can weaken the site security. Users can also weaken site security by
+    misusing security mechanisms (such as selecting passwords that are easy to
+    guess).
+</p>
+<p>
+    Lack of training need not be in the technical arena. Many successful
+    break-ins have arisen from the art of <strong><mark>social engineering</strong></mark>.
+    If operators will change passwords based on telephone requests, all an
+    attacker needs to do is to determine the name of someone who uses the
+    computer.
+</p>
+<p>
+    Underlying computer security are key assumptions describing what the site
+    and the system accept as true or trustworthy; understanding these
+    assumptions is the key to analyzing the strength of the system's security.
+    This notion of <strong><mark>trust</strong></mark> is the central notion for computer
+    security. If trust is well placed, any system can be made acceptably
+    secure. If it is misplaced, the system cannot be secure in any sense of the
+    word.
+</p>
+<h2>
+    Access Control Matrix
+</h2>
+<p>
+    A protection system describes the conditions under which a system is
+    secure. The state of a system is the collection of the current values of
+    all memory locations, all secondary storage, and all registers and other
+    components of the system. The subset of this collection that deals with
+protection is the protection state of the system. An    <strong><mark>access control matrix</strong></mark> is one tool that can describe the
+    current protection state.
+</p>
+<p>
+Characterizing a secure system is the function of a    <strong><mark>security policy</strong></mark>; preventing the system from entering an
+    insecure state is the function of a <strong><mark>security mechanism</strong></mark>.
+    The access control matrix model is the most precise model used to describe
+    a protection state. It characterizes the rights of each subject (active
+    entity, such as a process) with respect to every other entity.
+</p>
+<p>
+    As the system changes, the <strong><mark>protection state</strong></mark> changes. When
+    a command changes the state of the system, a state transition occurs. In
+    practice, any operation on a real system causes multiple state transitions;
+    the reading, loading, altering, and execution of any datum or instruction
+    causes a transition. We are concerned only with those state transitions
+    that affect the protection state of the system, so only transitions that
+    alter the actions a subject is authorized to take are relevant. The access
+    control matrix model is an abstract model of the protection state, and when
+    one talks about the meaning of some particular access control matrix, one
+    must always talk with respect to a particular implementation or system.
+</p>
+<p>
+    The <strong><mark>own</strong></mark> right is a distinguished right. In most systems,
+    the creator of an object has special privileges: the ability to add and
+    delete rights for other users (and for the owner). When a process accesses
+    a directory, <strong><mark>read</strong></mark> means to be able to list the contents of
+    the directory; <strong><mark>write</strong></mark> means to be able to create, rename,
+or delete files or subdirectories in that directory; and    <strong><mark>execute</strong></mark> means to be able to access files or subdirectories
+    in that directory. When a process accesses another process, read means to
+    be able to receive signals, write means to be able to send signals, and
+    execute means to be able to execute the process as a subprocess.
+</p>
+<p>
+The access control matrix is the primary    <strong><mark>abstraction mechanism</strong></mark> in computer security. In its purest
+    form, it can express any expressible security policy. In practice, it is
+    not used directly because of space requirements; most systems have (at
+    least) thousands of objects and could have thousands of subjects, and the
+    storage requirements would simply be too much. However, its simplicity
+    makes it ideal for theoretical analyses of security problems.
+</p>
+<h2>
+    Security Policies
+</h2>
+<p>
+    A <strong><mark>security policy</strong></mark> defines secure for a system or a set of
+    systems. Security policies can be informal or highly mathematical in
+    nature. After defining a security policy precisely, we expand on the nature
+    of trust and its relationship to security policies. A security policy is a
+    statement that partitions the states of the system into a set of
+    authorized, or secure, states and a set of unauthorized, or nonsecure,
+    states. A <strong><mark>secure system</strong></mark> is a system that starts in an
+    authorized state and cannot enter an unauthorized state. A breach of
+    security occurs when a system enters an unauthorized state.
+</p>
+<p>
+    A security policy considers all relevant aspects of confidentiality,
+integrity, and availability. With respect to    <strong><mark>confidentiality</strong></mark>, it identifies those states in which
+    information leaks to those not authorized to receive it. This includes not
+    only the leakage of rights but also the illicit transmission of information
+without leakage of rights, called information flow. With respect to    <strong><mark>integrity</strong></mark>, a security policy identifies authorized ways in
+    which information may be altered and entities authorized to alter it.
+    Authorization may derive from a variety of relationships, and external
+    influences may constrain it. With respect to <strong><mark>availability</strong></mark>,
+    a security policy describes what services must be provided. It may present
+    parameters within which the services will be accessible. It may require a
+    level of service, for example, that a server will provide authentication
+    data within 1 minute of the request being made. This relates directly to
+    issues of quality of service.
+</p>
+<p>
+    A <strong><mark>military security policy</strong></mark> (also called a governmental
+    security policy) is a security policy developed primarily to provide
+    confidentiality. The name comes from the military's need to keep
+    information, such as the date that a troop ship will sail, secret. Although
+    integrity and availability are important, organizations using this class of
+    policies can overcome the loss of either. But the compromise of
+    confidentiality would be catastrophic because an opponent would be able to
+    plan countermeasures (and the organization may not know of the compromise).
+    Confidentiality is one of the factors of privacy, an issue recognized in
+    the laws of many government entities (such as the Privacy Act of the United
+    States).
+</p>
+<p>
+    A <strong><mark>commercial security policy</strong></mark> is a security policy
+    developed primarily to provide integrity. The name comes from the need of
+    commercial firms to prevent tampering with their data because they could
+    not survive such compromises. If the integrity of the computer holding the
+    accounts were compromised, the balances in the customers' accounts could be
+    altered, with financially ruinous effects.
+</p>
+<p>
+    A system administrator receives a security patch for her computer's
+    operating system. She installs it. Has she improved the security of her
+system? She has indeed, given the correctness of certain    <strong><mark>assumptions</strong></mark>: She is assuming that the patch came from the
+    vendor and was not tampered with in transit. She is assuming that the
+    vendor tested the patch thoroughly. She is assuming that the vendor's test
+    environment corresponds to her environment. Otherwise, the patch may not
+    work as expected. She is assuming that the patch is installed correctly.
+    These assumptions are fairly high-level, but invalidating any of them makes
+    the patch a potential security problem. Any security policy, mechanism, or
+    procedure is based on assumptions that, if incorrect, destroy the
+    superstructure on which it is built. Analysts and designers (and users)
+    must bear this in mind because unless they understand what the security
+    policy, mechanism, or procedure is based on, they jump from an unwarranted
+    assumption to an erroneous conclusion.
+</p>
+<p>
+    A security policy may use two types of <strong><mark>access controls</strong></mark>,
+    alone or in combination. In one, access control is left to the discretion
+    of the owner. In the other, the operating system controls access, and the
+    owner cannot override the controls.
+</p>
+<p>
+    If an individual user can set an access control mechanism to allow or deny
+access to an object, that mechanism is a    <strong><mark>discretionary access control</strong></mark> (DAC), also called an
+    identity-based access control (IBAC). Discretionary access controls base
+    access rights on the identity of the subject and the identity of the object
+    involved. Identity is the key; the owner of the object constrains who can
+    access it by allowing only particular subjects to have access. The owner
+    states the constraint in terms of the identity of the subject, or the owner
+    of the subject.
+</p>
+<p>
+    When a system mechanism controls access to an object and an individual user
+cannot alter that access, the control is a    <strong><mark>mandatory access control</strong></mark> (MAC), occasionally called a
+    rule-based access control. The operating system enforces mandatory access
+    controls. Neither the subject nor the owner of the object can determine
+    whether access is granted. Typically, the system mechanism will check
+    information associated with both the subject and the object to determine
+    whether the subject should access the object. Rules describe the conditions
+    under which access is allowed.
+</p>
+<p>
+    An <strong><mark>originator controlled access control</strong></mark> (ORCON or ORGCON)
+    bases access on the creator of an object (or the information it contains).
+    The goal of this control is to allow the originator of the file (or of the
+    information it contains) to control the dissemination of the information.
+    The owner of the file has no control over who may access the file.
+</p>
+<p>
+    <strong><mark>Trust</strong></mark>
+    underlies all policies and enforcement mechanisms. Policies themselves make
+    assumptions about the way systems, software, hardware, and people behave.
+    At a lower level, security mechanisms and procedures also make such
+    assumptions. Even when rigorous methodologies are applied, the
+    methodologies themselves simply push the assumptions, and therefore the
+    trust, to a lower level. Understanding the assumptions and the trust
+    involved in any policies and mechanisms deepens one's understanding of the
+    security of a system.
+</p>
+<h2>
+    Confidentiality Policies
+</h2>
+<p>
+    A <strong><mark>confidentiality policy</strong></mark>, also called an information flow
+    policy, prevents the unauthorized disclosure of information. Unauthorized
+    alteration of information is secondary. The simplest type of
+confidentiality classification is a set of    <strong><mark>security clearances</strong></mark> arranged in a linear (total) ordering.
+    These clearances represent sensitivity levels. The higher the security
+    clearance, the more sensitive the information (and the greater the need to
+    keep it confidential). A subject has a security clearance. An object has a
+    security classification.
+</p>
+<p>
+    The goal of the <strong><mark>Bell-LaPadula security model</strong></mark> is to prevent
+    read access to objects at a security classification higher than the
+    subject's clearance. We say that subjects have clearance at (or are cleared
+    into, or are in) a security level and that objects are at the level of (or
+    are in) a security level.
+</p>
+<p>
+    According to the <strong><mark>Simple Security Condition</strong></mark>, S can read O
+    if and only if the security clearance of the object is less than or equal
+    to the security clearance of the subject and S has discretionary read
+    access to O. The simple security condition is often described as no read
+    up.
+</p>
+<p>
+    According to the <strong><mark>*-Property Security Condition</strong></mark>, S can
+    write O if and only if the security clearance of the subject is less than
+    or equal to the security clearance of the object and S has discretionary
+    write access to O. The *-Property Security Condition is often described as
+    no write down.
+</p>
+<p>
+Security levels change access. Because categories are based on a    <strong><mark>need to know</strong></mark> someone with access to the category set A
+    presumably has no need to access items in the category B. Hence, read
+    access should be denied, even if the security clearance of the subject is
+    higher than the security classification of the object.
+</p>
+<p>
+    At times, a subject must communicate with another subject at a lower level.
+    This requires the higher-level subject to write into a lower-level object
+    that the lower-level subject can read. The model provides a mechanism for
+allowing this type of communication. A subject has a <strong><mark>maximum security</strong></mark> level and a    <strong><mark>current security level</strong></mark>. The maximum security level must
+    dominate the current security level. A subject may (effectively) decrease
+    its security level from the maximum in order to communicate with entities
+    at lower security levels.
+</p>
+<h2>
+    Integrity Policies
+</h2>
+<p>
+    Commercial requirements differ from military requirements in their emphasis
+    on preserving data integrity. These requirements suggest several principles
+of operation. Separation of duty. The principle of    <strong><mark>separation of duty</strong></mark> states that if two or more steps are
+    required to perform a critical function, at least two different people
+    should perform the steps. <strong><mark>Separation of function</strong></mark>.
+    Developers do not develop new programs on production systems because of the
+    potential threat to production data. <strong><mark>Auditing</strong></mark>. Commercial
+    systems emphasize recovery and accountability. Auditing is the process of
+    analyzing systems to determine what actions took place and who performed
+    them.
+</p>
+<p>
+    In 1977, Biba studied the nature of the integrity of systems. In his model,
+    a system consists of a set S of subjects, a set O of objects, and a set I
+    of integrity levels. The levels are ordered. Data at a higher level is more
+    accurate and/or reliable (with respect to some metric) than data at a lower
+    level. Again, this model implicitly incorporates the notion of trust; in
+fact, the term trustworthiness is used as a measure of integrity level.    <strong><mark>Integrity labels</strong></mark>, in general, are not also security
+    labels. They are assigned and maintained separately because the reasons
+    behind the labels are different. <strong><mark>Security labels</strong></mark> primarily
+    limit the flow of information; integrity labels primarily inhibit the
+    modification of information.
+</p>
+<p>
+    In 1987, David Clark and David Wilson developed an integrity model
+    radically different from previous models. This model uses transactions as
+    the basic operation, which models many commercial systems more
+    realistically than previous models. One main concern of a commercial
+    environment, as discussed above, is the integrity of the data in the system
+and of the actions performed on that data. The data is said to be in a    <strong><mark>consistent state</strong></mark> (or consistent) if it satisfies given
+    properties. e.g. If money is deposited in a bank account the balance should
+    change accordingly.
+</p>
+<p>
+    Someone must certify that the transactions are implemented correctly. The
+    principle of <strong><mark>separation of duty</strong></mark> requires that the
+    certifier and the implementors be different people. In order for the
+    transaction to corrupt the data (either by illicitly changing the data or
+    by leaving the data in an inconsistent state), two different people must
+    either make similar mistakes or collude to certify the well-formed
+    transaction as correct.
+</p>
+<h2>
+    Authentication
+</h2>
+<p>
+    Subjects act on behalf of some other, external entity. The identity of that
+    entity controls the actions that its associated subjects may take. Hence,
+the subjects must bind to the identity of that external entity.    <strong><mark>Authentication</strong></mark> is the binding of an identity to a subject.
+    The external entity must provide information to enable the system to
+    confirm its identity. This information comes from one (or more) of the
+    following. 1. What the entity knows (such as passwords or secret
+    information) 2. What the entity has (such as a badge or card) 3. What the
+    entity is (such as fingerprints or retinal characteristics) 4. Where the
+    entity is (such as in front of a particular terminal).
+</p>
+<p>
+    The <strong><mark>authentication process</strong></mark> consists of obtaining the
+    authentication information from an entity, analyzing the data, and
+    determining if it is associated with that entity. This means that the
+    computer must store some information about the entity.
+</p>
+<p>
+    A <strong><mark>password</strong></mark> is information associated with an entity that
+    confirms the entity's identity. Passwords are an example of an
+    authentication mechanism based on what people know: the user supplies a
+    password, and the computer validates it. If the password is the one
+    associated with the user, that user's identity is authenticated. If not,
+    the password is rejected and the authentication fails.
+</p>
+<p>
+    The simplest attack against a password-based system is to guess passwords.
+    A <strong><mark>dictionary attack</strong></mark> is the guessing of a password by
+    repeated trial and error. The name of this attack comes from the list of
+    words (a dictionary) used for guesses. The dictionary may be a set of
+    strings in random order or (more usually) a set of strings in decreasing
+    order of probability of selection.
+</p>
+<p>
+    Psychological studies have shown that humans can repeat with perfect
+    accuracy about eight meaningful items, such as digits, letters, or words.
+    If <strong><mark>random</strong></mark> <strong><mark>passwords</strong></mark> are eight characters
+    long, humans can remember one such password. So a person who is assigned
+    two random passwords must write them down.
+</p>
+<p>
+    A compromise between using random, unmemorizable passwords and writing
+passwords down is to use <strong><mark>pronounceable</strong></mark>    <strong><mark>passwords</strong></mark>. The advantage of pronounceable passwords is
+    that fewer phonemes need to be used to reach some limit, so that the user
+    must memorize chunks of characters rather than the individual characters
+    themselves.
+</p>
+<p>
+    Rather than selecting passwords for users, one can constrain what passwords
+users are allowed to select. This technique, called <strong><mark>proactive</strong></mark> <strong><mark>password</strong></mark>    <strong><mark>selection</strong></mark>, enables users to propose passwords they can
+    remember, but rejects any that are deemed too easy to guess.
+</p>
+<p>
+Some <strong><mark>categories</strong></mark> <strong><mark>of</strong></mark>    <strong><mark>passwords</strong></mark> that researchers have found easy to guess are as
+    follows: Passwords based on account names. Dictionary words. Patterns from
+    the keyboard. Passwords shorter than six characters. Passwords containing
+    only digits. Passwords used in the past. Concatenations of dictionary
+    words. Dictionary words preceded or followed by digits, punctuation marks,
+    or spaces. Dictionary words with all vowels deleted. Passwords with too
+    many characters in common with the previous (current) password.
+</p>
+<p>
+    <strong><mark>Good</strong></mark>
+    <strong><mark>passwords</strong></mark>
+    can be constructed in several ways. A password containing at least one
+    digit, one letter, one punctuation symbol, and one control character is
+    usually quite strong. A second technique is to pick a verse from an obscure
+    poem (or an obscure verse from a well known poem) and pick the characters
+    for the string from its letters.
+</p>
+<p>
+Passwords have the fundamental problem that they are    <strong><mark>reusable</strong></mark>. If an attacker sees a password, she can later
+    replay the password. The system cannot distinguish between the attacker and
+    the legitimate user, and allows access. An alternative is to authenticate
+    in such a way that the transmitted password changes each time. Then, if an
+    attacker replays a previously used password, the system will reject it.
+</p>
+<p>
+    A <strong><mark>one</strong></mark>-<strong><mark>time</strong></mark> <strong><mark>password</strong></mark> is a
+    password that is invalidated as soon as it is used. The problems in any
+    one-time password scheme are the generation of random passwords and the
+    synchronization of the user and the system. The former problem is solved by
+    using a cryptographic hash function or enciphering function such as the
+    DES, and the latter by having the system inform the user which password it
+    expects"for example, by having all the user's passwords numbered and the
+    system providing the number of the one-time password it expects.
+</p>
+<h2>
+    Design Principles
+</h2>
+<p>
+Saltzer and Schroeder describe eight    <strong><mark>principles for the design</strong></mark> and implementation of security
+mechanisms. The principles draw on the ideas of simplicity and restriction.    <strong><mark>Simplicity</strong></mark> makes designs and mechanisms easy to
+understand. More importantly, less can go wrong with simple designs.    <strong><mark>Restriction</strong></mark>: minimizing the interaction of system
+    components minimizes the number of sanity checks on data being transmitted
+    from one component to another. Simplicity also reduces the potential for
+    inconsistencies within a policy or set of policies. Restriction minimizes
+    the power of an entity. The entity can access only information it needs.
+    Entities can communicate with other entities only when necessary, and in as
+    few (and narrow) ways as possible.
+</p>
+<p>
+    The <strong><mark>principle of least privilege</strong></mark> states that a subject
+    should be given only those privileges that it needs in order to complete
+    its task. If a subject does not need an access right, the subject should
+    not have that right. Furthermore, the function of the subject (as opposed
+    to its identity) should control the assignment of rights. If a specific
+    action requires that a subject's access rights be augmented, those extra
+    rights should be relinquished immediately on completion of the action. In
+    practice, most systems do not have the granularity of privileges and
+    permissions required to apply this principle precisely. The designers of
+    security mechanisms then apply this principle as best they can.
+</p>
+<p>
+    The <strong><mark>principle of fail-safe defaults</strong></mark> states that, unless a
+    subject is given explicit access to an object, it should be denied access
+    to that object. This principle requires that the default access to an
+    object is none. Whenever access, privileges, or some security-related
+    attribute is not explicitly granted, it should be denied. Moreover, if the
+    subject is unable to complete its action or task, it should undo those
+    changes it made in the security state of the system before it terminates.
+    This way, even if the program fails, the system is still safe.
+</p>
+<p>
+    The <strong><mark>principle of economy of mechanism</strong></mark> states that security
+    mechanisms should be as simple as possible. If a design and implementation
+    are simple, fewer possibilities exist for errors. The checking and testing
+    process is less complex because fewer components and cases need to be
+    tested. Complex mechanisms often make assumptions about the system and
+    environment in which they run. If these assumptions are incorrect, security
+    problems may result.
+</p>
+<p>
+    The <strong><mark>principle of complete mediation</strong></mark> requires that all
+    accesses to objects be checked to ensure that they are allowed. Whenever a
+    subject attempts to read an object, the operating system should mediate the
+    action. First, it determines if the subject is allowed to read the object.
+    If so, it provides the resources for the read to occur. If the subject
+    tries to read the object again, the system should check that the subject is
+    still allowed to read the object.
+</p>
+<p>
+    The <strong><mark>principle of open design</strong></mark> states that the designers and
+    implementers of a program must not depend on secrecy of the details of
+    their design and implementation to ensure security. Others can ferret out
+    such details either through technical means, such as disassembly and
+    analysis, or through nontechnical means, such as searching through garbage
+    receptacles for source code listings (called dumpster-diving).
+</p>
+<p>
+    If the strength of the program's security depends on the ignorance of the
+user, a knowledgeable user can defeat that security mechanism. The term    <strong><mark>security through obscurity</strong></mark> captures this concept exactly.
+    Experience has shown that such secrecy adds little if anything to the
+    security of the system. Worse, it gives an aura of strength that is all too
+    often lacking in the actual implementation of the system.
+</p>
+<p>
+    The <strong><mark>principle of separation of privilege</strong></mark> states that a
+    system should not grant permission based on a single condition. Company
+    checks for more than $75,000 must be signed by two officers of the company.
+    If either does not sign, the check is not valid. The two conditions are the
+    signatures of both officers. Similarly, systems and programs granting
+    access to resources should do so only when more than one condition is met.
+    This provides a fine-grained control over the resource as well as
+    additional assurance that the access is authorized.
+</p>
+<p>
+    The <strong><mark>principle of least common mechanism</strong></mark> states that
+    mechanisms used to access resources should not be shared. Sharing resources
+    provides a channel along which information can be transmitted, and so such
+    sharing should be minimized. In practice, if the operating system provides
+    support for virtual machines, the operating system will enforce this
+    privilege automatically to some degree. Otherwise, it will provide some
+    support (such as a virtual memory space) but not complete support (because
+    the file system will appear as shared among several processes).
+</p>
+<p>
+    The <strong><mark>principle of psychological acceptability</strong></mark> states that
+    security mechanisms should not make the resource more difficult to access
+    than if the security mechanisms were not present. Configuring and executing
+    a program should be as easy and as intuitive as possible, and any output
+    should be clear, direct, and useful. If security-related software is too
+    complicated to configure, system administrators may unintentionally set up
+    the software in a nonsecure manner.
+</p>
+<h2>
+    Assurance
+</h2>
+<p>
+    When looked on as an absolute, creating a <strong><mark>secure system</strong></mark> is
+    an ultimate, albeit unachievable, goal. As soon as we have figured out how
+    to address one type of attack on a system, other types of attacks occur. In
+    reality, we cannot yet build systems that are guaranteed to be secure or to
+    remain secure over time.
+</p>
+<p>
+    Intuitively, trust is a belief or desire that a computer entity will do
+    what it should to protect resources and be safe from attack. However, in
+    the realm of computer security, trust has a very specific meaning. An
+    entity is <strong><mark>trustworthy</strong></mark> if there is sufficient credible
+    evidence leading one to believe that the system will meet a set of given
+    requirements. Trust is a measure of trustworthiness, relying on the
+    evidence provided.
+</p>
+<p>
+    <strong><mark>Security</strong></mark>
+    <strong><mark>assurance</strong></mark>
+    , or simply assurance, is confidence that an entity meets its security
+    requirements, based on specific evidence provided by the application of
+assurance techniques. Examples of <strong><mark>assurance</strong></mark>    <strong><mark>techniques</strong></mark> include the use of a development methodology,
+    formal methods for design analysis, and testing. Evidence specific to a
+    particular technique may be simplistic or may be complex and fine-grained.
+</p>
+<p>
+    A <strong><mark>trusted</strong></mark> <strong><mark>system</strong></mark> is a system that has
+    been shown to meet well-defined requirements under an evaluation by a
+    credible body of experts who are certified to assign trust ratings to
+    evaluated products and systems. These methodologies provide increasing
+    levels of trust, each level having more stringent assurance requirements
+    than the previous one. When experts evaluate and review the evidence of
+    assurance, they provide a check that the evidence amassed by the vendor is
+    credible to disinterested parties and that the evidence supports the claims
+    of the security requirements.
+</p>
+<p>
+    Accidental or unintentional failures of computer systems, as well as
+    intentional compromises of security mechanisms, can lead to security
+failures. Neumann describes nine types of    <strong><mark>problem sources in computer systems</strong></mark>: 1. Requirements
+    definitions, omissions, and mistakes 2. System design flaws 3. Hardware
+    implementation flaws, such as wiring and chip flaws 4. Software
+    implementation errors, program bugs, and compiler bugs 5. System use and
+    operation errors and inadvertent mistakes 6. Willful system misuse 7.
+    Hardware, communication, or other equipment malfunction 8. Environmental
+    problems, natural causes, and acts of God 9. Evolution, maintenance, faulty
+    upgrades, and decommissions.
+</p>
+<p>
+    Although security policies define security for a particular system, the
+    policies themselves are created to meet needs. These needs are the
+    requirements. A requirement is a statement of goals that must be satisfied.
+    A statement of goals can vary from generic, high-level goals to concrete,
+detailed design considerations. The term    <strong><mark>security objectives</strong></mark> refers to the high-level security
+issues and business goals, and the term    <strong><mark>security requirements</strong></mark> refers to the specific and concrete
+    issues. Selecting the right security requirements for a computer entity
+    requires an understanding of the intended use of that entity as well as of
+    the environment in which it must function.
+</p>
+<p>
+    The goal of <strong><mark>assurance</strong></mark> is to show that an implemented and
+    operational system meets its security requirements throughout its life
+    cycle. Because of the difference in the levels of abstraction between
+    high-level security requirements and low-level implementation details, the
+    demonstration is usually done in stages. Different assurance techniques
+    apply to different stages of system development. For this reason, it is
+    convenient to classify assurance into policy assurance, design assurance,
+    implementation assurance, and operational or administrative assurance.
+</p>
+<p>
+    <strong><mark>Policy assurance</strong></mark>
+    is the evidence establishing that the set of security requirements in the
+    policy is complete, consistent, and technically sound. Once the proper
+    requirements have been defined, justified, and approved for the system, the
+    design and development process can begin with confidence.
+</p>
+<p>
+    <strong><mark>Design assurance</strong></mark>
+    is the evidence establishing that a design is sufficient to meet the
+requirements of the security policy.    <strong><mark>Implementation assurance</strong></mark> is the evidence establishing that
+    the implementation is consistent with the security requirements of the
+    security policy. In practice, implementation assurance shows that the
+    implementation is consistent with the design, which design assurance showed
+    was consistent with the security requirements found in the security policy.
+</p>
+<p>
+    Operational or <strong><mark>administrative assurance</strong></mark> is the evidence
+    establishing that the system sustains the security policy requirements
+    during installation, configuration, and day-to-day operation. One
+    fundamental operational assurance technique is a thorough review of product
+    or system documentation and procedures, to ensure that the system cannot
+    accidentally be placed into a nonsecure state. This emphasizes the
+    importance of proper and complete documentation for computer applications,
+    systems, and other entities.
+</p>
+<p>
+    Like performance, security is an integral part of a computer system. It
+    should be integrated into the system from the beginning, rather than added
+on later. Inclusion of many features often leads to    <strong><mark>complexity</strong></mark>, which limits the ability to analyze the
+    system, which in turn lowers the potential level of assurance. Systems in
+    which security mechanisms are added to a previous product are not as
+    amenable to extensive analysis as those that are specifically built for
+    security.
+</p>
+<h2>
+    Penetration Testing
+</h2>
+<p>
+    A <strong><mark>computer</strong></mark> <strong><mark>system</strong></mark> is more than hardware
+    and software; it includes the policies, procedures, and organization under
+    which that hardware and software is used. Lapses in security can arise from
+    any of these areas or from any combination of these areas. Thus, it makes
+    little sense to restrict the study of vulnerabilities to hardware and
+    software problems.
+</p>
+<p>
+    When someone breaks into a computer system, that person takes advantage of
+    lapses in procedures, technology, or management (or some combination of
+    these factors), allowing unauthorized access or actions. The specific
+    failure of the controls is called a <strong><mark>vulnerability</strong></mark> or
+    security flaw; using that failure to violate the site security policy is
+    called exploiting the vulnerability. One who attempts to exploit the
+    vulnerability is called an attacker.
+</p>
+<p>
+    <strong><mark>Penetration</strong></mark>
+    <strong><mark>testing</strong></mark>
+    is a testing technique, not a proof technique. It can never prove the
+    absence of security flaws; it can only prove their presence. To be
+    meaningful, a formal verification proof must include all external factors.
+    Incorrect configuration, maintenance, or operation of the program or system
+    may introduce flaws that formal verification will not detect.
+</p>
+<p>
+    A <strong><mark>penetration</strong></mark> <strong><mark>study</strong></mark> is a test for
+    evaluating the strengths of all security controls on the computer system.
+    The goal of the study is to violate the site security policy. A penetration
+    study (also called a tiger team attack or red team attack) is not a
+    replacement for careful design and implementation with structured testing.
+    Unlike other testing and verification technologies, it examines procedural
+    and operational controls as well as technological controls.
+</p>
+<p>
+    A <strong><mark>penetration</strong></mark> <strong><mark>test</strong></mark> is an authorized
+    attempt to violate specific constraints stated in the form of a security or
+    integrity policy. This formulation implies a metric for determining whether
+    the study has succeeded. Should goals be nebulous, interpretation of the
+    results will also be nebulous, and the test will be less useful than if the
+    goals were stated precisely. Example goals of penetration studies are
+    gaining of read or write access to specific objects, files, or accounts;
+    gaining of specific privileges; and disruption or denial of the
+    availability of objects.
+</p>
+<p>
+    A penetration test is designed to characterize the effectiveness of
+    security mechanisms and controls to attackers. To this end, these studies
+    are conducted from an <strong><mark>attacker's point of view</strong></mark>, and the
+    environment in which the tests are conducted is that in which a putative
+    attacker would function. Different attackers, however, have different
+    environments; for example, insiders have access to the system, whereas
+    outsiders need to acquire that access. This suggests a layering model for a
+    penetration study.
+</p>
+<p><ul>
+    <strong><mark>External attacker with no knowledge of the system</strong></mark>
+    . This layer is normally skipped in penetration testing because it tells
+    little about the security of the system itself.
+</p>
+<p>
+    <strong><mark></strong></mark>
+</p>
+<p>
+    <strong><mark>External attacker with access to the system</strong></mark>
+    . At this level, the testers have access to the system and can proceed to
+    log in or to invoke network services available to all hosts on the network
+    (such as electronic mail). They must then launch their attack. Common forms
+    of attack at this stage are guessing passwords, looking for unprotected
+    accounts, and attacking network servers. Implementation flaws in servers
+    often provide the desired access.
+</p>
+<p>
+    <strong><mark>Internal attacker with access to the system</strong></mark>
+    . At this level, the testers have an account on the system and can act as
+    authorized users of the system. The test typically involves gaining
+    unauthorized privileges or information and, from that, reaching the goal.
+    At this stage, the testers acquire (or have) a good knowledge of the target
+    system, its design, and its operation.</ul>
+</p>
+<h2>
+    Vulnerability Analysis
+</h2>
+<p>
+    The usefulness of a penetration study comes from the documentation and
+    conclusions drawn from the study and not from the success or failure of the
+    attempted penetration. The <strong><mark>Flaw Hypothesis Methodology</strong></mark> was
+    developed at System Development Corporation and provides a framework for
+    penetration studies. It consists of five steps.
+</p>
+<p><ul>
+    <strong><mark>Information gathering</strong></mark>
+    . In this step, the testers become familiar with the system's functioning.
+    They examine the system's design, its implementation, its operating
+    procedures, and its use. The testers become as familiar with the system as
+    possible.
+</p>
+<p>
+    <strong><mark>Flaw hypothesis</strong></mark>
+    . Drawing on the knowledge gained in the first step, and on knowledge of
+    vulnerabilities in other systems, the testers hypothesize flaws of the
+    system under study.
+</p>
+<p>
+    <strong><mark>Flaw testing</strong></mark>
+    . The testers test their hypothesized flaws. If a flaw does not exist (or
+    cannot be exploited), the testers go back to step 2. If the flaw is
+    exploited, they proceed to the next step.
+</p>
+<p>
+    <strong><mark>Flaw generalization</strong></mark>
+    . Once a flaw has been successfully exploited, the testers attempt to
+    generalize the vulnerability and find others similar to it. They feed their
+    new understanding (or new hypothesis) back into step 2 and iterate until
+    the test is concluded.
+</p>
+<p>
+    <strong><mark>Flaw elimination</strong></mark>
+    . The testers suggest ways to eliminate the flaw or to use procedural
+    controls to ameliorate it.
+</p></ul>
+<p>
+    <strong><mark>Information Gathering and Flaw Hypothesis</strong></mark>
+    : The testers devise a model of the system, or of its components, and then
+    explore each aspect of the designs for internal consistency, incorrect
+    assumptions, and potential flaws. If the testers have access to design
+    documents and manuals, they can often find parts of the specification that
+    are imprecise or incomplete. If a privileged user (such as root on UNIX
+    systems or administrator on Windows systems) is present, the way the system
+    manages that user may reveal flaws. Wherever the manuals suggest a limit or
+    restriction, the testers try to violate it; wherever the manuals describe a
+    sequence of steps to perform an action involving privileged data or
+    programs, the testers omit some steps. More often than not, this strategy
+    will reveal security flaws.
+</p>
+<p>
+    <strong><mark>Flaw Testing</strong></mark>
+    : Once the testers have hypothesized a set of flaws, they determine the
+    order in which to test the flaws. The priority is a function of the goals
+    of the test. Assigning priorities is a matter of informed judgment, which
+    emphasizes the need for testers to be familiar with the environment and the
+    system. When a system must be tested, it should be backed up and all users
+    should be removed from it. This precautionary measure saves grief should
+    the testing go awry. The notes of the test must be complete enough to
+    enable another tester to duplicate the test or the exploitation on request;
+    thus, precise notes are essential.
+</p>
+<p>
+    <strong><mark>Flaw Generalization and Flaw Elimination</strong></mark>
+    : As testers successfully penetrate the system (either through analysis or
+    through analysis followed by testing), classes of flaws begin to emerge.
+    The testers must confer enough to make each other aware of the nature of
+    the flaws. The flaw elimination step is often omitted because correction of
+    flaws is not part of the penetration. However, the flaws uncovered by the
+    test must be corrected. For example, the TCSEC requires that any flaws
+    uncovered by penetration testing be corrected.
+</p>
+<p>
+    <strong><mark>Penetration testing</strong></mark>
+    is no substitute for good, thorough specification, rigorous design, careful
+    and correct implementation, and meticulous testing. It is, however, a very
+    valuable component of the final stage, testing. Properly done, penetration
+    tests examine the design and implementation of security mechanisms from the
+    point of view of an attacker. The knowledge and understanding gleaned from
+    such a viewpoint is invaluable.
+</p>
+<p>
+    In 1992, Landwehr, Bull, McDermott, and Choi developed a taxonomy to help
+    designers and operators of systems enforce security. They tried to answer
+    three questions: how did the flaw enter the system, when did it enter the
+system, and where in the system is it manifest? They built three different    <strong><mark>classification systems</strong></mark>, one to answer each of the three
+    questions, and classified more than 50 vulnerabilities in these schemes.
+</p>
+<p>
+The first classification scheme classified    <strong><mark>vulnerabilities by genesis</strong></mark>. The investigators felt that
+    because most security flaws were inadvertent, better design and coding
+    reviews could eliminate many of them; but if the flaws were intentional,
+    measures such as hiring more trustworthy designers and programmers and
+    doing more security-related testing would be more appropriate.
+</p>
+<p>
+The second scheme classified    <strong><mark>vulnerabilities by time of introduction</strong></mark>. The investigators
+    wanted to know if security errors were more likely to be introduced at any
+    particular point in the software life cycle in order to determine if
+    focusing efforts on security at any specific point would be helpful.
+</p>
+<p>
+The third scheme classified    <strong><mark>vulnerabilities by location of the flaw</strong></mark>. The intent is to
+    capture where the flaw manifests itself and to determine if any one
+    location is more likely to be flawed than any other. If so, focusing
+    resources on that location would improve security.
+</p>
+<p>
+Landwehr's et al taxonomy differs from the others in that it focuses on    <strong><mark>social processes</strong></mark> as well as technical details of flaws. In
+    order to classify a security flaw correctly on the time of introduction and
+    genesis axes, either the precise history of the particular flaw must be
+    known or the classifier must make assumptions. This ambiguity is unsettling
+    because this information is not always available. However, when available,
+    this information is quite useful, and the study was the first to approach
+the problem of reducing vulnerabilities by studying the    <strong><mark>environments</strong></mark> in which they were introduced.
+</p>
+<h2>
+    Intrusion Detection
+</h2>
+<p>
+    Computer systems that are not under attack exhibit several characteristics.
+    Denning hypothesized that systems under attack fail to meet at least one of
+    these characteristics.
+</p>
+<p><ul>
+   &#183; The actions of users and processes generally conform to a statistically
+    predictable pattern. A user who does only word processing when using the
+    computer is unlikely to perform a system maintenance function.
+</p>
+<p>
+  &#183;  The actions of users and processes do not include sequences of commands to
+    subvert the security policy of the system. In theory, any such sequence is
+    excluded; in practice, only sequences known to subvert the system can be
+    detected.
+</p>
+<p>
+   &#183; The actions of processes conform to a set of specifications describing
+    actions that the processes are allowed to do (or not allowed to do).
+</p></ul>
+<p>
+The characteristics listed above guide the    <strong><mark>detection of intrusions</strong></mark>. Once the province of the
+    technologically sophisticated, attacks against systems have been automated.
+    So a sophisticated attack need not be the work of a sophisticated attacker.
+    An <strong><mark>attack tool</strong></mark> is an automated script designed to violate
+    a security policy.
+</p>
+<p>
+    Denning suggests automation of the intrusion detection process. Her
+    specific hypothesis is that exploiting vulnerabilities requires an abnormal
+    use of normal commands or instructions, so security violations can be
+    detected by looking for abnormalities. Her model is very general and
+includes abnormalities such as deviation from usual actions (    <strong><mark>anomaly detection</strong></mark>), execution of actions that lead to
+    break-ins (<strong><mark>misuse detection</strong></mark>), and actions inconsistent
+with the specifications of privileged programs (    <strong><mark>specification-based detection</strong></mark>).
+</p>
+<p>
+Systems that do this are called    <strong><mark>intrusion detection systems</strong></mark> (IDS). Their goals are
+    fourfold: (1) Detect a wide variety of intrusions. (2) Detect intrusions in
+    a timely fashion. (3) Present the analysis in a simple, easy-to-understand
+    format. (4) Be accurate.
+</p>
+<p>
+    <strong><mark>Anomaly models</strong></mark>
+    use a statistical characterization, and actions or states that are
+    statistically unusual are classified as bad. Misuse models compare actions
+    or states with sequences known to indicate intrusions, or sequences
+    believed to indicate intrusions, and classify those sequences as bad.
+    Specification-based models classify states that violate the specifications
+    as bad. In practice, models are often combined, and intrusion detection
+    systems use a mixture of two or three different types of models.
+</p>
+<p>
+    <strong><mark>Anomaly detection</strong></mark>
+    uses the assumption that unexpected behavior is evidence of an intrusion.
+    Implicit is the belief that some set of metrics can characterize the
+    expected behavior of a user or a process. Anomaly detection analyzes a set
+    of characteristics of the system and compares their behavior with a set of
+    expected values. It reports when the computed statistics do not match the
+    expected measurements.
+</p>
+<p>
+    <strong><mark> Misuse detection</strong></mark>
+    determines whether a sequence of instructions being executed is known to
+    violate the site security policy being executed. If so, it reports a
+    potential intrusion. Modeling of misuse requires a knowledge of system
+    vulnerabilities or potential vulnerabilities that attackers attempt to
+    exploit. The intrusion detection system incorporates this knowledge into a
+    rule set. When data is passed to the intrusion detection system, it applies
+    the rule set to the data to determine if any sequences of data match any of
+    the rules. If so, it reports that a possible intrusion is underway.
+</p>
+<p>
+    Specification detection looks for states known not to be good, and when the
+system enters such a state, it reports a possible intrusion.    <strong><mark>Specification-based detection</strong></mark> determines whether or not a
+    sequence of instructions violates a specification of how a program, or
+    system, should execute. If so, it reports a potential intrusion.
+    Specification-based intrusion detection is in its infancy. Among its
+    appealing qualities are the formalization (at a relatively low level) of
+    what should happen. This means that intrusions using unknown attacks will
+    be detected.
+</p>
+<h2>
+    Intrusion Response
+</h2>
+<p>
+    Once an intrusion is detected, how can the system be protected? The field
+    of <strong><mark>intrusion</strong></mark> <strong><mark>response</strong></mark> deals with this
+    problem. Its goal is to handle the (attempted) attack in such a way that
+    damage is minimized (as determined by the security policy). Some intrusion
+    detection mechanisms may be augmented to thwart intrusions. Otherwise, the
+    security officers must respond to the attack and attempt to repair any
+    damage.
+</p>
+<p>
+    In the context of response, <strong><mark>prevention</strong></mark> requires that the
+    attack be identified before it completes. The defenders then take measures
+    to prevent the attack from completing. This may be done manually or
+    automatically.
+</p>
+<p>
+    <strong><mark> Jailing of attackers</strong></mark>
+    is an approach that allows the attackers to think that their attacks have
+    succeeded but places them in a confined area in which their behavior can be
+    controlled and, if necessary, manipulated.
+</p>
+<p>
+    <strong><mark>Intrusion handling</strong></mark>
+    consists of six phases.
+</p><ul>
+<p>
+    &#183; Preparation for an attack. This step occurs before any attacks are
+    detected. It establishes procedures and mechanisms for detecting and
+    responding to attacks.
+</p>
+<p>
+    &#183; Identification of an attack. This triggers the remaining phases.
+</p>
+<p>
+    &#183; Containment of the attack. This step limits the damage as much as
+    possible.
+</p>
+<p>
+    &#183; Eradication of the attack. This step stops the attack and blocks
+    further similar attacks.
+</p>
+<p>
+    &#183; Recovery from the attack. This step restores the system to a secure
+    state (with respect to the site security policy).
+</p>
+<p>
+    &#183; Follow-up to the attack. This step involves taking action against
+    the attacker, identifying problems in the handling of the incident, and
+    recording lessons learned (or lessons not learned that should be learned).
+</p></ul>
+<p>
+    <strong><mark>Honeypots</strong></mark>
+    , sometimes called decoy servers, are servers that offer many targets for
+    attackers. The targets are designed to entice attackers to take actions
+    that indicate their goals. Honeypots are also instrumented and closely
+    monitored. When a system detects an attack, it takes actions to shift the
+    attacker onto a honeypot system. The defenders can then analyze the attack
+    without disrupting legitimate work or systems.
+</p>
+<p>
+    <strong><mark>Firewalls</strong></mark>
+    are systems that sit between an organization's internal network and some
+    other external network (such as the Internet). The firewall controls access
+    from the external network to the internal network and vice versa. The
+    advantage of firewalls is that they can filter network traffic before it
+    reaches the target host. They can also redirect network connections as
+    appropriate, or throttle traffic to limit the amount of traffic that flows
+    into (or out of) the internal network.
+</p>
+<p>
+    An organization may have several firewalls on its perimeter, or several
+organizations may wish to coordinate their responses. The    <strong><mark>Intruder Detection and Isolation Protocol</strong></mark> provides a
+    protocol for coordinated responses to attacks. When a connection passes
+    through a member of an IDIP domain, the system monitors the connection for
+    intrusion attempts. If one occurs, the system reports the attempt to its
+    neighbors. Kahn and Zurko suggest that IDIP, or a similar protocol, should
+    be widely deployed throughout the Internet to handle flooding attacks. They
+    argue that economic and other incentives will encourage Internet Service
+    Providers and other network providers to cooperate in suppressing
+    distributed flooding attacks.
+</p>
+<p>
+    <strong><mark>Counterattacking</strong></mark>
+, or attacking the attacker, takes two forms. The first form involves    <strong><mark>legal</strong></mark> <strong><mark>mechanisms</strong></mark>, such as filing criminal
+    complaints. This requires protecting a chain of evidence so that legal
+    authorities can establish that the attack was real (in other words, that
+    the attacked site did not invent evidence) and that the evidence can be
+    used in court.
+</p>
+<p>
+    The second form is a <strong><mark>technical attack</strong></mark>, in which the goal
+    is to damage the attacker seriously enough to stop the current attack and
+    discourage future attacks. This approach has several important consequences
+    that must be considered.
+</p>
+<p>
+    The counterattack may harm an innocent party. The attacker may be
+    impersonating another site. In this case, the counterattack could damage a
+    completely innocent party, putting the counterattackers in the same
+    position as the original attackers. Alternately, the attackers may have
+    broken into the site from which the attack was launched. Attacking that
+    host does not solve the problem. It merely eliminates one base from which
+    future attacks might be launched.
+</p>
+<p>
+    The counterattack may have side effects. For example, if the counterattack
+    consists of flooding a specific target, the flood could block portions of
+    the network that other parties need to transit, which would damage them.
+</p>
+<p>
+    The counterattack is antithetical to the shared use of a network. Networks
+    exist to share data and resources and provide communication paths. By
+    attacking, regardless of the reason, the attackers make networks less
+    usable because they absorb resources and make threats more immediate.
+</p>
+<p>
+    The counterattack may be legally actionable. If an attacker can be
+    prosecuted or sued, it seems reasonable to assume that one who responds to
+    the attack by counterattacking can also be prosecuted or sued, especially
+    if other innocent parties are damaged by the counterattack.
+</p>
+<h2>
+    Data Classification
+</h2>
+<p>
+    <strong><mark>Classification of data</strong></mark>
+    should reflect the principle of least privilege. Data should be separated
+    in such a way that the ability to view one class of data does not imply the
+    ability to view another class of data. Also, the policy and all its rules
+    are not secret, reflecting the principle of open design. 5 classes of data:
+</p>
+<p><ul>
+    &#183; Public data (PD) is available to anyone. It includes product
+    specifications, price information, marketing literature, and any other data
+    that will help a company sell without compromising its secrets.
+</p>
+<p>
+    &#183; Development data for existing products (DDEP) is available only
+    internally. Because of pending lawsuits, it must be available to the
+    company lawyers and officers as well as to the developers. It is kept
+    secret from all others.
+</p>
+<p>
+    &#183; Development data for future products (DDFP) is available to the
+    developers only.
+</p>
+<p>
+    &#183; Corporate data (CpD) includes legal information that is privileged
+    and information about corporate actions that is not to become known
+    publicly (such as actions that may affect stock values). The corporate
+    officials and lawyers need access to this information; no one else does.
+</p>
+<p>
+    &#183; Customer data (CuD) is data that customers supply, such as credit
+    card information. The company protects this data as strongly as it protects
+    its own data.
+</p></ul>
+<p>
+    The <strong><mark>user classes</strong></mark> are based on the same principles as the
+    classes of data: separation of privilege and least privilege. Some users
+    may be placed in multiple classes. If so, an underlying assumption of the
+    model is that they will not bypass the restrictions by copying data from
+    one class to another without using the mechanisms provided for that
+    purpose. Four classes of people may access data.
+</p>
+<ul>
+    <p>
+    &#183; Outsiders (members of the public) get access to some of the
+    company's data such as prices, product descriptions, and public corporate
+    information.
+</p>
+<p>
+    &#183; Developers get access to both classes of development data.
+</p>
+<p>
+    &#183; Corporation executives (corporation counsel, members of the board of
+    directors, and other executives) get access to corporate data.
+</p>
+
+<p>
+    &#183;         Employees get access to customer data only.
+</ul>
+</p>
+
+<h2>
+    Network Organization
+</h2>
+<p>
+    Networks should be partitioned into several parts, with guards between
+    parts to prevent information from leaking. Each type of data resides in one
+    of the parts. This is a fairly standard corporate network, with one part
+available to the public and a second part available only internally. The    <strong><mark>DMZ (Demilitarized Zone)</strong></mark> is a portion of a network that
+    separates a purely internal network from an external network.
+</p>
+<p>
+When information moves from the Internet to the    <strong><mark>internal network</strong></mark>, confidentiality is not at issue.
+    However, integrity is. The guards between the Internet and the DMZ, and
+    between the DMZ and the internal network, must not accept messages that
+    will cause servers to work incorrectly or to crash. When information moves
+    from the internal network to the Internet, confidentiality and integrity
+    are both at issue.
+</p>
+<p>
+    A <strong><mark>firewall</strong></mark> is a host that mediates access to a network,
+    allowing and disallowing certain types of access on the basis of a
+    configured security policy. This firewall accepts or rejects messages on
+    the basis of external information, such as destination addresses or ports,
+    rather than on the basis of the contents of the message.
+</p>
+<p>
+    A <strong><mark>filtering firewall</strong></mark> performs access control on the basis
+    of attributes of the packet headers, such as destination addresses, source
+    addresses, and options. <strong><mark>Access control lists</strong></mark> provide a
+    natural mechanism for representing these policies. This contrasts with the
+    second type of firewall, which never allows such a direct connection.
+    Instead, special agents called proxies control the flow of information
+    through the firewall.
+</p>
+<p>
+    A <strong><mark>proxy</strong></mark> is an intermediate agent or server that acts on
+    behalf of an endpoint without allowing a direct connection between the two
+    endpoints. A proxy (or applications level) firewall uses proxies to perform
+    access control. A <strong><mark>proxy firewall</strong></mark> can base access control
+    on the contents of packets and messages, as well as on attributes of the
+    packet headers.
+</p>
+<p>
+    The public cannot communicate directly with any system in the internal
+    network, nor can any system in the internal network communicate directly
+with other systems on the Internet (beyond the    <strong><mark>outer firewall</strong></mark>). The systems in the DMZ serve as
+    mediators, with the firewalls providing the guards. The goals of the outer
+    firewall are to restrict public access to the company's corporate network
+    and to restrict the company's access to the Internet. This arises from the
+    duality of information flow.
+</p>
+<p>
+    Four servers reside in the DMZ. They are the mail, WWW, DNS, and log
+    servers.
+</p>
+<ul>
+    <li>
+        The <strong><mark>mail server</strong></mark> in the DMZ performs address and
+        content checking on all electronic mail messages. The goal is to hide
+        internal information from the outside while being transparent to the
+        inside.
+    </li>
+    <li>
+        The <strong><mark>Web server</strong></mark> accepts and services requests from the
+        Internet. It does not contact any servers or information sources within
+        the internal network. This means that if the Web server is compromised,
+        the compromise cannot affect internal hosts.
+    </li>
+    <li>
+        The DMZ <strong><mark>DNS server</strong></mark> contains directory name service
+        information about those hosts that the DMZ servers must know. The
+        limited information in the DNS server reflects the principle of least
+        privilege because those entries are sufficient for the systems in the
+        DMZ.
+    </li>
+    <li>
+        The <strong><mark>log server</strong></mark> performs an administrative function.
+        All DMZ machines have logging turned on. In the event of a compromise
+        (or an attempted compromise), these logs will be invaluable in
+        assessing the method of attack, the damage (or potential damage), and
+        the best response.
+    </li>
+</ul>
+<p>
+Ideally, the operating systems of the server computers should be    <strong><mark>very small kernels</strong></mark> that provide only the system support
+    services necessary to run the appropriate servers. In practice, the
+    operating systems are trusted operating systems (developed using assurance
+    techniques, or"more commonly"commercial operating systems in which all
+    unnecessary features and services have been disabled. This minimizes the
+    operations that a server can perform on behalf of a remote process. Hence,
+    even if the server is compromised, the attacker cannot use it to compromise
+    other hosts such as the inner firewall.
+</p>
+<h2>
+    User Security
+</h2>
+<p>
+    The components of <strong><mark>users' policies</strong></mark> that we focus on are as
+    follows.
+</p><ul>
+<p>
+    U1. Only users have access to their accounts.
+</p>
+<p>
+    U2. No other user can read or change a file without the owner's permission.
+</p>
+<p>
+    U3. Users shall protect the integrity, confidentiality, and availability of
+    their files.
+</p>
+<p>
+    U4. Users shall be aware of all commands that they enter, or that are
+    entered on their behalf.
+</p></ul>
+<p>
+    Component U1 requires that users <strong><mark>protect access</strong></mark> to their
+    accounts. Consider the ways in which users gain access to their accounts.
+    These points of entry are ideal places for attackers to attempt to
+    masquerade as users. Hence, they form the first locus of users' defenses.
+</p>
+<p>
+    Ideally, <strong><mark>passwords</strong></mark> should be chosen randomly. In practice,
+    such passwords are difficult to remember. So, either passwords are not
+    assigned randomly, or they require that some information be written down.
+    Writing down passwords is popularly considered to be dangerous. In reality,
+    the degree of danger depends on the environment in which the system is
+    accessed and on the manner in which the password is recorded.
+</p>
+<p>
+The first potential access authentication attack arises from the    <strong><mark>lack of mutual authentication</strong></mark> on most systems. An attacker
+    may place a program at the access point that emulates the login prompt
+    sequence. Then, if the user has a reusable password, the name and password
+    are captured.
+</p>
+<p>
+The second potential attack arises from an attacker    <strong><mark>reading the password</strong></mark> as it is entered. At a later date,
+    the attacker can reuse the password. This differs from the first attack in
+    that it succeeds even when the user and system mutually authenticate each
+    other.
+</p>
+<p>
+    As part of the <strong><mark>login procedure</strong></mark>, many systems print useful
+    information. If the date, time, and location of the last successful login
+    are shown, the user can verify that no one has used her account since she
+    last did. If the access point is shown, the user can determine if some
+    program is intercepting and rerouting her communications. Policy component
+    U1 suggests that the user should be alert when logging in. If something
+    suspicious occurs, or the link to the system is not physically or
+    cryptographically protected, an unauthorized user may acquire access to the
+    system.
+</p>
+<p>
+    The notion of <strong><mark>trusted hosts</strong></mark> comes from the belief that if
+    two hosts are under the same administrative control, each can rely on the
+    other to authenticate a user. It allows certain mechanisms, such as
+    backups, to be automated without placing passwords or cryptographic keys on
+    the system. The trusted host mechanism requires accurate identification of
+    the connecting host. The primary identification token of a host is its IP
+    address, but the authentication mechanism can be either the IP address
+    itself or a challenge-response exchange based on cryptography. Using the
+    latter prevents IP spoofing.
+</p>
+<p>
+    Users must protect confidentiality and integrity of the files to satisfy
+    policy component U2. To this end, they use the protection capabilities of
+    the system to constrain access. Complicating the situation is the
+    interpretation of permissions on the containing directories. Many systems
+    allow users to specify a <strong><mark>template of permissions</strong></mark> to be
+    given to a file when it is created. The owner can then modify this set as
+    required.
+</p>
+<p>
+    <strong><mark>Group access</strong></mark>
+    provides a selected set of users with the same access rights. The problem
+    is that the membership of the group is not under the control of the owner
+    of the file. This has an advantage and a disadvantage. The advantage arises
+    when the group is used as a role. Then, as users are allowed to assume the
+    role, their access to the file is altered. Because the owner of the file is
+    concerned only with controlling access of those role users, reconfiguration
+    of the access to the role reconfigures user access to the file, which is
+    what the user wants.
+</p>
+<p>
+    The disadvantage arises when a group is used as a shorthand for a set of
+    specific users. If the membership of the group changes, unauthorized users
+    may obtain access to the file, or authorized users may be denied access to
+    the file. In general, users should limit access as much as possible when
+    creating new files. So ACLs and C-Lists should include as few entries as
+    possible, and permissions for each entry should be as restrictive as
+    possible.
+</p>
+<p>
+    Users communicate with the system through <strong><mark>devices</strong></mark>. The
+    devices may be virtual, such as network ports, or physical, such as
+    terminals. Policy components U1 and U4 require that these devices be
+    protected so that the user can control what commands are sent to the system
+    in her name and so that others are prevented from seeing her interactions.
+    Devices that allow any user to write to them can pose serious security
+    problems. Unless necessary for the correct functioning of the system,
+    devices should restrict write access as much as possible.
+</p>
+<p>
+    The basis for encryption is <strong><mark>trust</strong></mark>. Anyone who can alter
+    the programs used to encipher and decipher the files, or any of the
+    supporting tools (such as the operating system), can also obtain the
+    cryptographic keys or the cleartext data itself. For this reason, unless
+    users trust the privileged users, and trust that other users cannot acquire
+    the privileges needed to read memory, swap space, or alter the relevant
+    programs, the sensitive data should never be on the system in cleartext.
+</p>
+
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

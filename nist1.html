@@ -1,0 +1,989 @@
+<html>
+<title>NIST Notes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="w3-theme-black.css">
+<link rel="stylesheet" href="roboto.css">
+<link rel="stylesheet" href="font-awesome.min.css">
+
+
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {
+font-family: "Roboto", sans-serif;
+text-align: left;
+}
+
+.w3-sidebar {
+z-index: 3;
+width: 440px;
+top: 35px;
+bottom: 0;
+height: inherit;
+text-align: justify;
+}
+</style>
+
+<body>
+
+<!-- Topbar -->
+<div class="w3-top">
+<div class="w3-bar w3-theme w3-top w3-left-align w3-small">
+<a class="w3-bar-item w3-theme-l1"><i class="fa fa-bars"></i></a>
+</div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-small w3-theme-l5" id="mySidebar">
+<a class="w3-button w3-hover-black" href="nist1.html">SP 800-12 - An Introduction to Information Security</a>
+<a class="w3-button w3-hover-black" href="nist2.html">SP 800-30 - Guide for Conducting Risk Assessments</a>
+<a class="w3-button w3-hover-black" href="nist3.html">SP 800-37 - Risk Management Framework for Information Systems</a>
+<a class="w3-button w3-hover-black" href="nist4.html">SP 800-39 - Managing Information Security Risk</a>
+<a class="w3-button w3-hover-black" href="nist5.html">SP 800-40 - Guide to Enterprise Patch Management Technologies</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-41 - Guidelines on Firewalls and Firewall Policy</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-44 - Guidelines on Securing Public Web Servers</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-45 - Guidelines on Electronic Mail Security</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-46 - Enterprise Telework, Remote Access, and BYOD Security</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-50 - Building a Security Awareness Program</a>
+<a class="w3-button w3-hover-black" href="nist7.html">SP 800-53 - Security and Privacy Controls for Information Systems</a>
+<a class="w3-button w3-hover-black" href="nist8.html">SP 800-55 - Performance Measurement Guide for Information Security</a>
+<a class="w3-button w3-hover-black" href="nist9.html">SP 800-61 - Computer Security Incident Handling Guide</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-63 - Digital Identity Guidelines</a><BR>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-77 - Guide to IPsec VPNs</a>
+<a class="w3-button w3-hover-black" href="nist10.html">SP 800-82 - Guide to Industrial Control Systems (ICS) Security</a>
+<a class="w3-button w3-hover-black" href="nist11.html">SP 800-83 - Guide to Malware Incident Prevention and Handling</a>
+<a class="w3-button w3-hover-black" href="nist12.html">SP 800-86 - Integrating Forensic Techniques into Incident Response</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-88 - Guidelines for Media Sanitization</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-92 - Guide to Computer Security Log Management</a>
+<a class="w3-button w3-hover-black" href="nist13.html">SP 800-94 - Guide to Intrusion Detection and Prevention Systems</a>
+<a class="w3-button w3-hover-black" href="nist14.html">SP 800-100 - Information Security Handbook: A Guide for Managers</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-113 - Guide to SSL VPNs</a>
+<a class="w3-button w3-hover-black" href="nist15.html">SP 800-115 - Guide to Information Security Testing and Assessment</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-122 - Protecting Personally Identifiable Information (PII)</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-123 - Guide to General Server Security</a>
+<a class="w3-button w3-hover-black" href="nist15.html">SP 800-128 - Guide for Security-Focused Configuration Management</a>
+<a class="w3-button w3-hover-black" href="nist15.html">SP 800-137 - Information Security Continuous Monitoring</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-144 - Security and Privacy in Public Cloud Computing</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-146 - Cloud Computing Synopsis and Recommendations</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-147 - BIOS Protection Guidelines</a>
+<a class="w3-button w3-hover-black" href="nist15.html">SP 800-150 - Guide to Cyber Threat Information Sharing</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-153 - Guidelines for Securing Wireless Local Area Networks</a>
+<a class="w3-button w3-hover-black" href="nist15.html">SP 800-154 - Guide to Data-Centric System Threat Modeling</a>
+<a class="w3-button w3-hover-black" href="nist15.html">SP 800-160 - Systems Security Engineering</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-161 - Supply Chain Risk Management Practices</a>
+<a class="w3-button w3-hover-black" href="nist15.html">SP 800-167 - Guide to Application Whitelisting</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-171 - Protecting Controlled Unclassified Information</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-177 - Trustworthy Email</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-184 - Guide for Cybersecurity Event Recovery</a>
+<a class="w3-button w3-hover-black" href="nist6.html">SP 800-189 - Resilient Interdomain Traffic Exchange</a>
+<a class="w3-button w3-hover-black" href="nist15.html">IR 7621 - Small Business Information Security</a>
+<a class="w3-button w3-hover-black" href="nist6.html">IR 7874 - Guidelines for Access Control System Evaluation Metrics</a>
+<a class="w3-button w3-hover-black" href="nist6.html">IR 8006 - Cloud Computing Forensic Science Challenges</a>
+<a class="w3-button w3-hover-black" href="nist6.html">IR 8011 - Automation Support for Security Control Assessments</a>
+<a class="w3-button w3-hover-black" href="nist6.html">IR 8062 -  Privacy Engineering and Risk Management</a>
+<a class="w3-button w3-hover-black" href="nist6.html">IR 8151 - Dramatically Reducing Software Vulnerabilities</a>
+<a class="w3-button w3-hover-black" href="nist15.html">IR 8192 - Enhancing Resilience of the Internet and Communications</a>
+<a class="w3-button w3-hover-black" href="nist6.html">IR 8228 - Managing Internet of Things Cybersecurity and Privacy Risks</a>
+
+</nav>
+
+
+
+
+
+
+<div class="w3-main" style="margin-left:470px">
+<div class="w3-row w3-padding-64">
+<div class="w3-twothird w3-container">
+<h2 class="w3-text-teal"></h2>
+
+<h2>
+An Introduction to Information Security
+</h2>
+<div>
+Information – (1) Facts or ideas, which can be represented (encoded) as
+various forms of data; (2) Knowledge (e.g., data, instructions) in any
+medium or form that can be communicated between system entities.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Information Security – The protection of information and information
+systems from unauthorized access, use, disclosure, disruption,
+modification, or destruction in order to ensure confidentiality, integrity,
+and availability.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Confidentiality – Preserving authorized restrictions on information
+access and disclosure, including means for protecting personal privacy and
+proprietary information.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Integrity – Guarding against improper information modification or
+destruction and ensuring information non-repudiation and authenticity. 
+<P>
+Data Integrity – The property that data has not been altered in an
+unauthorized manner. Data integrity covers data in storage, during
+processing, and while in transit. 
+<P>
+System Integrity – The quality that a
+system has when it performs its intended function in an unimpaired manner,
+free from unauthorized manipulation of the system, whether intentional or
+accidental.
+</div>
+
+<div>
+Availability – Ensuring timely and reliable access to and use of
+information. • Security Controls – The management, operational, and
+technical controls (i.e., safeguards or countermeasures) prescribed for a
+system to protect the confidentiality, availability, and integrity of the
+system and its information.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Laws and regulations do not typically provide detailed instructions for
+protecting information. Instead, they specify broad, flexible requirements
+such as restricting the availability of personal data to authorized users.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Information security supports the mission of the organization ... Private
+and public-sector organizations improve both profit and service to
+customers when appropriate security protections are in place. Information
+security, therefore, is a means to an end and not an end in itself. 
+
+<p>
+In an
+inter- organizational system, each organization benefits from securing the
+system. For example, for electronic commerce to be successful, each of the
+participants requires security controls to protect their resources. Good
+security on the buyer's system also benefits the seller; the buyer's system
+is less likely to be used for fraud, to become unavailable, or to otherwise
+negatively affect the seller.
+</div>
+
+<div>
+Information security is an integral element of sound management...
+Management personnel are ultimately responsible for determining the level
+of acceptable risk for a specific system and the organization as a whole,
+taking into account the cost of security controls. Since information
+security risk cannot be completely eliminated, the objective is to find the
+optimal balance between protecting the information or system and utilizing
+available resources.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Information security protections are implemented so as to be commensurate
+with risk... Risk to a system can never be completely eliminated.
+Therefore, it is crucial to manage risk by striking a balance between
+usability and the implementation of security protections. The primary
+objective of risk management is to implement security protections that are
+commensurate with risk. Applying unnecessary protections may waste
+resources and make systems more difficult to use and maintain.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Security benefits have both direct and indirect costs. Direct costs include
+purchasing, installing, and administering security protections (e.g.,
+access control software or fire-suppression systems). Indirect costs may
+affect both system and business performance, employee morale, or retraining
+requirements. In some cases, indirect costs may exceed the direct cost of
+the control.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Information security roles and responsibilities are made explicit... The
+roles and responsibilities of system owners, common control providers,
+authorizing officials, system security officers, users, and others are
+clear and documented. If the responsibilities are not made explicit,
+management may find it difficult to hold personnel accountable for future
+outcomes.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Information security responsibilities for system owners go beyond their own
+organization... When an interconnection between two or more systems is in
+place, information security responsibilities might be shared amongst the
+participating organizations. When such is the case, the system owners are
+responsible for sharing the security measures used by the organization to
+provide confidence to the user that the system is adequately secure and
+capable of meeting security requirements.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Information security requires a comprehensive and integrated approach....
+Defense-in- depth utilizes administrative defenses (e.g., policies,
+procedures) and security technologies (e.g., intrusion detection systems,
+firewalls, configuration settings, and antivirus software) in tandem with
+physical security defenses (e.g., gates, guards) to minimize the
+probability of a successful attack on the system. These measures not only
+help reduce the likelihood that a security breach will compromise access to
+system assets or have detrimental effects on confidentiality, integrity, or
+availability, but also give the organization near-real time notification
+once an attack has been initiated.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Interdependencies of security controls... Security controls are seldom put
+in place as stand-alone solutions to a problem. They are typically more
+effective when paired with another control or set of controls. Security
+controls, when selected properly, can have a synergistic effect on the
+overall security of a system.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Other interdependencies... System managers must be able to recognize how
+information security relates to other security disciplines like physical
+and environmental security. Understanding how those relationships work
+together will prove beneficial when implementing a more holistic security
+strategy. Understanding the relationships between security controls is
+especially important when systems are connected to other systems or
+interconnected to a globally distributed supply chain ecosystem.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Information security is assessed and monitored regularly... Information
+security is not a static process and requires continuous monitoring and
+management to protect the confidentiality, integrity, and availability of
+information as well as to ensure that new vulnerabilities and evolving
+threats are quickly identified and responded to accordingly.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Information security is constrained by societal and cultural factors... An
+organization’s own culture can impact its response to information security.
+Careful explanation of the risks associated with the business practices can
+help in the transparency and acceptance of the recommended information
+security practices. It is incumbent on organizations to find a balance
+between information security requirements and usability. Organizations can
+leverage a variety of tools that meet the security requirements of their
+system(s) without unduly burdening the user. Providing updated and
+recurring training on what is and what is not an acceptable use of
+organizational systems helps safeguard the overall security of the system.
+</div>
+<div>
+<br/>
+</div>
+<div>
+The Risk Executive Function is an individual or group (e.g., board members,
+CEO, CIO) within an organization responsible for ensuring that: (i)
+risk-related considerations for individual systems are viewed from an
+organization-wide perspective.
+</div>
+<div>
+<br/>
+</div>
+<div>
+The Chief Executive Officer is the highest-level senior official or
+executive in an organization with the overall responsibility to provide
+information security protections commensurate with the risk and magnitude
+of harm (i.e. impact) to organizational operations assets, individuals,
+</div>
+<div>
+<br/>
+</div>
+<div>
+The Chief Information Officer is an organizational official responsible
+for: (i) designating a senior agency information security officer; (ii)
+developing and maintaining security policies, procedures, and control
+techniques to address all applicable requirements; (iii) overseeing
+personnel with significant responsibilities for information security and
+ensuring that personnel are adequately trained; (iv) assisting senior
+organizational officials with their security responsibilities; and (v) in
+coordination with other senior officials, reporting annually on the overall
+effectiveness of the organization’s information security program, including
+progress of remedial actions.
+</div>
+<div>
+<br/>
+</div>
+<div>
+The Information Owner/Steward is an organizational official with statutory,
+management, or operational authority for specified information who is
+responsible for establishing the policies and procedures governing its
+generation, collection, processing, dissemination, and disposal.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Chief Information Security Officer (CISO). Responsibilities include, but
+are not limited to: • Managing and implementing an organization-wide
+information security program; and • Assuming the role of authorizing
+official designated representative or security control assessor when
+needed.
+</div>
+<div>
+<br/>
+</div>
+<div>
+The System Owner is an organizational official responsible for the
+procurement, development, integration, modification, operation,
+maintenance, and disposal of a system.
+</div>
+<div>
+<br/>
+</div>
+<div>
+The System Security Officer is responsible for ensuring that an appropriate
+operational security posture is maintained for a system and as such, works
+in close collaboration with the system owner.
+</div>
+<div>
+<br/>
+</div>
+<div>
+The Information Security Architect is an individual, group, or organization
+responsible for ensuring that the information security requirements
+necessary to protect the organization’s core missions and business
+processes are adequately addressed in all aspects of enterprise
+architecture.
+</div>
+<div>
+<br/>
+</div>
+<div>
+The System Security Engineer is an individual, group, or organization
+responsible for conducting system security engineering activities.
+</div>
+<div>
+<br/>
+</div>
+<div>
+The Security Control Assessor is an individual, group, or organization
+responsible for conducting a comprehensive assessment of the managerial,
+operational, and technical security controls and control enhancements
+employed within or inherited by a system to determine the overall
+effectiveness of the controls.
+</div>
+<div>
+<br/>
+</div>
+<div>
+The System Administrator is an individual, group, or organization
+responsible for setting up and maintaining a system or specific components
+of a system.
+</div>
+<div>
+<br/>
+</div>
+<div>
+The User is an individual, group, or organization granted access to
+organizational information in order to perform assigned duties.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Auditors are responsible for examining systems to determine: (i) whether
+the system is meeting stated security requirements and organization
+policies; and (ii) whether security controls are appropriate.
+</div>
+<div>
+<br/>
+</div>
+<div>
+The physical security office is responsible for developing and enforcing
+appropriate physical security controls, often in consultation with
+information security management, program and functional managers.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Privacy Office Staff. This office is responsible for maintaining a
+comprehensive privacy program that ensures compliance with applicable
+privacy requirements, develops and evaluates privacy policy, and manages
+privacy risks.
+</div>
+<div>
+<br/>
+</div>
+<div>
+A vulnerability is a weakness in a system, system security procedure,
+internal controls, or implementation that could be exploited by a threat
+source... A threat source can be adversarial or non-adversarial.
+Adversarial threat sources are individuals, groups, organizations, or
+entities that seek to exploit an organization’s dependence on cyber
+resources.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Non-adversarial threat sources refer to natural disasters or erroneous
+actions taken by individuals in the course of executing their everyday
+responsibilities. If the system is vulnerable, threat sources can lead to
+threat events. A threat event is an incident or situation that could
+potentially cause undesirable consequences or impacts.
+</div>
+<div>
+<br/>
+</div>
+<div>
+In order to protect a system from risk and to implement the most
+cost-effective security measures, system owners, managers, and users need
+to know and understand the vulnerabilities of the system as well as the
+threat sources and events that may exploit the vulnerabilities.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Social media accounts provide a means of gathering contact information,
+interests, and personal connections of a targeted individual which in turn
+can be used to conduct a social engineering attack.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Social engineering, in the context of information security, is a technique
+that relies heavily on human interaction to influence an individual to
+violate security protocol and encourages the individual to divulge
+confidential information.
+</div>
+<div>
+<br/>
+</div>
+<div>
+An advanced persistent threat is a long-term intrusion that attempts to
+gain access to specific data and information. Instead of trying to cause
+damage, APT attacks are designed to harvest information from the network or
+target.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Employees can represent an insider threat to an organization given their
+familiarity with the employer’s systems and applications as well as what
+actions may cause the most damage, mischief, or disorder. Employee
+sabotage—often instigated by knowledge or threat of termination—is a
+critical issue for organizations and their systems.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Malicious hacker is a term used to describe an individual or group who use
+an understanding of systems, networking, and programming to illegally
+access systems, cause damage, or steal information.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Malicious code refers to viruses, Trojan horses, worms, logic bombs, and
+any other software created for the purpose of attacking a platform.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Errors and omissions can be inadvertently caused by system operators who
+process hundreds of transactions daily or by users who create and edit data
+on organizational systems. These errors and omissions can degrade data and
+system integrity.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Information security policy is defined as an aggregate of directives,
+regulations, rules, and practices that prescribes how an organization
+manages, protects, and distributes information. Because policy is written
+at a broad level, organizations also develop standards, guidelines, and
+procedures that offer users, managers, system administrators, and others a
+clearer approach to implementing policy and meeting organizational goals.
+Standards and guidelines specify technologies and methodologies to be used
+to secure systems. Procedures are yet more detailed steps to be followed to
+accomplish security-related tasks.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Organizational standards specify uniform use of specific technologies,
+parameters, or procedures when such uniform use will benefit an
+organization. Standards are normally compulsory within an organization.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Guidelines assist users, systems personnel, and others in effectively
+securing their systems. Guidelines are often used to help ensure that
+specific security measures are not overlooked, although they can be
+implemented, and correctly so, in more than one way.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Procedures describe how to implement applicable security policies,
+standards, and guidelines. They are detailed steps to be followed by users,
+system operations personnel, or others to accomplish a particular task.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Program policy is used to create an organization’s information security
+program. Program policies set the strategic direction for security and
+assign resources for its implementation within the organization.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Program policy addresses the following: Purpose. Program policy often
+includes a statement describing the purpose and goals of the program.
+Security-related needs such as integrity, availability, and confidentiality
+can form the basis of organizational goals established in the policy.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Scope. Program policies are clear as to which resources (e.g., facilities,
+hardware and software, information, and personnel) the information security
+program protects.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Responsibilities. The responsibilities of officials and offices throughout
+the organization also need to be addressed. It can also serve as the basis
+for establishing employee accountability.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Issue-Specific Policy... The intent is to provide specific guidance and
+instructions on proper usage of systems to employees within the
+organization. An issue-specific policy is meant for every technology the
+organization uses and is written in such a way that it will be clear to
+users.
+</div>
+<div>
+<br/>
+</div>
+<div>
+System-specific policies provide information and direction on what actions
+are permitted on a particular system. These policies are similar to
+issue-specific policies in that they relate to specific technologies
+throughout the organization. However, system-specific policies dictate the
+appropriate security configurations to the personnel responsible for
+implementing the required security controls in order to meet the
+organization’s information security needs.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Risk is a measure of the extent an entity is threatened by a potential
+circumstance or event, and typically a function of: (i) the adverse impacts
+that would arise if the circumstance or event occurs; and (ii) the
+likelihood of occurrence.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Risk management requires organizations to (i) frame risk, (ii) assess risk,
+(iii) respond to risk, and (iv) monitor risk. Framing Risk – describes how
+organizations establish a risk context for the environment in which
+risk-based decisions are made. Assessing Risk – describes how organizations
+analyze risk within the context of the organizational risk frame.
+Responding to Risk – addresses how organizations respond to risk once that
+risk is determined based on the results of risk assessments. Monitoring
+Risk – addresses how organizations monitor risk over time.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Risk Management Framework (RMF). The six steps that comprise the RMF
+include: 1. System Categorization; 2. Security Control Selection; 3.
+Security Control Implementation; 4. Security Control Assessment; 5. System
+Authorization; and 6. Security Control Monitoring
+</div>
+<div>
+<br/>
+</div>
+<div>
+The first step of the RMF focuses on the categorization of the system.
+Here, organizations categorize the system and the information processed,
+stored, and transmitted by that system based on an impact analysis.
+</div>
+<div>
+<br/>
+</div>
+<div>
+The second step of the RMF process involves selecting an initial set of
+baseline security controls for the system based on the security
+categorization as well as tailoring and supplementing the security control
+baseline as needed based on an organizational assessment of risk and local
+conditions.
+</div>
+<div>
+<br/>
+</div>
+<div>
+In the third step, the organization is responsible for implementing
+security controls and describing how the controls are employed within the
+system and its environment of operation.
+</div>
+<div>
+<br/>
+</div>
+<div>
+The fourth step ensures that the organization assesses the security
+controls using appropriate assessment procedures and to determine the
+extent to which the controls are implemented correctly, operating as
+intended, and producing the desired outcome with respect to meeting the
+security requirements for the system.
+</div>
+<div>
+<br/>
+</div>
+<div>
+In the fifth step, a senior manager officially authorizes a system to
+operate or continue to operate based on the results of a complete and
+thorough security control assessment.
+</div>
+<div>
+<br/>
+</div>
+<div>
+The sixth step of the RMF is to continuously monitor the security controls
+in the system to ensure that they are effective over time as changes occur
+in the system and the environment in which the system operates.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Information assurance is the degree of confidence one has that security
+measures protect and defend information and systems by ensuring their
+availability, integrity, authentication, confidentiality, and
+non-repudiation.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Authorization is the official management decision to authorize the
+operation of a system. The authorizing official (a senior organizational
+executive) explicitly accepts the risk of operating the system.
+</div>
+<div>
+<br/>
+</div>
+<div>
+To facilitate sound risk-based decision making, decisions are based on
+reliable and current information about the implementation and effectiveness
+of both technical and nontechnical safeguards. These include: • Technical
+features (Do they operate as intended?); • Operational policies and
+practices (Is the system operated according to stated policies and
+practices?); • Overall security (Are there threats that the safeguards do
+not address?); and • Remaining risk (Is residual risk at an acceptable
+level?)
+</div>
+<div>
+<br/>
+</div>
+<div>
+One factor in reliable security is the concept of ease of safe use, which
+postulates that a system that is easier to secure is more likely to
+actually be secure. Security features may be more likely utilized when the
+initial system defaults to the "most secure" option.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Security tends to degrade during the operational phase of the system life
+cycle. System users and operators discover new ways to intentionally or
+unintentionally bypass or subvert security, especially if there is a
+perception that bypassing security improves functionality or that there
+will be no repercussions to them or their systems.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Organizations use three basic methods to maintain operational assurance: •
+System assessment. An event or a continuous process to evaluate security.
+An assessment can vary widely in scope: it may examine an entire system for
+the purpose of authorization or it may investigate a single anomalous
+event; • System audit. An independent review and examination of records and
+activities to assess the adequacy of system controls and to ensure
+compliance with established policies and operational procedures; and •
+System monitoring. A process for maintaining ongoing awareness of
+information security, vulnerabilities, and threats to support
+organizational risk management decisions.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Assessments can address the quality of the system as built, implemented, or
+operated. Assessments can be performed throughout the development cycle,
+after system installation, and throughout its operational phase. Assessment
+methods include interviews, examinations, and testing. Some common testing
+techniques feature functional testing (to see if a given function works
+according to its requirements) or penetration testing (to see if security
+can be bypassed). These techniques can range from trying several test cases
+to in-depth studies using metrics, automated tools, or multiple detailed
+test cases.
+</div>
+<div>
+<br/>
+</div>
+<div>
+An audit conducted to support operational assurance examines whether the
+system is meeting stated or implied security requirements as well as system
+and organization policies. Some audits also examine whether security
+requirements are appropriate, though this is outside of the scope of
+operational assurance.
+</div>
+<div>
+<br/>
+</div>
+<div>
+There are two types of automated tools: (1) active tools, which find
+vulnerabilities by trying to exploit them; and (2) passive tests, which
+only examine the system and infer the existence of problems from the state
+of the system.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Automated tools can be used to help uncover a variety of threats and
+vulnerabilities, such as improper access controls or access control
+configurations, weak passwords, lack of system software integrity, or not
+applying all relevant software updates and patches.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Baselines are the starting point of the security control selection process
+for systems. Once a security control baseline is selected, organizations
+use the tailoring guidance in NIST SP 800-53 to remove controls from the
+baseline (with a justification based on risk) or to add compensating or
+supplemental controls to strengthen the security posture of a specific
+system. Care needs to be taken to ensure that deviations from the baseline
+are based on an assessment of the associated risk as the changes may be
+appropriate for the system's particular environment or technical
+constraints.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Configuration management provides assurance that the system in operation
+has been configured to organizational needs and standards, that any changes
+to be made are reviewed for security implications, and that such changes
+have been approved by management prior to implementation. Configuration
+management can be used to help ensure that changes take place in an
+identifiable and controlled environment and that they do not
+unintentionally harm any of the system's properties, including its
+security.
+</div>
+<div>
+<br/>
+</div>
+<div>
+In addition to monitoring the system, it is useful to monitor external
+sources for information. Such sources as trade literature, both printed and
+electronic, have information about security vulnerabilities, patches, and
+other areas that impact security.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Support and operations are routine activities that enable systems to
+function correctly. These include fixing software or hardware problems,
+installing and maintaining software, and helping users resolve problems.
+The failure to consider security as part of the support and operations of
+systems, can be detrimental to the organization.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Access is the ability to make use of any system resource. Access control is
+the process of granting or denying specific requests to: 1) obtain and use
+information and related information processing services; and 2) enter
+specific physical facilities.
+</div>
+<div>
+<br/>
+</div>
+<div>
+System-based access controls are called logical access controls. Logical
+access controls can prescribe not only who or what (in the case of a
+process) is to have access to a specific system resource, but also the type
+of access that is permitted. Examples of access control security controls
+include: account management, separation of duties, least privilege, session
+lock, information flow enforcement, and session termination.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Making system users aware of their security responsibilities and teaching
+them correct practices helps change their behavior. It also supports
+individual accountability, which is one of the most important ways to
+improve information security. Without knowing the necessary security
+measures or how to use them, users cannot be truly accountable for their
+actions. Examples of awareness and training security controls include:
+security awareness training, role- based security training, and security
+training records.
+</div>
+<div>
+<br/>
+</div>
+<div>
+An audit is an independent review and examination of records and activities
+to assess the adequacy of system controls and ensure compliance with
+established policies and operational procedures. An audit trail is a record
+of individuals who have accessed a system as well as what operations the
+user has performed during a given period. Examples of audit and
+accountability controls include: audit events, time stamps, non-
+repudiation, protection of audit information, audit record retention, and
+session audit.
+</div>
+<div>
+<br/>
+</div>
+<div>
+A security control assessment is the testing and/or evaluation of the
+management, operational, and technical security controls on a system to
+determine the extent to which the controls are implemented correctly,
+operating as intended, and producing the desired outcome with respect to
+meeting the security requirements for the system. Examples of security
+assessment and authorization controls include: security assessments, system
+interconnections, plans of action and milestones, and continuous
+monitoring.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Configuration management consists of determining and documenting the
+appropriate specific settings for a system, conducting security impact
+analyses, and managing changes through a change control board. It allows
+the entire system to be reviewed to help ensure that a change made on one
+system does not have adverse effects on another system.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Common secure configurations (also known as security configuration
+checklists) provide recognized, standardized, and established benchmarks
+that stipulate secure configuration settings for information technology
+platforms and products. Examples of configuration management controls
+include: baseline configuration, configuration change control, security
+impact analysis, least functionality, and software usage restrictions.
+</div>
+<div>
+<br/>
+</div>
+<div>
+An information security contingency is an event with the potential to
+disrupt system operations.... To avert potential contingencies and
+disasters or minimize the damage they cause, organizations can take early
+steps to control the outcome of the event. Generally, this activity is
+called contingency planning. Examples of contingency planning controls
+include: contingency plan, contingency training, contingency plan testing,
+system backup, and system recovery and reconstitution.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Identification and authentication is a critical building block of
+information security since it is the basis for most types of access control
+and for establishing user accountability. Access control often requires
+that the system be able to identify and differentiate between users.
+Examples of identification and authentication controls include: device
+identification and authentication, identifier management, authenticator
+management, authenticator feedback, and re-authentication.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Risk assessments inform decision makers and support risk responses by
+identifying: (i) relevant threats to organizations or threats directed
+through organizations against other organizations; (ii) vulnerabilities
+both internal and external to organizations; (iii) impact (i.e., harm) to
+organizations that may occur given the potential for threats exploiting
+vulnerabilities; and (iv) the likelihood that harm will occur. Examples of
+risk assessment controls include: security categorization, risk assessment,
+vulnerability scanning, and technical surveillance countermeasures survey.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Organizations can better safeguard their information by separating user
+functionality and system management functionality. System and
+communications protection also establishes boundaries that restrict access
+to publicly-accessible information within a system. Using boundary
+protections, an organization can monitor and control communications at
+external boundaries as well as key internal boundaries within the system.
+</div>
+<div>
+<br/>
+</div>
+<div>
+Integrity is defined as guarding against improper information modification
+or destruction, and includes ensuring information non-repudiation and
+authenticity. System and information integrity provides assurance that the
+information being accessed has not been meddled with or damaged by an error
+in the system.
+</div>
+<div>
+<br/>
+</div>
+</body>
+</html>

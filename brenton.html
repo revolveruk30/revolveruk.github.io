@@ -1,0 +1,957 @@
+<html>
+<title>SANS Notes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="w3-theme-black.css">
+<link rel="stylesheet" href="roboto.css">
+<link rel="stylesheet" href="font-awesome.min.css">
+
+
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 350px;
+  top: 35px;
+  bottom: 0;
+  height: inherit;
+  text-align: justify;}
+</style>
+
+<body>
+
+<!-- Topbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-small">
+    <a class="w3-bar-item w3-theme-l1"><i class="fa fa-bars"></i></a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-small w3-theme-l5" id="mySidebar">
+  <a class="w3-button w3-hover-black" href="cole.html">SEC 401 - Security Essentials, Cole</a>
+  <a class="w3-button w3-hover-black" href="beaupre.html">SEC 460 - Threat/Vulnerability Management, Beaupre</a>
+  <a class="w3-button w3-hover-black" href="cole2.html">SEC 501 - Enterprise Defender, Cole</a>
+  <a class="w3-button w3-hover-black" href="brenton.html">SEC 502 - Perimeter Protection, Brenton</a>
+  <a class="w3-button w3-hover-black" href="novak.html">SEC 503 - Intrusion Detection, Novak</a>
+  <a class="w3-button w3-hover-black" href="strand.html">SEC 504 - Hacker Tools, Strand</a>
+  <a class="w3-button w3-hover-black" href="pomeranz.html">SEC 506 - Linux/Unix Security, Pomeranz</a>
+  <a class="w3-button w3-hover-black" href="hoelzer.html">SEC 507 - Auditing Networks, Hoelzer</a>
+  <a class="w3-button w3-hover-black" href="misenar.html">SEC 511 - Continuous Monitoring, Misenar</a>
+  <a class="w3-button w3-hover-black" href="skoudis.html">SEC 517 - Cutting Edge Hacking Techniques, Skoudis</a>
+  <a class="w3-button w3-hover-black" href="strand2.html">SEC 550 - Offensive Countermeasures, Strand</a>
+  <a class="w3-button w3-hover-black" href="henderson.html">SEC 555 - SIEM with Tactical Analytics, Henderson</a>
+  <a class="w3-button w3-hover-black" href="skoudis2.html">SEC 560 - Network Penetration Testing, Skoudis</a>
+  <a class="w3-button w3-hover-black" href="wright.html">SEC 561 - Hands-On Hacking Techniques, Wright</a>
+  <a class="w3-button w3-hover-black" href="vest.html">SEC 564 - Red Team Operations, Vest</a>
+  <a class="w3-button w3-hover-black" href="tarala.html">SEC 566 - Implementing Critical Security Controls, Tarala</a>
+  <a class="w3-button w3-hover-black" href="baggett.html">SEC 573 - Automating InfoSec with Python, Baggett</a>
+  <a class="w3-button w3-hover-black" href="buggenhout.html">SEC 599 - Defeating Advanced Adversaries, Buggenhout</a>
+  <a class="w3-button w3-hover-black" href="wright2.html">SEC 617 - Wireless Ethical Hacking, Wright</a>
+  <a class="w3-button w3-hover-black" href="searle.html">SEC 642 - Web App Penetration Testing, Searle</a>
+  <a class="w3-button w3-hover-black" href="sims.html">SEC 660 - Advanced Penetration Testing, Sims</a>
+  <a class="w3-button w3-hover-black" href="sims2.html">SEC 760 - Advanced Exploit Development, Sims</a>
+  <a class="w3-button w3-hover-black" href="lee.html">FOR 408 - Windows Forensic Analysis, Lee</a>
+  <a class="w3-button w3-hover-black" href="lee2.html">FOR 508 - Incident Response Forensics, Lee</a>
+  <a class="w3-button w3-hover-black" href="hagen.html">FOR 572 - Advanced Network Forensics, Hagen</a>
+  <a class="w3-button w3-hover-black" href="zeltser.html">FOR 610 - Reverse-Engineering Malware, Zeltser</a>
+  <a class="w3-button w3-hover-black" href="cole3.html">MGT 414 - CISSP, Cole</a>
+</nav>
+
+<div class="w3-main" style="margin-left:350px">
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h2 class="w3-text-teal"></h2>
+
+<h2> Perimeter Protection In-Depth, Chris Brenton</h2>
+
+
+<P>
+ 
+    
+       
+        Lecture 1: Perimeter Protection
+    
+    <p>
+        It's important to note that an open listening socket is not the root
+        cause of the system being vulnerable. Problems can occur anytime
+        software on the <strong><mark>system is remotely accessible</strong></mark>. While
+        accessing software via an open listening port is the most common attack
+        vector, it is not the only possibility.
+    </p>
+    <p>
+        It's possible to formulate a <strong><mark>payload </strong></mark>that is
+        specifically designed to attack the security device as it attempts to
+        process the packets. We have seen this a number of times in the wild.
+        While usually these attacks take the form of a denial of service
+        attacks, there have been cases where the malicious payload has
+        permitted the attacker to execute arbitrary code on the system. In
+        other words, it's possible to compromise these devices even though they
+        have no open listening sockets!
+    </p>
+    <p>
+        Unfortunately, many services are allowed to run as root or
+        administrator, since some of their functionality may require a high
+level of system access. If the service is running under the        <strong><mark>administrator account</strong></mark>, then the attacker's code will
+        be executed with this level access as well. The result is that the
+        attacker is free to create user accounts, steal password files, or do
+        whatever they may need to do to gain access to the system.
+    </p>
+    <p>
+        Exactly where does your <strong><mark>perimeter </strong></mark>end? If you have
+        remote VPN users, your perimeter extends to their systems. This changes
+        our design model from layering a few firewalls at our border' to
+        possibly needing to deploy personal firewalls on each remote user's
+        system.
+    </p>
+    <p>
+The real skill and security comes from        <strong><mark>maintaining the perimeter</strong></mark>, not from installing it. To
+        properly lock down the perimeter, you have to understand what is
+        "normal" for that
+        environment and investigate the deviations from this baseline.
+        Maintaining a perimeter is one of those "some extra effort up front
+leads to less work on the back end" kind of things. Proper        <strong><mark>alerting </strong></mark>can inform you of critical conditions so you
+        don't need to review your logs every minute of the day. A little bit of
+        scripting that will prune out all the known traffic patterns in your
+        environment can help you focus on the traffic that truly needs your
+        attention.
+    </p>
+    <p>
+        <strong><mark>Decoying </strong></mark>
+        is simply a set of techniques which makes your perimeter appear to be
+        different than it actually is. This could be hiding the existence of
+        your firewall, making it appear that you have more firewall layers than
+        you actually do, or even masking the identification of some of your
+        services.
+    </p>
+    <p>
+        When the attacker could simply <strong><mark>grab the banner</strong></mark>, you
+        had no knowledge that you were being targeted. When you forced the
+        attacker to launch the attack, you made it easier to record who you
+        needed to worry about. So decoying should never be considered a valid
+        method of security by itself. It's just a tool we can add to the many
+        other layers of our defense. So by making our network look different,
+        we can cause more work for the attacker. More work means they need to
+        generate more packets and the more packets they generate the better the
+        chance we will identify them as being hostile and take corrective
+        action.
+    </p>
+    
+       
+        <a name="_bookmark1"></a>
+        Lecture 2: Link and Network Layers
+    
+    <p>
+        When the network or IP layer talks to the link layer, an address
+        association has to be done. The network layer speaks in IP addresses
+and the link layer speaks in MAC addresses. The        <strong><mark>address resolution protocol </strong></mark>is responsible for making
+        the association between IP addresses and MAC addresses. The host that
+        needs to send the IP datagram to the link layer will issue an Address
+        Resolution Protocol request to determine the MAC address of the
+        receiver. Once determined, a frame header will be constructed that
+        contains both the sender's and the receiver's MAC addresses.
+    </p>
+    <p>
+        By altering a host's <strong><mark>ARP table</strong></mark>, an attacker can alter
+        the course that packets take. Although packets transmitted after the
+        table alteration will contain the correct IP address, they will fail to
+        reach the correct destination because their MAC address is wrong.
+    </p>
+    <p>
+        While <strong><mark>ARP spoofing </strong></mark>is typically the most effective
+        method of hijacking traffic at layer 2, it is not the only option
+        available. Another method is known as <strong><mark>Mac flooding</strong></mark>,
+        which involves flooding the switch with bogus MAC addresses. If the MAC
+        table becomes full, there is no
+        room to store legitimate MAC address entries. The result is the switch
+        now starts acting like a hub.
+    </p>
+    <p>
+        It may also be possible to perform <strong><mark>port stealing</strong></mark>. With
+        this method, the attacker transmits packets making it appear that the
+        victim's system has moved from its actual port to the port where the
+        attacker is located. This causes the switch to transmit packets
+        intended for the victim to the attacker.
+    </p>
+    <p>
+        If a network uses DHCP, then <strong><mark>spoofing DHCP </strong></mark>responses
+        is another possibility. The attacker simply returns DHCP replies that
+        contain all the correct information, with one minor modification. The
+        attacker changes the default gateway entry to point at their IP
+        address. When the victim system attempts to communicate off of the LAN,
+        they end up sending their traffic to the attacker's system.
+    </p>
+    <p>
+        Finally, <strong><mark>spoofing ICMP </strong></mark>redirects is another possible
+        option. With this method the attacker spoofs ICMP redirect packets to
+        the victim making it look like the attacker's system is a preferred
+        route to the Internet.
+    </p>
+    <p>
+        The <strong><mark>network layer </strong></mark>uses source and destination IP
+        addresses to communicate between hosts. As users, we usually tend to
+        refer to hosts by their hostname rather than their IP addresses. Most
+        times, we can remember hostnames more easily than IP addresses.
+    </p>
+    <p>
+        The <strong><mark>internet protocol </strong></mark>addresses are stored in the IP
+        header of the IP datagram. IP is concerned about getting a packet from
+        hop to hop. This can be from the sender to the first router on its way
+        to the destination host. Or, it can be from router to router in
+        transit. Finally, it can be from the final router to the destination
+        host. These IP datagrams are individual entities that are directed to
+        the destination host as they go.
+    </p>
+    <p>
+        <strong><mark>User Datagram Protocol (UDP) </strong></mark>
+        is considered a lightweight protocol because it is simple and makes no
+        guarantee of reliable delivery. Unlike TCP that supports only single
+        host to single host (unicast) communications, UDP can deliver traffic
+        to one or more hosts. It has low overhead because it has a standard 8
+        byte header that carries vital information like source and destination
+        port, UDP checksum, and a length that reflects the number of payload
+        and UDP header bytes.
+    </p>
+    <p>
+        <strong><mark>Transmission Control Protocol (TCP) </strong></mark>
+        has to synchronize a connection between hosts. Because of this, it is
+        only possible for one source host to talk to one destination host. This
+        is known as a unicast connection. TCP provides for reliable delivery.
+        This comes in the form of a destination host acknowledging all received
+        data. This is the only way that the sender knows that the data has been
+        received.
+TCP also gives each segment of data that it sends        <strong><mark>sequence numbers</strong></mark>. The sequence number represents the
+        first byte of data in each TCP segment sent. Since TCP segments are
+        transported in IP packets and since IP packets can take different
+        routes to the destination host, it is possible for data to arrive in a
+        different order than it was sent. Therefore, TCP is responsible for
+        re-ordering the data by using the TCP sequence numbers.
+    </p>
+    <p>
+        <strong><mark>Internet Control Message Protocol (ICMP) </strong></mark>
+        was created to report on problems that are not transient or likely to
+        go away soon. ICMP is enlisted to inform the sending host that the UDP
+        port is not reachable. The most well-known ICMP application is
+        certainly the ICMP echo request/echo reply, or ping. Ping is used to
+        find whether a given Internet host is reachable or not. ICMP is a
+        lightweight protocol originally created for network troubleshooting.
+        ICMP, like IP, has no built-in reliability. ICMP packets can be lost or
+        dropped as well with no accountability.
+    </p>
+    
+       
+        Lecture 3: Firewalls, IDSs, Proxies
+    
+    <p>
+        <strong><mark>Static packet filtering </strong></mark>
+        can be quite effective for performing "absolute" filtering. By absolute
+        I mean that you would never under any conditions want the traffic
+        entering your network. For example, 192.168.0.0/16 is considered to be
+        private address space. Packets crossing the Internet should not use
+        this address space as a source IP address. If they do, someone is
+        leaking out packets, some hardware is misconfigured, or someone is
+        spoofing the address space. With this in mind we can simply block this
+        entire address space at our perimeter. It does not matter what protocol
+        is used, or even what flags or options are set. We never want to let a
+        packet with a source IP address with 192.168/16 into our network.
+    </p>
+    <p>
+        All inbound traffic with loopback as the source IP address should be
+        blocked as well. <strong><mark>Loopback </strong></mark>is a special IP address that
+        allows IP applications to communicate with other applications on the
+        same host without needing to know the IP address that has been assigned
+        to the host. Traffic sent to 127.0.0.1 is processed internally and is
+        never actually transmitted on the wire. If you do see 127.0.0.1 as a
+        source IP address, something is very broken or someone is attempting to
+        send spoofed packets.
+    </p>
+    <p>
+        The concept of a "<strong><mark>black hole</strong></mark>" revolves around blocking
+        a single IP or entire subnet which is known to generate attacks or
+        unwanted traffic. For example, when reviewing your firewall logs you
+        will most certainly come across source IP addresses that are scanning
+        your domain for known vulnerabilities. This suggests that either the
+        source IP has a bad guy at the terminal or the host has been
+        compromised. In either case it may make sense
+        to block all inbound traffic from this IP address to ensure that they
+        do not come back later and actually find a host they can compromise.
+    </p>
+    <p>
+Along with using your logs as a source of known to be        <strong><mark>bad source IP addresses</strong></mark>, you can also use source IPs
+that other people have come across. For example        <a href="http://www.dshield.org/">www.dshield.org</a> lists the top 10
+        source IP addresses that are launching scans and/or attacks. It may
+        also make sense to block entire countries. For example at the time of
+        this writing many hosts within China are launching an all out cyberwar
+        with the U.S. If your domain is located in the U.S. and you never do
+        business with China, it may make sense to block all traffic originating
+        from that country.
+    </p>
+    <p>
+        A <strong><mark>stateful packet filter </strong></mark>is simply a static packet
+        filter which has the additional ability of maintaining connection
+        state. This might not sound like much on the surface, but ifs actually
+        a very powerful capability. By remembering the state of a connection a
+        stateful filter can make intelligent decisions as to which packets are
+        true reply traffic and which packets have been crafted. The real
+        replies can be let through while the crafted packets get filtered out.
+    </p>
+    <p>
+        Most stateful filters will try to match all traffic against an existing
+        state table entry. If a match is found, the traffic is passed through.
+If no match is found, the packet is evaluated against the        <strong><mark>firewall rulebase</strong></mark>. In effect the firewall is only
+        opening a small pin hole in our perimeter security in order to allow
+        replies back in. An attacker would have to craft a spoofed packet which
+        matches all the state table information in order to get it through our
+        firewall. So while static filtering was helpless against crafted ACK
+        packets, stateful filtering can easily protect against this traffic.
+    </p>
+    <p>
+        In order to maintain a proper <strong><mark>state table entry</strong></mark>, a
+        stateful packet filter must record the source and destination IP
+        addresses as well as the source and destination port numbers. This is
+        needed to distinguish between multiple hosts as well as multiple
+        sessions that may be taking place between the same hosts.
+    </p>
+    <p>
+        In addition, some stateful packet filters may track additional
+        information in order to more closely control security. For example the
+        Cisco firewalls also record sequence numbers. This means that if an
+        attacker attempts to <strong><mark>craft packets </strong></mark>in order to sneak
+        them past the firewall, they must get the IP and port information
+        correct as well as the sequence numbers. This makes sneaking packets
+        through the firewall far more difficult, as sequence numbers will
+        change every time a packet is transmitted.
+    </p>
+    <p>
+        When choosing a stateful firewall, pay close attention to how the state
+table gets stored. Firewalls that use a        <strong><mark>limited size state table </strong></mark>(say a maximum of 50,000
+        entries or less) have
+        been prone to DoS attacks in the past. An attacker simply fills up the
+        state table with bogus entries so no new legitimate entries can be
+        created.
+    </p>
+    <p>
+One limitation of stateful packet filtering is that it does no        <strong><mark>payload verification</strong></mark>. Traffic is controlled strictly
+        on header information and may or may not reflect the actual data
+        content contained within the payload of the packets.
+    </p>
+    <p>
+        <strong><mark>Stateful inspection </strong></mark>
+        takes the concept of stateful packet filtering one step further.
+        Instead of just maintaining state on a session like a stateful filter,
+        a stateful inspection firewall has the ability to actually understand
+        the protocols in use and make decisions based on the payload of these
+        packets. This can be extremely useful when handling complex protocols.
+    </p>
+    <p>
+        A problem with security implementations of stateful inspection is that
+they been somewhat trivial to break. Remember that we are talking about  <strong><mark>pattern matching</strong></mark>. This means that if the pattern does
+        not exactly match the signature, it is going to get missed. So while SI
+        may catch original versions of attacks, it's possible that even the
+        slightest variation (like the addition of a single space character)
+        could cause attacks to fly under the wire. Whether this is possible
+        will depend on how the signature is written.
+    </p>
+    <p>
+        <strong><mark>Port forwarding </strong></mark>
+        is a form of address translation that is used to support external
+        clients attempting to access internal servers. All traffic is directed
+        to the external IP address of the firewall. Port forwarding can then be
+        configured to "forward" traffic on a per port basis to some internal
+        server. The strength of port forwarding is that you can use a single
+        legal IP address when offering multiple services. The down side is that
+        you may not be able to support multiple servers of the same type. For
+        example traffic to TCP/80 can only be forwarded to a single internal IP
+        address.
+    </p>
+    <p>
+        <strong><mark>Many-to-one NAT </strong></mark>
+        is used to support multiple workstations that need access to Internet
+        resources. All outbound traffic has the source IP address changed so
+        that it appears to originate from the external IP address of the
+        firewall. The firewall will also change the source port number and use
+        this as an accounting method to keep track of multiple sessions.
+    </p>
+    <p>
+        <strong><mark>One-to-one NAT </strong></mark>
+        is used to map individual internal private IP addresses to a unique
+        legal IP address. This is useful when you have one or two systems on a
+        private address network that need to be accessed by hosts on the
+        Internet. Note that since we have a direct one- to-one IP mapping, the
+        firewall does not need to change the port number like it does with
+        many-to-one NAT. This can be useful for services that attempt to assign
+        a fixed source port as well as a fixed target port.
+        A <strong><mark>network-based intrusion detection system (NIDS) </strong></mark>is a
+        system which attempts to identify potential attacks as they travel
+        across the network. The goal is to receive some kind of a heads up when
+        hostile activity is taking place. Packets crossing the wire are decoded
+        and inspected for suspect data. When the system feels it has detected
+        an attack, an alert is triggered.
+    </p>
+    <p>
+        There are two primary methods of detecting suspect activity on the
+        wire. The first is to look for known attack patterns which is referred
+        to as <strong><mark>signature based</strong></mark>. The other is to look for
+        unexpected activity known as <strong><mark>anomaly detection </strong></mark>or
+        "adaptive IDS".
+    </p>
+    <p>
+        While most IDS are signature-based, there are systems that attempt to
+        alert on attack patterns by identifying traffic that falls outside of
+        what is defined to be "normal" for a given network. This technology is
+        referred to as <strong><mark>anomaly detection</strong></mark>, or adaptive IDS.
+    </p>
+    <p>
+        Most <strong><mark>adaptive intrusion detection systems </strong></mark>are
+        incapable of checking payload so any attack hitting the Web server on
+        TCP/80 would probably go unnoticed. Also, networks tend to be an
+        evolving entity. This means that our network's "normal" traffic flow
+        may look drastically different a few weeks from now. With this in mind,
+        the device needs to keep learning what is "normal" in order to keep
+        from generating false positives.
+    </p>
+    <p>
+        Network intrusion systems are a great tool but need a skilled human
+sitting behind it that knows how to interpret the information. When a        <strong><mark>false positive </strong></mark>is detected, you should take steps to
+        try to prevent it from reoccurring. First thing you need to do is
+        gather information on the exploit and take a look at the signature that
+        generated the false positive. Can the rule be tweaked slightly to
+        reduce the chance of generating false positives? When possible, it is
+        always better to tighten rules rather than write exceptions.
+    </p>
+    <p>
+        A <strong><mark>proxy </strong></mark>is actually a running application that acts
+        like a middle man between the two ends of the session. It mediates the
+        outbound request as well as the returning data. Proxies can be deployed
+        as a dedicated service system, such as a proxy that handles only SMTP
+        traffic, or they can be deployed as general purpose firewalls which
+        controls all inbound and outbound traffic across the perimeter. Proxies
+        are powerful tools in that they are capable of fully scrutinizing the
+        payload within the data.
+    </p>
+    <p>
+Proxies are more secure when it comes to dealing with        <strong><mark>fragmentation or payload based attacks</strong></mark>. Because a
+        proxy completely inserts itself between the two communicating systems,
+        it is in a much better position to screen content and secure what gets
+        passed in the data stream. This makes proxy based firewalls better at
+        providing security for the hosts that are being protected.
+        Proxy firewalls do have an Achilles heel however. In order to control
+        the data stream, they must accept inbound connections. This means that
+        all proxies operate with one or more open listening ports which make
+them vulnerable to attack. One option is to leverage        <strong><mark>defense in depth</strong></mark>. Place a Stateful Inspection firewall
+        just behind your router, and utilize proxy based technology behind this
+        initial perimeter. This gives you the best of both worlds and allows
+        you to contain and control any intrusion that may occur into a proxy.
+    </p>
+    <p>
+        It is also possible to dedicate a proxy to a specific direction. For
+        example <strong><mark>forward proxies </strong></mark>only service connections
+        headed to the Internet from the internal network. There are a number of
+        benefits to deploying a forward HTTP proxy. To start, a forward proxy
+        can completely mask all of the tell tale fingerprints inherent in every
+        IP stack and browser. This help to prevent leaking information that
+        could be helpful to someone attempting to enumerate your environment.
+    </p>
+    <p>
+We can also do the reverse, referred to as a        <strong><mark>reverse proxy</strong></mark>, in order to service inbound connections
+        to our Web server. A reverse proxy can help augment security as well as
+        performance. This is how it works. The IP address for the HTTP proxy is
+        given the DNS entry of "www". The actual Web server has no DNS entry
+        and in fact is completely inaccessible from the Internet. When a user
+        attempts to access "www", they are directed to the proxy. The proxy
+        then receives the connection and processes it accordingly. For example
+        we could configure the proxy to filter out any POST requests. This
+        would help to prevent Internet based attacks that rely on writing to
+        the Web server. The proxy would then forward the request to the actual
+        Web server.
+    </p>
+    
+       
+        <a name="_bookmark2"></a>
+        Lecture 4: Firewall Rules
+    
+    <p>
+When the firewall receives a packet, it compares the packet to the        <strong><mark>rule base</strong></mark>, starting with the first rule. It then
+        compares the packet to every rule in order until it finds a rule that
+        matches. The packet is then applied to the first rule that matches. If
+        no rule is found to match, the implicit deny should drop it.
+    </p>
+    <p>
+        <strong><mark>Rule order </strong></mark>
+        is critical to both security and performance. Place more specific rules
+        before general rules to keep your security policy from breaking. For
+        example place a list of banned IP addresses prior to your rule allowing
+        all Internet users HTTP access to your Web server. When possible, put
+        more commonly used rules first. For example if your Web server receives
+        more traffic than your mail server place the HTTP rule first.
+    </p>
+    <p>
+        While it's possible to <strong><mark>scale up firewall management </strong></mark>to
+        an impressive size, the trade off is an increase in complexity. With
+        complexity comes a greater chance of mistakes, and thus security
+        problems. All access should be strictly documented as to why it's in
+        place, and
+        maybe a third party should be charged with auditing and testing the
+        firewall policies on a regular basis. Clearly the need for checks and
+        balances increases as your firewall management becomes more complex.
+    </p>
+    <p>
+        <strong><mark>Principle of Least Privilege</strong></mark>
+        : we could create a policy that only lets out specifically what we know
+        we need to do business. The strength here of course is a much better
+        security posture. The problem with this option however is that it
+        requires a higher level of administration. Since you are only letting
+        out what you need to, you are constantly re- evaluating your
+        requirements and changing the firewall policy as needed. As we
+        mentioned earlier, the more changes you make the greater the likelihood
+        that you will break something. You also need to figure out how to deal
+        with non-standard services like legitimate Web servers that are
+        listening on ports other than TCP/80.
+    </p>
+    <p>
+        We should strive for only allowing out what is actually needed. If this
+is not possible, try specifically        <strong><mark>blocking critical services </strong></mark>but let everything else
+        out. For example we could block outbound NetBIOS/IP, SNMP, TFTP and
+        Syslog but let out all other protocols. This is not as secure as
+        letting out only what is specifically needed, but it's better than just
+        blindly letting out all traffic from your internal network.
+    </p>
+    <p>
+        So we want to do alerting on firewall events, the question is how do we
+        implement this? The problem is firewall matches may not be the only
+        condition we wish to alert on. For example we may wish to see alerts if
+        our intrusion system detects suspicious activity or if we have a host
+        that has become compromised. What we would like to avoid is creating a
+        number of separate alerting systems that will all require individual
+        maintenance. With this in mind, <strong><mark>centralized alerting </strong></mark>
+        on firewall events may be our best bet.
+    </p>
+    <p>
+        <strong><mark>Testing the firewall </strong></mark>
+        after an initial install or when making any rule changes cannot be
+        stressed highly enough. Until you have confirmed your policy, do not
+        just assume that your perimeter is safe. The tools of choice for
+        performing this testing are nmap and tcpdump. You use nmap to run a
+        series of scans and tcpdump on the other side of the firewall to verify
+        that the traffic pattern did not punch through.
+    </p>
+    <p>
+When possible we want to think ahead a bit and        <strong><mark>tweak the firewall policy </strong></mark>so that it makes log review
+        easier. The idea is to sort detected traffic patterns so that they
+        become easier to review at a later date.
+    </p>
+    <p>
+        Also keep in mind that adding signatures to your firewall policy does
+        increase processing time and affect performance. Keep an eye on your
+        firewall's throughput as you add additional rules. Still, the minor
+        performance hit may more than make up for the time saved in log review
+        and being able to run real-time alerts.
+    </p>
+
+        <a name="_bookmark3"></a>
+        Lecture 5: Perimeter Assessment
+    
+    <p>
+        There are quite a few reasons why your perimeter may not control
+        traffic in the manner you expect. The most popular is misconfiguration,
+and bugs or idiosyncrasies in the vendor's software implementation.        <strong><mark>Validating the perimeter </strong></mark>is functioning as expected
+        permits you to find these problems before an attacker does.
+    </p>
+    <p>
+As part of your checks, don't forget to        <strong><mark>review the logs </strong></mark>to ensure that all of your test probes
+        were properly logged. Remember that stopping the suspicious traffic
+        pattern is only part of the firewall's job. It should also give the
+        local security administrator a heads up that the suspicious pattern
+        occurred.
+    </p>
+    <p>
+        <strong><mark>Perimeter tests</strong></mark>
+        <strong><mark> </strong></mark>
+        to be performed:
+    </p>
+    <p>
+        &#183; Port scans of external/internal IP
+    </p>
+    <ul>
+        <li>
+            Source routed packets
+        </li>
+        <li>
+            Fragmented packets
+        </li>
+        <li>
+            Spoofed source IP addresses
+        </li>
+        <li>
+            Various flag values
+        </li>
+        <li>
+            Inbound/outbound policy test
+        </li>
+    </ul>
+    <p>
+        The idea is to throw unusual packets at the firewall and see how it
+        handles them. For example, the <strong><mark>fragment testing </strong></mark>should
+        allow us to answer all of the following questions: Can the firewall
+        pass legitimate fragments? Does the firewall simply drop the first
+        fragment or does it perform reassembly before matching rules? Can rules
+        that check header or payload content be circumvented with
+        fragmentation? Are obviously crafted fragments filtered out?
+    </p>
+    <p>
+        With the answers to these questions, we can better decide how to handle
+        fragments that make it through the firewall. For example, let's say our
+        firewall does a good job handling fragments, but the content checking
+        can be circumvented with <strong><mark>fragmentation</strong></mark>. With this in
+        mind, we may wish to install an outbound HTTP proxy to eliminate the
+        problem. What if our firewall simply passes all non-first fragments? In
+        that case we may wish to watch fragments more closely with our IDS,
+        install another firewall that provides better fragment protection, or
+        possibly replace the firewall we are currently using.
+    </p>
+    <p>
+Sometimes the problem can be fixed with a simple        <strong><mark>rule change</strong></mark>. For example one of the tests was to see
+        if unrestricted access was permitted to outbound ICMP error packets.
+        For a firewall failing this test, it should be a simple matter of
+        implementing an outbound
+        rule that filters these patterns. Of course you don't know to block
+        this unless you know it's a problem.
+    </p>
+    
+       
+             Lecture 6: Host Level Security
+    
+    <p>
+        <strong><mark>Principles of Host Security</strong></mark>
+        :
+    </p>
+    <p>
+        &#183; Disable all unnecessary local services, listening ports, and
+        applications.
+    </p>
+            Whatever is left, lock it down
+    </ul>
+    <p>
+        <strong><mark>Split DNS </strong></mark>
+        is an architectural concept. It is the logical splitting of your
+        external name resolution and your internal name resolution. This means
+        you will need two different sets of DNS servers, one set to service
+        your internal network and another to service the rest of the Internet.
+        Whether you choose to manage one or both of these sets of DNS servers
+        is obviously a management decision.
+    </p>
+    <p>
+        <strong><mark>Zone transfers </strong></mark>
+        are how secondary DNS servers update their zone databases from the
+        primary (SOA) DNS servers. You want to ensure that your primary DNS
+        server is limiting zone transfers to only the appropriate secondary DNS
+        servers. Secondary DNS servers should not be allowing zone transfers.
+        Zone transfers are an easy and quick method for mapping your
+        organization's network.
+    </p>
+    <p>
+        <strong><mark>Host based intrusion protection systems (HIPS) </strong></mark>
+        are an effort to move protection against network based attacks onto the
+        hosts themselves. There are many benefits with this methodology. To
+        start, network based protection begins to break down when dealing with
+        technologies such as switching, encryption or when multiple attack
+        vectors are possible (Internet, wireless, business partner connections,
+        etc.). By moving protection onto the host, these problems are
+        eliminated. On the downside, we increase the number of instances of
+        security software on the wire so centralized management becomes key to
+        a successful deployment.
+    </p>
+    <p>
+        <strong><mark>SELinux </strong></mark>
+        can provide an extremely high level of security for Linux environments.
+        Beyond that, it makes an excellent security model that can be adapted
+        by other operating systems. SELinux has been implemented directly into
+        the Linux kernel which means it can have absolute control over what
+        goes on within the system. SELinux is policy-based and provides
+        granular control over what a running process is permitted to do to a
+        system. If we can quantify the level of access required by each running
+        application, we can ensure that it never misbehaves by doing something
+        unexpected.
+        SELinux is deployed using one of two possible implementations. The
+        first is described as "targeted", the second is defined as "strict".
+        When running in <strong><mark>targeted mode</strong></mark>, SELinux is told to only
+        control the operation of certain applications. Everything else is
+        permitted to run unconfined relying on security built into the
+        operating system to keep it secure (file permissions, restrictions on
+        process owner, etc.). While this policy seems pretty loose, it can
+        actually be quite effective. Our biggest threat comes from applications
+        that hold open a listening socket. If we target in on writing policies
+        for those applications, we can secure the remote entry points into the
+        system.
+    </p>
+    <p>
+        With <strong><mark>strict mode</strong></mark>, all applications require a policy in
+        order to run on the system. While this is certainly the most secure
+        method of operation (an undefined backdoor process would not be allowed
+        to execute in memory), it is also the most complex. Every single
+        executable on the system requires an access control policy. Needless to
+        say these configurations can become extremely complex. Management also
+        becomes more difficult as systems which serve different roles within
+        your environment (Web server, SMTP server, administrator's desktop,
+        etc.) may require drastically different policies.
+    </p>
+    <p>
+        When you configure SELinux for operation, you have to choose between
+"permissive" and "enforcing" operation modes. In        <strong><mark>permissive mode</strong></mark>, we simply log all actions that appear
+        to break policy. This is the safest mode to run in if you are worried
+        about breaking an application. When <strong><mark>enforcing mode </strong></mark>is
+        in effect, all controlled applications are restricted to operations
+        defined within the policy. If an application tries something
+        unexpected, the activity is blocked and logged.
+    </p>
+    <p>
+Unfortunately HIPS does not cure all that ails us. While        <strong><mark>whitelisting </strong></mark>what an application is permitted to do on
+        a system can be a powerful security tool, it become cumbersome give the
+        large number of applications that are available. Imagine having to
+        create behavioral white lists for the thousands of Windows applications
+        that could potentially see use in a corporate environment!
+    </p>
+    <p>
+        Remember that the strength of HIPS is to protect us from attacks over
+        the wire. This may be overkill for applications that do not interface
+        with the network. If an application is not communicating with network
+        sockets, it may be sufficient to simply determine whether we wish to
+        grant the user permission to run the application on their system.
+        Application control has the ability to fill this niche.
+    </p>
+    <p>
+        <strong><mark>Application Control </strong></mark>
+        permits enforcement of "acceptable use" policy regarding software. By
+        taking control of the software your end users can install on their
+        system, you can limit access to only those applications that have been
+        certified for use. If the permitted
+        software has been properly vetted, risk to the overall environment is
+        dramatically reduced.
+    </p>
+    <p>
+        One of the biggest problems we face is... that malicious patterns have
+        a tendency of sneaking past existing security devices if the attack is
+        of an <strong><mark>unknown signature</strong></mark>. Application control resolves
+        this problem by restricting what can actually be run on the system. If
+        an end user receives an unknown malicious file via e-mail, an
+        application control system will prevent the file from executing. Note
+        that what we've done is change the paradigm. We gone from "react to
+        files that are known to be bad" to "react to files that are not known
+        to be good".
+    </p>
+    <p>
+While application control can deal with        <strong><mark>rogue applications </strong></mark>and malicious code, the technology
+        is not designed to deal with threats against existing software such as
+        exposed services with remote exploits. It will provide secondary
+        protection by preventing the exploit from writing a toolkit to the file
+        system, but a host based intrusion prevention system is better suited
+        to this task. Same is true for memory level attacks that do not record
+        information to the file system. While these attacks are rare, a host
+        based intrusion prevention system is again better suited to neutralize
+        them.
+    </p>
+    
+       
+        <a name="_bookmark5"></a>
+        Lecture 7: Vulnerability Assessment and Auditing
+    
+    <p>
+        A <strong><mark>vulnerability scanner </strong></mark>is a tool which will check
+        specified target hosts for known vulnerabilities. The vulnerability
+        scanner usually references an included database which has records for
+        each known vulnerability. The scanner then probes remote hosts to
+        identify which hosts have tell tale signs of being vulnerable to each
+        of the database's listed vulnerabilities.
+    </p>
+    <p>
+        There are two common methods used to perform vulnerability checking.
+        The first method is simple <strong><mark>banner grabbing</strong></mark>. For
+        example, a vulnerability scanner may do nothing more than connect to
+        TCP/80 and record the banner presented by the Web server. The
+        vulnerability scanner then references a database and prints out all
+        known vulnerabilities related to that software version. The up side
+        here is that we can perform quick tests without fear of hurting our
+        server. On the down side the scanner can easily report erroneous
+        information because of simple banner manipulation.
+    </p>
+    <p>
+        The second option is to actually <strong><mark>try the exploit </strong></mark>or
+        some portion there of. While this method is more dangerous (it could
+        crash the server), it is far more accurate. For example, with the first
+        method you could fool the vulnerability scanner by simply changing the
+        reported version. Obviously, the second method would not be fooled by
+        this rudimentary trick.
+    </p>
+    <p>
+        The goal of a <strong><mark>vulnerability assessment </strong></mark>is to identify
+        if there are configuration problems or missing patches from a system.
+        With regards to patches, there are a number of ways we can perform this
+        verification. The first is to see what version of software is
+        registered with the system. Another option is to perform an integrity
+        check of the files on the system.
+    </p>
+    <p>
+        An <strong><mark>audit</strong></mark>, simply put, is verification of the integrity
+        of a system. When you perform an audit, you are insuring that only
+        authorized access has taken place and all changes made to the system
+are in accordance with your security policy. A        <strong><mark>baseline audit </strong></mark>is simply the process of collecting
+        information about a known to be secure system (say before it is
+        deployed on the network) in order to create a "baseline". At later
+        intervals, you can then check the current system status against this
+        baseline in order to ensure its integrity is still intact. A good audit
+        should leave as few clues as possible that a regular audit is being
+        performed. Armed with the knowledge of what you audit and how, a
+        potential attacker will take steps to try and cover their tracks.
+    </p>
+    <p>
+        Even though we will try to make our audits as complete as possible,
+        this does not mean we will be able to detect every single system
+compromise. When an operating system is infected at the        <strong><mark>kernel level </strong></mark>the malicious code effectively becomes
+        part of the operating system itself. This means that it has full
+        control of all system checks and data reporting. So it might be obvious
+        to our tool that something is amiss on the system, but if the malicious
+        code does not permit our tool to report this information we are out of
+        luck.
+    </p>
+    
+       
+        <a name="_bookmark6"></a>
+        Lecture 8: Authentication and Encryption
+    
+    <p>
+        <strong><mark>Secure Socket Layer (SSL) </strong></mark>
+        is really a framework that pulls together a bunch of other
+        specifications and defines how they will all work together. For
+        example, SSL does not specify how to encrypt the data, it simply
+        defines which algorithms are supported and leaves it to each
+        specification to define how data privacy will be implemented.
+    </p>
+    <p>
+        <strong><mark>Secure Shell (SSH) </strong></mark>
+        is a secure alternative to clear text applications such as Telnet and
+        FTP. It uses TCP/22 by default to communicate and encrypts all data
+        after the initial protocol negotiation. Even the logon name is
+        protected from prying eyes. Additionally, SSH has the ability to tunnel
+        just about any service between two hosts. SSH can be used to create
+        network-to-network VPNs. This is done by tunneling services and mapping
+        them to local listening ports.
+        <strong><mark>IPSec </strong></mark>
+        has three distinct phases. In the first phase, initial authentication
+        takes place. This is the initial verification that both ends of the
+        connection are in fact who they claim to be. The process can be as
+        simple as exchanging the hash of a pre-programmed password (known as "a
+        shared secret"). This initial authentication can also leverage
+        technologies such as LDAP or PKI.
+    </p>
+    <p>
+In phase two, the parameters of the        <strong><mark>Virtual Private Network (VPN) </strong></mark>are negotiated. The two
+        end points negotiate things like "What kind of encryption will be
+        used?", "What security services will be supported?", and even "How
+        often should we create new encryption keys?". In the final phase, the
+        actual VPN is initialized and data is transferred in a protected
+        format.
+    </p>
+    
+       
+        <a name="_bookmark7"></a>
+        Lecture 9: Secure Design
+    
+    <p>
+It is important to think of a proper        <strong><mark>security solution </strong></mark>in terms of a complete system. In
+        other words, no single solution will ever provide enough security to
+        reduce risk to an acceptable level. We will typically want to connect
+        multiple solutions into an overall security posture. The trick is
+        identifying you greatest levels of risk so that security can properly
+        be applied.
+    </p>
+    <p>
+        Achieving zero risk is not going to happen unless we shut everything
+        down and stop doing business. As a security professional, it is easy to
+        get caught up in trying to reduce risk to as close to zero as possible.
+        From a business standpoint however, <strong><mark>risk reduction </strong></mark>
+        needs to be balanced against other requirements like budget and work
+        flow.
+    </p>
+    <p>
+        You may find it useful to define <strong><mark>security zones </strong></mark>within
+        the network. A security zone is simply a numeric indicator of how much
+        security is required in that segment. It is also an indication of the
+        trustworthiness of that portion of the network. Why is defining
+        security zones important? Because they will help you decide how to best
+        allocate security resources when protecting your network.
+    </p>
+    <p>
+        <strong><mark>Border routers </strong></mark>
+        should be stand alone devices (not virtualized on the same hardware
+        with other internal routers). They can provide a minimal level of
+        security, including verifying that the firewall remains in a secure
+        state. The <strong><mark>stateful firewall </strong></mark>sitting behind the router
+        needs to remain a trusted host. This device will be our gatekeeper for
+        controlling inbound traffic flow, as well as identifying internal hosts
+        which may become compromised.
+    
+    Once the stateful firewall controls traffic at a port level, we can look to
+other technology for analyzing the payload information.    <strong><mark>Proxies </strong></mark>give us our best security, but can be replaced by
+    a NIPS solution if bandwidth demands it. We can also leverage NIDS
+    technology to detect abnormal traffic patterns or known attack signatures.
+</p>
+<p>
+    The <strong><mark>Demilitarized Zone (DMZ) </strong></mark>contains systems that are
+    exposed to direct attack. The value of this security zone is probably going
+    to be much lower than any of your internal segments. With this in mind, you
+    would probably want to use a different physical switch than the one used
+    for the administrative and HR folks. While we could certainly create VLANs
+    on the DMZ using this second switch, what we want to avoid is creating a
+    potential software bridge that could connect the DMZ to an internal
+    segment, thus bypassing the firewall.
+</p>
+<p>
+    <strong><mark>Encryption </strong></mark>
+    can be our best friend but also our worst nightmare. It can be used to
+    protect our confidential transmissions, but it can also be used by
+attackers to hide their tracks. Basically, you have two options: 1) Avoid    <strong><mark>end to end encryption </strong></mark>&#8212; This will permit you to
+    leverage your network security devices to validate the data stream. 2)
+    Permit end to end encryption &#8212; All verification must be done on the
+    host system. With the first option we only encrypt data as it moves over
+    security zones with a low level of trust. This way we can verify security.
+    If we go with the second option, we must secure the stream after it is
+    decrypted. Namely, on the host itself. This severely limits our security
+    options.
+</p>
+
+   
+    <a name="_bookmark8"></a>
+    Lecture 10: Information Enumeration
+
+<p>
+    The best place to learn about anyone connected to the Internet is to start
+    by querying the <strong><mark>whois databases</strong></mark>. These databases include
+    information such as administrative contacts as well as IP address
+    information. One nice thing about starting with the whois databases is that
+    it generates no direct traffic at the target itself. In other words, our
+    whois queries will not generate any firewall or system log entries at the
+    network we wish to attack.
+</p>
+<p>
+    So how do you access the <strong><mark>perimeter security</strong></mark>? We tell nmap
+    to perform two port probes, one with the SYN flag set and another with the
+    ACK flag set. If a RST is returned in both cases, there is no firewall. If
+    the ACK returns a RST but the SYN does not, a static packet filtering
+    firewall is in the way. If neither probe returns a RST, there is a stateful
+    or proxy firewall protecting the host.
+</p>
+<p>
+    Once <strong><mark>open ports </strong></mark>have been identified, it's a simple matter
+    of doing some banner grabbing to find out what software is running. Once we
+    know the software and version numbers used, we can start digging for a
+    working exploit.
+</p>
+
+
+<!-- END MAIN -->
+</div>
+
+
+</body>
+</html>

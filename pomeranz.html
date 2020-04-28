@@ -1,0 +1,1108 @@
+<html>
+<title>SANS Notes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="w3-theme-black.css">
+<link rel="stylesheet" href="roboto.css">
+<link rel="stylesheet" href="font-awesome.min.css">
+
+
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 350px;
+  top: 35px;
+  bottom: 0;
+  height: inherit;
+  text-align: justify;}
+</style>
+
+<body>
+
+<!-- Topbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-small">
+    <a class="w3-bar-item w3-theme-l1"><i class="fa fa-bars"></i></a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-small w3-theme-l5" id="mySidebar">
+  <a class="w3-button w3-hover-black" href="cole.html">SEC 401 - Security Essentials, Cole</a>
+  <a class="w3-button w3-hover-black" href="beaupre.html">SEC 460 - Threat/Vulnerability Management, Beaupre</a>
+  <a class="w3-button w3-hover-black" href="cole2.html">SEC 501 - Enterprise Defender, Cole</a>
+  <a class="w3-button w3-hover-black" href="brenton.html">SEC 502 - Perimeter Protection, Brenton</a>
+  <a class="w3-button w3-hover-black" href="novak.html">SEC 503 - Intrusion Detection, Novak</a>
+  <a class="w3-button w3-hover-black" href="strand.html">SEC 504 - Hacker Tools, Strand</a>
+  <a class="w3-button w3-hover-black" href="pomeranz.html">SEC 506 - Linux/Unix Security, Pomeranz</a>
+  <a class="w3-button w3-hover-black" href="hoelzer.html">SEC 507 - Auditing Networks, Hoelzer</a>
+  <a class="w3-button w3-hover-black" href="misenar.html">SEC 511 - Continuous Monitoring, Misenar</a>
+  <a class="w3-button w3-hover-black" href="skoudis.html">SEC 517 - Cutting Edge Hacking Techniques, Skoudis</a>
+  <a class="w3-button w3-hover-black" href="strand2.html">SEC 550 - Offensive Countermeasures, Strand</a>
+  <a class="w3-button w3-hover-black" href="henderson.html">SEC 555 - SIEM with Tactical Analytics, Henderson</a>
+  <a class="w3-button w3-hover-black" href="skoudis2.html">SEC 560 - Network Penetration Testing, Skoudis</a>
+  <a class="w3-button w3-hover-black" href="wright.html">SEC 561 - Hands-On Hacking Techniques, Wright</a>
+  <a class="w3-button w3-hover-black" href="vest.html">SEC 564 - Red Team Operations, Vest</a>
+  <a class="w3-button w3-hover-black" href="tarala.html">SEC 566 - Implementing Critical Security Controls, Tarala</a>
+  <a class="w3-button w3-hover-black" href="baggett.html">SEC 573 - Automating InfoSec with Python, Baggett</a>
+  <a class="w3-button w3-hover-black" href="buggenhout.html">SEC 599 - Defeating Advanced Adversaries, Buggenhout</a>
+  <a class="w3-button w3-hover-black" href="wright2.html">SEC 617 - Wireless Ethical Hacking, Wright</a>
+  <a class="w3-button w3-hover-black" href="searle.html">SEC 642 - Web App Penetration Testing, Searle</a>
+  <a class="w3-button w3-hover-black" href="sims.html">SEC 660 - Advanced Penetration Testing, Sims</a>
+  <a class="w3-button w3-hover-black" href="sims2.html">SEC 760 - Advanced Exploit Development, Sims</a>
+  <a class="w3-button w3-hover-black" href="lee.html">FOR 408 - Windows Forensic Analysis, Lee</a>
+  <a class="w3-button w3-hover-black" href="lee2.html">FOR 508 - Incident Response Forensics, Lee</a>
+  <a class="w3-button w3-hover-black" href="hagen.html">FOR 572 - Advanced Network Forensics, Hagen</a>
+  <a class="w3-button w3-hover-black" href="zeltser.html">FOR 610 - Reverse-Engineering Malware, Zeltser</a>
+  <a class="w3-button w3-hover-black" href="cole3.html">MGT 414 - CISSP, Cole</a>
+</nav>
+
+<div class="w3-main" style="margin-left:350px">
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h2 class="w3-text-teal"></h2>
+
+  <h2>  Linux/Unix Security, Hal Pomeranz</h2>
+<p>
+    As far as the "how" goes, there are a large number of Unix security
+    "recipes" out there on the Internet for many, many different operating
+    systems. The free <strong><mark>CIS hardening "benchmarks"</strong></mark> at
+    CISecurity.org are a good place to start if you want to "translate" the
+    guidance in this course into actionable commands on different Unix and
+    Linux variants.
+</p>
+<p>
+    What are the most important things I can do to secure my Unix-like system?
+The biggest component is to    <strong><mark>present as small a target as possible</strong></mark> by reducing the
+    number of potential vulnerabilities on your system. This process starts
+    from the moment you install the system with the smallest, most "minimal" OS
+    image that will allow you to successfully run your application. Patches
+    need to be applied to the base OS image and then maintained for the
+    lifetime of the machine.
+</p>
+<p>
+    Perhaps the most important task is to <strong><mark>disable services</strong></mark>
+    that are not being used so that you're not exposed to as yet unknown
+    vulnerabilities in these services. Sometimes you can't completely disable a
+    service, but you can use a host-based firewall or some other IP-based
+    access control to restrict which machines may have access to that service.
+</p>
+<p>
+    Memory attacks of various sorts- buffer overflows, heap overflows, return
+    to libc attacks, format string attacks, and so on, have become an
+    enormously popular mechanism for gaining remote access to systems.
+</p>
+<p>
+    A <strong><mark>buffer overflow exploit</strong></mark> attempts to write past the end
+    of the allocated string buffer and clobber the return execution address. If
+    successful, the program will not return to the original calling function
+    but will instead jump to some other malicious instruction created by the
+    attacker. Attackers overflow buffers by sending the program long input
+    strings (via input prompts in the program, environment variables, Remote
+    Procedure Calls, etc.). These attacks succeed because many programmers
+    don't always check the length of the input they receive and happily accept
+    long inputs which can be used to overwrite memory in this fashion.
+</p>
+<p>
+    The classic buffer overflow attacker constructs a string which contains a
+    bunch of "no-op" instructions for padding, then the nasty code, then the
+    evil instruction address repeated many, many times. The instruction address
+    is repeated because the attacker can never really be exactly certain where
+    the return pointer is relative to the buffer they're overflowing.
+</p>
+<p>
+    The most common evil instruction set is a variant of the exec () system
+    call which replaces the current process with a new process. The "classic"
+    buffer overflow described in Aleph's paper uses exec (/bin/ sh) , which
+    gives the attacker an interactive shell, but newer attacks will typically
+    run a more complicated script that downloads rootkits and possibly
+    additional exploit code to compromise the system and make it into part of a
+    botnet for DDoS attacks or spamming.
+</p>
+<p>
+    Well-behaved programs should never execute code in any other portion of
+    memory, e.g., from the stack or heap areas. The "fix" for most buffer
+    overflow attacks is to simply modify the kernel so that attempting to
+    execute an instruction in the stack area causes the program to abort. This
+    behavior is generally referred to as <strong><mark>stack protection</strong></mark>.
+</p>
+<p>
+    Stack protection is enabled by default in Linux since kernel version 2.6.8-
+    at least on 64-bit CPUs. noexec user stack enables stack protection. The
+    noexec user stack log setting causes the kernel to log to syslog when it
+    shuts down an application that is violating the stack protection rules.
+</p>
+<p>
+    While kernel-based stack protection can stop buffer overflows in any
+    application running on the machine, work is also being done to develop
+    compilers that produce executable code that is resistant to buffer
+    overflows. This is of particular interest on platforms where kernel-based
+    stack protection is not available but is also used in conjunction with
+    normal kernel-based stack protection.
+</p>
+<p>
+    The idea is that an additional data value called a "<strong><mark>canary</strong></mark>
+    " (as an analogy to the canaries coal miners use to warn them of toxic
+    gasses) is inserted into the normal stack frame between the return address
+    pointer and the subroutine variables area. Any classic buffer overflow
+    exploit that overflows the data area and writes downward to the return
+    address pointer is also going to overwrite the canary value (although this
+    is not true in a format string attack). As part of the normal subroutine
+    exit sequence, the canary value is checked. If the value changes, then the
+    program simply aborts itself rather than returning to the memory address in
+    the (probably corrupted) return address pointer.
+</p>
+<p>
+    &#8226; <strong><mark>Disable services</strong></mark> that are not absolutely necessary
+    for accomplishing your mission. The best way to prevent an attacker from
+    exploiting a vulnerability on your system is to not be running the
+    vulnerable software in the first place.
+</p>
+<p>
+    &#8226; Keep up-to-date on security announcements and patches from your
+    vendor. Don't get victimized by vulnerabilities that have been known for
+    months. Most vendors have security alert mailing lists you can subscribe to
+    for timely updates.
+</p>
+<p>
+    &#8226; Use <strong><mark>strong encryption</strong></mark> to protect the data flowing
+    between client and server. Strong encryption is also the only real
+    protection you have from session hijacking.
+</p>
+<p>
+    &#8226; Only grant access to systems that have a legitimate need to access
+    a given service.
+</p>
+<p>
+&#8226; As much as possible, try to run "    <strong><mark>one app per server</strong></mark>" so that a vulnerability in one service
+    doesn't end up compromising another. Some applications also allow
+    administrators to run them in a restricted environment via the chroot ()
+    system call (more on this later in the curriculum).
+</p>
+<p>
+    &#8226; Where possible, avoid running applications with root privilege, so
+    that if an attacker does get access to the system, there are some limits on
+    what they can do. <strong><mark>Kernel-based privilege restriction</strong></mark>
+    solutions like SELinux are also helpful here.
+</p>
+<p>
+    From a security perspective, you want to choose the smallest set of OS
+    programs possible for your application because each piece of software you
+    add might have a security vulnerability that could be used to exploit your
+    system. It also turns out that smaller OS images are also a win from a
+    system stability perspective (less that could go wrong) and from a
+    performance perspective (less stuff is running and consuming system
+    resources, and the system boots much quicker if it doesn't have to start
+    dozens of different daemons at boot time).
+</p>
+<p>
+There are lots of different classes of    <strong><mark>potentially dangerous services</strong></mark> out there:
+</p>
+<p>
+    &#8226; File sharing via NFS and Samba is certainly dangerous for Internet
+    servers and should be disabled.
+</p>
+<p>
+    &#8226; NIS and other RPC-based services are also incompatible with
+    security in hostile, unprotected network environments. Most of the recent
+    worms and other Unix exploits seem to have been targeting vulnerable RPC
+    services.
+</p>
+<p>
+    &#8226; Apache is fine if you're a Web server, but if you're not then why
+    run httpd? Disable printing if you don't print, SNMP if you're not
+    monitoring your machines this way, etc.
+</p>
+<p>
+    &#8226; I find many of the "convenience" features like power management and
+    volume managers to be more annoying than helpful. Volume managers also make
+    it easy for users and attackers with physical access to compromise your
+    system with tools and set-UID programs brought in on USB and DVD.
+</p>
+<p>
+    &#8226; If you only manage the system over the network, do you need that
+    GUI login running on your machine's console (and the X server that goes
+    with it)?
+</p>
+<p>
+    You can simply disable the 25/tcp listener on all of the Unix systems in
+    your environment that are not acting as mail servers. It's possible that
+    you could have 25/tcp shut down on all Unix machines because none of them
+    act as mail servers. This would be a huge security win since it protects
+    you from future potential e-mail-based exploits and worms.
+</p>
+<p>
+    Having stopped a service, remove its configuration files: &#8226;
+    inetd/xinetd config files and directories &#8226; NFS, automounter config
+    files &#8226; Other server configs, server home dirs &#8226; Useless
+    crontab files
+</p>
+<p>
+    The idea behind removing these files is to make auditing your system
+    easier. If any of these files reappear on your system you will know that
+    something is far wrong with your machine. Also, removing the configuration
+    file for a service will often prevent that service from starting normally
+    if somebody (accidentally or on purpose) re-enables that service.
+</p>
+<p>
+    <strong><mark>Session hijacking</strong></mark>
+    is an attack where the bad guy takes over a network session already in
+    progress. If the attacker manages to take over your session after you've
+    logged into a server and become root, then the attacker has suddenly
+    achieved a root shell without ever guessing a single password! Naive users
+    may be completely unaware that this has happened, just writing the event
+    off to a brief network outage that caused their session to lock up or be
+    reset.
+</p>
+<p>
+    <strong><mark>Encryption</strong></mark>
+    not only protects the transmitted data but also makes session hijacking
+    essentially impossible. In order to hijack an encrypted session, the
+    attacker would have to determine the session key being used to encrypt the
+    data between client and server. For a decent cryptosystem, this should be
+    "computationally infeasible".
+</p>
+<p>
+    If you look at most of the remote SSH exploits, the vulnerabilities have
+    occurred in the very early stages of the connection process. In particular,
+    a goodly number of the attacks have been due to vulnerabilities in things
+    like the OpenSSL encryption libraries or the Kerberos and S/Key libraries
+    used during authentication, rather than in the SSH code base per se. Hence,
+    these have been vulnerabilities that are largely out of the control of the
+    SSH developers.
+</p>
+<p>
+    <strong><mark>Host based firewalls</strong></mark>
+    can be used to restrict what network traffic the system will accept,
+    further reducing the number of entry points for external attackers. As
+    network-layer perimeter security mechanisms become increasingly porous to
+    attack, implementing filtering on individual systems becomes more and more
+    important.
+</p>
+<p>
+    <strong><mark>Network layer filtering</strong></mark>
+    not only is the first line of defense against external attackers but is
+    also the place where you prevent obviously bogus traffic from reaching your
+    hosts. For example, spoofed traffic (traffic from "outside" that is sourced
+    from an internal IP address) can be dropped, along with traffic from
+    reserved address spaces (the loopback network 127.0.0.0/8 and the RFC1918
+    network space). Source-routed traffic, maliciously fragmented traffic, and
+    directed broadcasts can also be shut down.
+</p>
+<p>
+    The loopback interface is the only place you should be seeing net
+    127.0.0.0/8 traffic. So, once we've created rules to pass the loopback
+    traffic, we can add a rule to drop any other traffic trying to reach the
+    box that purports to come from this network ("- s " to specify source
+address). This is an example of what's usually referred to as an    <strong><mark>"anti-spoofing" filter</strong></mark>.
+</p>
+<p>
+    You could sit on the console of the system entering all of these iptables
+    commands by hand. The risk, however, is that you make a typo, or forget to
+    add a rule or make some other trivial error that causes your firewall to
+    fail. A much better approach would be to create a script file with all of
+    your iptables commands. When you want to make a change, all you have to do
+    is tweak the script and then re-run it. You can also run the same script on
+    multiple systems to have a consistent policy.
+</p>
+<p>
+    <strong><mark>IP Tables</strong></mark>
+    is capable of limiting both the number of connections and the bit rate on
+    those connections in both the inbound and the outbound direction. IP Tables
+    can do network address translation and even other types of packet mangling
+    inline.
+</p>
+<p>
+    &lt; ----------------------- &gt;
+</p>
+<p>
+    One common scenario is deploying <strong><mark>backdoors</strong></mark> into already
+    compromised systems. An attacker who breaks root on your machine probably
+    doesn't want to go through whatever hassle was required to break root
+    initially. Besides the original root compromise may have been "noisy"
+    enough that the attack was detected, and the hole closed. However, if the
+    administrator fails to detect the backdoor left behind by the attacker,
+    then the attacker still has free access to the system.
+</p>
+<p>
+    The typical rootkit will deliver Trojan versions of ls, find, dir and any
+    other command that an administrator might use to detect the hidden files.
+    In many cases, the <strong><mark>Trojaned binaries</strong></mark> will reference a
+    configuration file that lists the files and directories that should be
+    hidden. Sometimes the malicious binaries will ignore files and directories
+    that contain a particular string somewhere in the file or directory name.
+</p>
+<p>
+    <strong><mark>Rootkits</strong></mark>
+    also want to hide running processes (like the DDoS daemons and the
+    rootkits&#8217; packet sniffer) from the administrator. Rootkits will
+    contain a Trojaned version of ps which hides certain processes-either
+    specific processes or those listed in a configuration file. Similarly, the
+    attacker doesn't want their processes to be stopped by the admin. The kill,
+    p kill, and kill all programs are "fixed" so that they wouldn't actually
+    kill any of the attackers' processes.
+</p>
+<p>
+    <strong><mark>netstat</strong></mark>
+    can be used to detect network connections in progress. Typical rootkits
+    install a new net stat that not only hides the attackers' backdoor
+    connections but also hides connections between the DDoS daemon running on
+    the system and the master controller for the daemon. Similarly, the rootkit
+    will contain replacement Syslog agents that do not log the attacker's
+    activity.
+</p>
+<p>
+    When you get around to wanting to close the holes in your system, your best
+    bet is to simply re-install from scratch and then close the holes on a
+    "virgin" system. Who knows, you might have missed a back-door on the old OS
+    image that would allow the attacker to &#183;re-establish access if you put
+the machine back into production without rebuilding.    <strong><mark>Reinstalling from backups</strong></mark> may be tricky because you can't
+    be certain exactly when your system was compromised.
+</p>
+<p>
+    In the Internet security arms race, though, the growing use of malicious
+    kernel modules gives the attacker the ability to subvert the system kernel
+    and globally change the behavior of all applications running on the system
+    (including the integrity checking tools that the administrator relies on
+    for alerts). Without taking the system offline and booting off a "known
+    good" kernel it may be impossible to detect a sophisticated kernel exploit
+    of this type.
+</p>
+<p>
+    <strong><mark>AIDE</strong></mark>
+    works by initially creating a database of information about files on your
+    system along with checksums it computes on the contents of these files.
+    Files are added to this database based on a configuration file created by
+    the administrator. The database for a machine should be created as soon as
+    the machine is installed and before it gets connected to a production
+    network where it might be compromised.
+</p>
+<p>
+    While it's likely that some of your systems will get broken into at some
+    point in time, this is hopefully a fairly rare occurrence. The other 364
+    days out of the year, AIDE is really good at letting you know when your
+    local administrative staff makes mistakes-either installing patches and
+    clobbering files that they shouldn't or making configuration file updates
+    that they shouldn't. AIDE's greatest long-term value to an organization may
+be its usefulness as a    <strong><mark>change control and configuration management</strong></mark> tool.
+</p>
+<p>
+    AIDE's default is to run only the MDS algorithm against files. This is so
+    that integrity checks (which might look at 10-20K files on a given system)
+    don't bog down the machine too much. However, it is prudent to identify
+    "critical" files on the system and monitor such files with multiple
+    checksum algorithms as a special case.
+</p>
+<p>
+    Certain files and directories should always be checked. These include:
+</p>
+<p>
+    &#8226; Directories like / , /usr, and /var shouldn't change under normal
+    operation (nobody should be adding new files and subdirectories immediately
+    under any of these top-level directories).
+</p>
+<p>
+    &#8226; Keep an eye on root's dot-files-- . rhosts, . shosts, .profile,
+    etc. The .ssh directory for root is very important to watch (especially the
+    authorized_ keys file).
+</p>
+<p>
+    &#8226; Always watch configuration files in / etc. You need to avoid files
+    like syslogd . pid and named . pid, though, which changes all the time.
+    Ditto for files like mnttab and share tab which are generated from other
+    configuration files at boot time.
+</p>
+<p>
+    &#8226; Keep an eye on your crontabs- you don't want anybody adding jobs
+    without your say-so!
+</p>
+<p>
+    &#8226; Your kernel executable file and/or directory (typically something
+    like /unix or /kernel or /bsd, etc.) including the directory that holds
+    your loadable kernel modules
+</p>
+<p>
+    <strong><mark>Critical files</strong></mark>
+    include:
+</p>
+<p>
+    &#8226; System shells (sh, csh, ksh, bash, ... )
+</p>
+<p>
+    &#8226; Daemons (inetd, syslogd, sshd, ... )
+</p>
+<p>
+    &#8226; Authentication (login, su, passwd, ... )
+</p>
+<p>
+    &#8226; Forensic tools (ls, ps, net stat, ifconfig, ... )
+</p>
+<p>
+    It's vital that you watch all bin and lib directories on your system. On
+    most Unix machines this is a surprisingly large collection of directories
+    including not only /usr /bin and /usr /1 ib, but also / sbin and /usr /
+    sbin and /usr / libexec.
+</p>
+<p>
+    l think the "critical" files on your system are files that are likely to be
+    modified by an attacker with a rootkit, including your standard forensic
+    tools (if config, net stat, ps, etc.) and your login programs, daemons, and
+    Unix shells. You might also want to watch important libraries like libc
+    more closely than other files.
+</p>
+<p>
+It's pretty well understood that an attacker with    <strong><mark>physical access</strong></mark> can find a way to get root privileges on a
+    machine. Rebooting into single-user mode, booting off of OS media, and even
+    the old "corrupt the root file system" trick all require one or more
+    reboots of the machine, however. So, it's a good idea to keep an eye on
+    your system logs for suspicious reboots.
+</p>
+<p>
+    Booting off of OS media generally puts you into the system install program,
+    but there's usually an option for dropping out to a shell prompt. This is
+    effectively a root shell, albeit in the limited environment used by the
+    install program. However, once at this shell, the user on the console can
+    mount the local disk drives from the machine and have full root access. For
+    administrators, the easiest thing to do at this point is to blank the
+    password field for the root account in /etc/shadow and reboot normally.
+</p>
+<p>
+    Setting a <strong><mark>boot loader password</strong></mark> means that the system will
+    require the user on the console to enter that password before any "special"
+    boot commands can be used- like booting from CD-ROM, or even booting into
+    single-user mode.
+</p>
+<p>
+    Even if you get this right, though, somebody with physical access to your
+    system can just rip the disk drives out of your machine and mount them up
+    on some other system that doesn't have these sorts of protections. On the
+    other hand, you'd probably notice if this happened to one of your machines,
+    so at least you'd know you bad a problem.
+</p>
+<p>
+    It is possible to set a <strong><mark>BIOS password</strong></mark> that must be entered
+    as soon as the system powers on. The problem is that a BIOS password
+    generally prevents the system from rebooting automatically. BIOS passwords
+    can be helpful on laptops and other personal machines but are generally not
+    advisable on server-type machines.
+</p>
+<p>
+    The question with these boot loader passwords is what password to use. Some
+    sites use the system root password as the boot loader password, but this is
+    actually a bad idea. One problem is that boot loader passwords are often
+    stored insecurely on the system (sometimes in clear text form in
+    configuration files). The other problem is that when a site updates their
+    root passwords, they tend to forget to update the boot loader password.
+</p>
+<p>
+    Experts agree that the best policy is to force users to log in under an
+    unprivileged account and then use su or <strong><mark>sudo</strong></mark> to get root
+    access. This provides maximum audit trail and also forces attackers to
+    compromise two accounts to "get to root."
+</p>
+<p>
+    Of course, in an emergency, it may be necessary to log in as root on the
+    system console to save the system. However, root logins should be
+    restricted to this console device only (and ideally the console is locked
+    up in a secure data center).
+</p>
+<p>
+    Sudo allows the administrator to define a limited set of commands that a
+    given user is allowed to run with privilege- usually as root, although Sudo
+    allows the administrator to define other alternate users that the commands
+    will run as. Each time the user uses Sudo to execute a command, logging
+    data is produced so that the administrator has a complete audit trail in
+    case the user makes a mistake.
+</p>
+<p>
+    When the user wants to run a command with privilege, they execute that
+    command via the sudo program (e.g., "s udo cat /etc/ shadow"). Sudo prompts
+    the user for their own password to verify the user's identity. The user
+    never needs to know the superuser password for the system.
+</p>
+<p>
+    If the user had to enter their password every time, they ran a command via
+    Sudo, it would be a huge hassle. So, what Sudo actually does is prompt the
+    user for their password only on the first command. As long as the user
+    keeps using Sudo to execute commands, Sudo "remembers" that the user
+    entered their password correctly and doesn't prompt again.
+</p>
+<p>
+    Sudo's audit trail only works if the users religiously run the sudo program
+    to execute all commands. However, it's a common tendency for frustrated
+    users to simply run "sudo /bin/ sh" or "sudo /bin/ su" in order to get a
+    root shell. At this point, any commands they type will not be logged by
+    Sudo.
+</p>
+<p>
+    &lt; ----------------------- &gt;
+</p>
+<p>
+    <strong><mark>chroot ()</strong></mark>
+    is a Unix system call that allows a process to give up access to all but a
+    small portion of the file system. This enables programmers to create
+    processes which run in a captive environment and therefore reduce many of
+    the security risks to applications that have to face "hostile" networks-
+    like the Internet.
+</p>
+<p>
+    When a process calls chroot () , it specifies a directory that the process
+    will chroot () into. As far as the calling process is concerned, this
+    directory becomes the root of the Unix file system for that process and the
+    process is only able to access files from the chroot () ed directory and
+    below.
+</p>
+<p>
+One of the primary uses for chroot () is to run networked services in    <strong><mark>captive environments</strong></mark> so that security holes in these
+    services can't be exploited against the entire machine. Typically, these
+    are complex services like FTP, Web servers, and DNS servers or services
+    which are insecure in other ways. In the case of a buffer overflow attack
+    or another remote exploit, even if the attacker gets access to the machine
+    remotely, they won't be able to "see" the entire file system to plant their
+    back-doors.
+</p>
+<p>
+    The problem with running applications in a chroot () ed environment is that
+    the environment itself is often difficult to set up initially. Remember
+    that the process is completely trapped in the chroot () ed directory- all
+    binaries, shared libraries, system devices, configuration files, etc. must
+    be properly configured by the administrator in the chroot () ed hierarchy
+    before the application can be run.
+</p>
+<p>
+    It's not uncommon to find applications which are so deeply intertwined in
+    the operating system that it's effectively impossible to run them in a
+    chroot () ed environment. These sorts of applications should then be
+    allowed to run by themselves on "sacrificial" machines where any security
+    breaches can be more easily contained.
+</p>
+<p>
+    Newer operating systems are starting to implement even more granular
+    process rights restrictions in the kernel, for example, the SELinux hooks
+    in newer Linux kernels and the Privileges functionality in Solaris 10 and
+    later. With this sort of functionality, you can define down to the level of
+    individual files what objects in the operating system a given process may
+    read, write, or execute. Fine-grained control over other system calls is
+    also included. Perhaps if you develop a restrictive enough "white list"
+    privilege model for a given process, then the chroot () call wouldn't be
+    required at all. The difficulty with these fine-grained kernel controls is
+    that they can be extremely complicated to configure.
+</p>
+<p>
+    <strong><mark>SELinux</strong></mark>
+    is a very fine-grained set of access controls implemented in a kernel
+    module. lt actually covers several different types of functionality:
+</p>
+<p>
+    <strong><mark>Multi-level Security (MLS)/Multi-Category Security (MCS)</strong></mark>
+    - These sorts of security controls are typica1ly required at high-security
+    sites that need to rigidly partition different categories of data
+    (unclassified, classified, secret, top secret, etc.) on their networks.
+    Outside of these kinds of environments, however, this level of access
+    control is not widely used or needed.
+</p>
+<p>
+    <strong><mark>Role-Based Access Control (RBAC}-</strong></mark>
+    One historic problem with the Unix security model has been "all or nothing"
+    administrative access via the root account. RBAC is an attempt to address
+    this deficiency by allowing sites to assign specific aspects of
+    administrative privilege to a number of different roles. The end game would
+    be to completely disable the root account and just assign people to
+    specific roles based on their job function.
+</p>
+<p>
+    <strong><mark>Type Enforcement (TE)-</strong></mark>
+    Type Enforcement is essentially an application "whitelisting" facility.
+    Type Enforcement policies attempt to specify exactly which components of
+    the operating system (files and directories, devices, sockets, etc.) a
+    given application needs to interact with and what level of access the
+    application needs (read access, write access, etc.).
+</p>
+<p>
+    The goal is to prevent an application that has been compromised by an
+    attacker from misbehaving in ways that would allow the attacker to
+    compromise the larger systems. So, Type Enforcement is really an
+    "application isolation" strategy, similar to chroot ().
+</p>
+<p>
+    Most sites only implement SELinux Type Enforcement on certain critical
+    processes and rely on normal Unix permissions to control access for
+    interactive user sessions.
+</p>
+<p>
+    Because <strong><mark>DNS</strong></mark> is so critical for the operation of individual
+    networks and the Internet as a whole, it's also a popular target for
+    denial-of-service type attacks. Aside from DoS danger to your own
+    infrastructure, badly configured DNS servers also provide attackers with an
+    opportunity to "amplify" their attacks against other targets.
+</p>
+<p>
+    Your DNS database contains information about all of the machines in your
+    organization. In particular, machine names and other information (HINFO and
+    TXT records) may help an attacker locate machines which are most critical
+    to the functioning of your organization or which can be easily targeted for
+    attack. Generally, the outside world needs to know very little information
+    about your network. At a minimum, you need to advertise hostnames and IP
+    addresses of a limited set of "public" servers: name servers, e-mail
+    servers, Web and FTP servers, etc.
+</p>
+<p>
+    Generally, each organization runs one master DNS server and one or more
+    slave servers for redundancy. Periodically, the slaves must contact the
+    master and download any updates to the local DNS database-this is referred
+    to as a <strong><mark>zone transfer</strong></mark>. By default, nameservers running
+    BIND allow any remote system to perform a zone transfer- whether that
+    system is a legitimate name server for that domain or not. Zone transfers
+    can even be requested from the slave name servers for your domains.
+</p>
+<p>
+    Attackers often attempt zone transfers in order to gather information about
+    your local network. If they succeed, then they have instantly gotten all of
+    the information about your internal hosts and networks with very little
+    effort.
+</p>
+<p>
+    <strong><mark>Split-horizon DNS</strong></mark>
+    is a DNS configuration where an organization presents one set of DNS
+    information to external organizations and reserves a second, separate set
+    of DNS information for internal use. This is generally done by maintaining
+    two different collections of name servers: an "external" set which
+    publishes the limited amount of DNS information that external organizations
+    need to interact with your company, and an "internal" set which holds your
+    complete, rich set of DNS information.
+</p>
+<p>
+    When your internal name servers wish to resolve external host names, they
+    must contact root name servers and name servers at other Internet-connected
+    sites. This can open up your internal name servers to attack from the
+    outside. For this reason, many organizations that run split-horizon DNS
+    also employ a sort of DNS proxying (slave forwarding name servers) to
+    "hide" their internal name servers completely from the outside world.
+</p>
+<p>
+    The basic idea behind <strong><mark>DNSSEC</strong></mark> is reasonably
+    straightforward:
+</p>
+<p>
+    &#8226; You generate a key pair and use it to sign your zones.
+</p>
+<p>
+    &#8226; You pass your public key back up the DNS chain to the owner of your
+    TLD- for example, if we're sysiphus . com, then we give a copy of our key
+    to the registry for .com
+</p>
+<p>
+    &#8226; The TLD uses DS (Delegation Signer) records to publish your public
+    key (actually the key fingerprint) and then signs those records with its
+    key.
+</p>
+<p>
+    &#8226; Similarly, the root zone maintainers use DS records for all of the
+    TLDs and sign those keys with the key for the root zone.
+</p>
+<p>
+    &#8226; Everybody manually downloads the key for the root zone from central
+    authority and verifies the key using something like a PGP signature.
+</p>
+<p>
+    Once this infrastructure is in place, then you should be able to verify DNS
+    responses because there will be a "chain of trust" from the root of the DNS
+    hierarchy. Attackers will be unable to spoofDNS responses unless they
+    manage to steal the private key for some zone (so we'll need to rigorously
+    protect those keys).
+</p>
+<p>
+    There end up being two different types of keys running around when you
+    start using DNSSEC. First, there are the Zone Signing Keys (ZSK). These are
+    the keys that are actually used to sign your zone files. But these are also
+    the keys that you should recycle every 30 days.
+</p>
+<p>
+    So, the recommended strategy is to also create a Key Signing Key (KSK). As
+    the name implies, you use the KSK to sign your ZSKs. You pass the public
+    portion of the KSK up to your TLD registrar and that's what gets signed and
+    put into OS records in the TLD.
+</p>
+<p>
+    <strong><mark>SSL</strong></mark>
+    is based on public/private key encryption. Each server that wants to
+    support SSL communications needs a public/private key pair. Browsers expect
+    that the server's public key has been signed by a recognized certificate
+    authority (CA)- this signed public key is referred to as a server
+    certificate.
+</p>
+<p>
+    At its simplest, <strong><mark>mod_ security</strong></mark> is a pattern matching
+    engine that allows you to match "signatures" of various kinds of malicious
+    web traffic. You can also extend these rulesets to do more complicated
+    checks using the Lua scripting language.
+</p>
+<p>
+    mod_security is deeply embedded in Apache via the Apache API and can filter
+    not only the incoming HTTP request headers, but can also do deep content
+    inspection (including uploaded fi le data), and even scan outgoing content
+    from the web server to make sure you're not accidentally emitting
+    information you shouldn't like PII and PCI
+</p>
+<p>
+    mod_security comes with a bundled set of rules which are called the "Core
+    Rules". This is a fairly extensive set of mod security rules that have been
+    developed over time to detect common sorts of malicious traffic and known
+    exploits. They're also a good overview of the kinds of functionality
+    available in mod_ security, and serve as an example of how you can write
+    your own rules.
+</p>
+<p>
+    &lt; ----------------------- &gt;
+</p>
+<p>
+    The <strong><mark>file systems</strong></mark> can be conceptualized as a "five layer"
+    model:
+</p>
+<p>
+    &#8226; Physical Layer: The physical drive or device and the partitions on
+    it. Sectors are the smallest unit of storage addressable by the disk
+    controller.
+</p>
+<p>
+    &#8226; File System Layer: Contains all the configuration and management
+    data associated with the file systems in each partition on the disk.
+</p>
+<p>
+    &#8226; The File Name Layer (AKA Human interface Layer) is responsible for
+    mapping human-readable file names to metadata addresses.
+</p>
+<p>
+    &#8226; Metadata Layer: Contains all of the data structures that are
+    responsible for the definition and delineation of files.
+</p>
+<p>
+    &#8226; Data Layer: Contains the actual data units of disk storage-commonly
+    referred to as blocks in Unix file systems.
+</p>
+<p>
+    When a file system is created in a logical partition, a data structure is
+    created at the beginning of the partition to define the attributes of the
+    file system that resides there. For Unix file systems, this data structure
+    is called a <strong><mark>superblock</strong></mark>. The superblock contains basic file
+    system information including items like the file system type, block size,
+    the number of blocks and inodes in the file system, the number of
+    unallocated blocks and inodes, and so on.
+</p>
+<p>
+    The <strong><mark>data layer</strong></mark> is where the binary information is actually
+    stored on disk. The smallest storage unit addressable by the disk device is
+    a sector which is usually 512 bytes. However, to improve VO performance,
+    EXT file systems will normally perform reads/writes in 4K chunks called
+    blocks.
+</p>
+<p>
+    When writing a large file that spans multiple blocks, the file system will
+    tend to allocate consecutive blocks where possible. This will increase the
+    read efficiency because the file system can "read ahead" in large swaths.
+    But this tendency also turns out to be useful when we're trying to recover
+    deleted data. lf you can locate a suspicious string in the middle of a
+    "deleted" block of data, you may be able to recover the entire deleted fi
+    le by capturing the blocks immediately before and after the "interesting"
+    block.
+</p>
+<p>
+    All file systems have structures that are used to describe or represent
+    files . The <strong><mark>metadata layer</strong></mark> contains these structures. They
+    are called different things in different file systems, but in the Unix
+    world, they are known as inodes (which is a contraction of "index nodes").
+</p>
+<p>
+    An <strong><mark>inode</strong></mark> contains descriptive information such as
+    timestamps, access controls or permissions, file owner's user id, and the
+    file 's size--everything you're used to seeing in the output of" 1 s - 1"
+    except for the file name. An inode also has pointers to the data blocks
+    that make up the contents of the file.
+</p>
+<p>
+    The Unix operating system tracks files using the inode number and the
+    device numbers associated with the disk partition that holds the file. But
+    human beings don't find a series of numbers convenient for naming files, so
+    some interface layer between humans and machines is necessary. The Human
+    interface, or <strong><mark>File Name Layer,</strong></mark> contains special file
+    system objects whose purpose is to associate human-readable file names with
+    the inode numbers used by the OS. The "special objects" are what we call
+    directories.
+</p>
+<p>
+    Directories are simply special files that associate file names with inodes.
+    In the traditional Unix file systems, a directory "file" is just a
+    sequential list of file names along with their corresponding inode. When
+    you list a directory, you are basically just dumping the contents of the
+    directory "file".
+</p>
+<p>
+    Evidence seizure generally occurs during the incident response phase where
+    you must verify the incident, but you also begin your work to collect
+    volatile and non-volatile data. Data that is volatile is lost if the system
+    is adjusted prior to the collecting of that data, a memory dump of a
+    process that contains key LP addresses of the attacker or subject.
+    Non-volatile data is a hard drive that is powered off, static CD-ROMs.
+</p>
+<p>
+    Investigation and analysis occur when the investigator takes what is
+    collected and analyzes it to form a clear picture of the incident. This
+    analysis uses tools and techniques that require data recovery, piecing
+    together the puzzle of what happened, and forming a timeline of events.
+</p>
+<p>
+    Reporting your results becomes the most important step. Without accurate
+    reporting, the investigator often finds himself unable to find anyone
+    willing to prosecute his case or take action. Without action, why perform
+    the investigation? Reporting is key.
+</p>
+<p>
+    <strong><mark>Image acquisition</strong></mark>
+    is the process of creating true bit images of the disks and removable media
+    that may be associated with the system in question. It is an artform unto
+    itself, albeit an easy one to master. Once these images have been acquired,
+    the original evidence (system disk) can be locked in a container for safe
+    keeping.
+</p>
+<p>
+    You will conduct your investigation against these images, performing media
+    analysis. Examining the images for small pieces of evidence that will
+    ultimately help you to reconstruct what happened in the past on a system.
+    The two final pieces are the ones that are most often overlooked. The
+    creation of an accurate and effective incident report, and incorporating
+    any lessons learned back into the security processes and policies of the
+    organization.
+</p>
+<p>
+    Much of the work involved in incident handling and forensic investigations
+    can, and should be done ahead of time. These proactive measures will help
+    you every step of the way when actually responding and investigating an
+    incident. Having plans, call lists, response policies, an adequate
+    detection infrastructure, and a trusted set of tools may ultimately make
+    the difference between a successful response/investigation and one that is
+    botched.
+</p>
+<p>
+    <strong><mark>Step 1. Create "Case File".</strong></mark>
+    In general, describe the system you are analyzing. Where did you acquire
+    the system? What is/was it used for? What is the configuration of the
+    system (OS, network)? Include any other information you feel may be
+    necessary to perform the investigation.
+</p>
+<p>
+    <strong><mark>Step 2. Validate the Compromise.</strong></mark>
+    Once you have been notified of a suspected incident and have opened a case
+    file, it is wise to work to validate that a system has actually been
+    compromised. There will be numerous incidents where the compromise wasn't
+    really a compromise after all- and there's the incident response team, all
+    psyched up and nowhere to go.
+</p>
+<p>
+    <strong><mark>Memory analysis</strong></mark>
+    can be enormously useful in an investigation. Since memory is analyzed on a
+    different machine from the compromised system, it is less prone to
+    interference from the attacker. Memory analysis may be the only way to
+    obtain encryption keys necessary to unlock protected file systems.
+</p>
+<p>
+    <strong><mark>Step 3. Collect Evidence.</strong></mark>
+    Evidence is defined as anything that can be collected from the system under
+    investigation. lt does not necessarily have to be an image. It could
+    include process information, network connections, log files, and user
+    information.
+</p>
+<p>
+    Computer evidence is very volatile. You have to be very careful about
+    completely understanding which evidence to gather and in what order. 1n
+    some cases, gathering one piece of evidence will accidentally modify
+    another.
+</p>
+<p>
+    Collecting evidence according to the <strong><mark>order of volatility</strong></mark>
+    is a de-facto-standard approach. The idea is simple: some data on a system
+    is more volatile le than other data. You should work to collect the most
+    volatile data first. In cases where you feel there may be a "tie", then
+    collect the most important evidence first.
+</p>
+<p>
+    Undoubtedly, memory is the most volatile evidence on a system, followed by
+    swap space. Swap exists on a system's media but is constantly changing. You
+    have no guarantee what state swap will be in once the system is powered
+    off, so you should gather it separately.
+</p>
+<p>
+    Network connections are important. What if the subject had a print queue or
+    was in the middle of a secure shell session while you powered down?
+</p>
+<p>
+    Running processes should also be gathered to testify as to the state of the
+    system. Perhaps during your media analysis phase, you determine that the
+    system scheduler had been Trojaned and had a sniffer wiretap wrapped into
+    it. You now can check and see if that process was running at the time of
+    seizure.
+</p>
+<p>
+    Evidence may exist in disk blocks that are no longer allocated to files. As
+    a result of their unallocated state, these disk blocks may be reused at any
+    time. lt would be a shame if the collection of one set of evidence (i.e.
+    collecting physical memory) were to cause the destruction of other evidence
+    that might reside in these blocks. Therefore, it is important to create
+    files that hold evidence on some disk other than the disks of the victim
+    system.
+</p>
+<p>
+    You may be able to physically remove the storage from the machine and
+    connect it to a forensic disk duplicator, which would be the fastest
+    copying option. Or you could connect the disk to another machine, being
+    careful that the system you're plugging the disk into doesn't auto-mount
+    the disk and change its state. If you're unable to remove the storage, you
+    could boot the system using a Linux forensic distro like Paladin and image
+    the disk that way.
+</p>
+<p>
+    <strong><mark>dd</strong></mark>
+    is a utility that reads input files block by block. If you specify a disk
+    device, you can capture fi le system metadata. This includes unallocated
+    blocks that could contain deleted fi le data. This data will be missed if
+    you use a logical file system collection tool like tar.
+</p>
+<p>
+    <strong><mark>dcfldd</strong></mark>
+    is a modified version of the dd tool that will provide for updates as well
+    as provide the ability to performing hashing on the raw data that it is
+    collecting (rather than having to collect the data and then run md5sum on
+    it separately). It works and is implemented just like the normal dd tool
+    but with two extra options.
+</p>
+<p>
+    In order to start working with our disk images, we need a tool to examine
+    the image and tell us where the partition boundaries are. The tool mrnls
+    from the Sleuthkit (TSK) is useful in determining which partitions are
+    located on a physical disk, the size, and the location in the physical disk
+    image.
+</p>
+<p>
+    The <strong><mark>timeline</strong></mark> is usually the bedrock of an investigation.
+    Everything revolves around it. Often, the investigator will have an idea of
+    the window of time in which the compromise occurred once basic evidence has
+    been obtained and analyzed or log fi le analysis has been performed. The
+    timing of events- when files were accessed, changed, modified will directly
+    point to the events that occurred on the system.
+</p>
+<p>
+    In terms of a timeline of events, we can learn a lot by looking at the MAC
+times associated with files. MAC stands for    <strong><mark>modification, access, and change</strong></mark>. These times are recorded
+    in the inode for each file and directory. The modification time tells us
+    when a file was last modified. The access time tells us when a file was
+    last accessed. The (metadata) change time records the last time that the
+    contents of an inode were written. The inode contains information such as
+    permissions and ownerships.
+</p>
+<p>
+    While MAC times are very useful in forensic investigations, be very
+    careful. MAC times can be modified quite easily. Using the debugfs command,
+    any one of these can be set to an appropriate time so as to fool the
+    investigator.
+</p>
+<p>
+    <strong><mark>Step 4. Create a Timeline</strong></mark>
+    . Analyze Timeline. The first step in making a timeline is to collect the
+    MAC time data from all of the partitions in your image. The second step is
+    to take the data in the body file that has just been created ( or a subset
+    of it) and sort/format it.
+</p>
+<p>
+    Analyze the timeline to quickly identify: &#8226; When the OS was
+    installed, updated, and last booted &#8226; Newly created files and
+    directories (rootkit locations) &#8226; Recently replaced binaries
+    (trojaned programs) &#8226; Altered bootscripts, password files, or other
+    system files (backdoors)
+</p>
+<p>
+    <strong><mark>Step 5: Analyze Disk Image</strong></mark>
+    : During media analysis, you will perform many different tasks. While it
+    would be too difficult to list every action here, some of the actions that
+    are recommended are: 1. Examine file system for modification to operating
+    system software or configuration 2. Examine file system for backdoors,
+    check for setuid and setgid files 3. Examine file system for any sign of a
+    sniffer program 4. Shell history files 5. Show start-up files and processes
+</p>
+<p>
+    Now that we have our disk mounted, the next step is to gather basic
+    information about the host. This data includes items like the name of the
+    host, the OS version, its lP address, etc. This information will end up in
+    your final report but is also important for analyzing the system.
+</p>
+<p>
+    Generally, attackers will be looking to set up backdoors to allow them to
+    access the system. This means either setting up standard account access for
+    themselves or running processes that give them a back door.
+</p>
+<p>
+    First, validate the passwd and shadow files for extraneous or mangled
+    accounts, odd defaults shells and the like. Attackers will often create
+    extra accounts with a UID 0, or enable blocked administrative accounts in
+    an attempt to leave behind an easy backdoor. Another common target these
+    days is the authorized keys file that holds the public half of identity
+    certificates used to access the system remotely via SSH. Look for new or
+    modified unit files in the systemd configuration directories.
+</p>
+<p>
+    Be sure to review the contents of your logs and the command history of any
+    user accounts that may have been involved in the incident. Look for any
+    hidden directories that begin with a".", some results will be valid
+    directories others may not. You need to take a look at each of these and
+    validate them.
+</p>
+<p>
+    More often than not, attackers will hide trojan rootkits in the / dev /
+    directory. This is because there are so many files listed there. They have
+    names like sdz 1 to sdz 9 so it can be hard to spot the files that do not
+    belong.
+</p>
+<p>
+    Have any of the binaries in the file system been modified or created
+    recently? Do any of them appear to have been "back-dated"? A good, hard
+    look at the MAC times of binaries can tell you a lot about what has
+    occurred on the system.
+</p>
+<p>
+    If a file is deleted, the contents (data blocks) are not overwritten
+    immediately. The data still exists on disk and can be recovered until the
+    free space is re-allocated by the OS and overwritten. You might think that
+    the <strong><mark>lifespan of deleted data</strong></mark> is short, and that storage
+    space that has been freed is used again quickly. This isn't necessarily the
+    case. ln fact, because of the inode and disk block allocation algorithms,
+    and the size of modem disk drives, this sort of collision occurs
+    infrequently. The bottom line is that we can usually recover most (if not
+    all) of a file even though it has been deleted.
+</p>
+<p>
+    Sometimes <strong><mark>string searching</strong></mark> can be the best mechanism to
+    zero in on certain data of interest to your investigation. For example, if
+    you suspect a particular piece of malware, there may be embedded strings
+    that you can look for to detect the presence of the malware on your system.
+</p>
+<p>
+    <strong><mark>Step 6. Create Incident Report.</strong></mark>
+    Reporting is not entirely a technical aspect of computer forensics, but it
+    is probably the most important step of the forensic process. Most reporting
+    is done to individuals who may not be educated in computer hardware,
+    networking topics, or computer crime law. You need to ensure that your
+    reporting clearly explains the evidence you found, the techniques you used
+    and defines everything that is technical.
+</p>
+<p>
+    <strong><mark>Step 7. Apply Lessons Learned. </strong></mark>
+    Every incident is an opportunity to learn about security and its
+    application within our organization. It may be that the lesson learned is
+    that new policies are needed. It may be that a policy was ignored. It could
+    also be the case that there was little the organization could do, in which
+    case the lessons learned would revolve around better incident handling.
+    Make absolutely sure that your organization learns from these lapses.
+</p>
+</div>
+</body>
+</html>
